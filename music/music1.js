@@ -7,7 +7,7 @@ server.on('request',function(req,res){
         var urls=req.url;
         console.log(urls);
     if(urls=="/"){
-        fs.readFile('music1.html',"utf-8",function(err,data){
+        fs.readFile('index.html',"utf-8",function(err,data){
             res.end(data);
         })
     }
