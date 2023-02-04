@@ -284,12 +284,14 @@ a.active {
 }
 
 .about-img-div img {
+	border-radius:5%;
     margin: 0 auto;
 }
 
 .about-border {
     position: absolute;
     border: 10px solid #425BB5;
+	border-radius:5%;
     width: 400px;
     height: 400px;
     top: 40px;
@@ -430,6 +432,10 @@ a.active {
     padding: 100px 0;
 }
 
+#projects div a{
+    border-radius: 5%;
+}
+
 .portfolio .categories-grid span {
     font-size: 30px;
     margin-bottom: 30px;
@@ -456,7 +462,7 @@ a.active {
 }
 
 .portfolio .categories-grid .categories ul li a.active {
-    background-color: #425BB5;
+    background-color: #5a7ff8;
     padding: 0px 20px;
     color: white;
     text-decoration: none;
@@ -464,6 +470,10 @@ a.active {
 
 .portfolio_filter {
     padding-left: 0;
+}
+
+.portfolio_filter .active{
+    border-radius:34px !important;
 }
 
 .portfolio_item {
@@ -759,7 +769,7 @@ fieldset {
     }
     #home,
     .disply-table {
-        height: 600px;
+        height: 700px;
     }
     .about-border {
         width: 265px;

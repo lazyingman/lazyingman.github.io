@@ -1,0 +1,91 @@
+html{font-size:16px}
+
+#rightMenu {
+    display: none;
+    position: fixed;
+    padding: 0 0.25rem;
+    width: 10rem;
+    height: fit-content;
+    top: 10%;
+    left: 10%;
+    background-color: rgba(255, 255, 255, 0.85);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    transform: translateZ(0);
+    color: #363636;
+    border-radius: 12px;
+    z-index: 99994;
+    border:1px solid #e3e8f7;
+    user-select: none;
+    box-shadow: 0 0 12px 4px rgba(0, 0, 0, .05);
+}
+
+#rightMenu .rightMenu-group {
+    padding: 0.35rem 0.3rem;
+    transition: 0.3s;
+}
+
+div {
+    display: block;
+}
+
+#rightMenu .rightMenu-group.rightMenu-small {
+    display: flex;
+    justify-content: space-between;
+}
+
+#rightMenu .rightMenu-group {
+    padding: 0.35rem 0.3rem;
+    transition: 0.3s;
+}
+
+#rightMenu .rightMenu-line {
+    border-top: 1px dashed #4259ef23;
+}
+
+#rightMenu .rightMenu-group.rightMenu-line .rightMenu-item {
+    display: flex;
+}
+
+#rightMenu .rightMenu-line .rightMenu-item {
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+}
+
+#rightMenu .rightMenu-group .rightMenu-item {
+    border-radius: 8px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.rightMenu-small .rightMenu-item {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+
+#rightMenu .rightMenu-line .rightMenu-item i {
+    margin: 0 0.25rem;
+}
+
+#rightMenu .rightMenu-group .rightMenu-item i {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.5rem;
+    width: 2rem;
+    padding: 0 0.25rem;
+}
+
+#rightMenu .rightMenu-group .rightMenu-item span {
+    line-height: 1.5rem;
+}
+
+#rightMenu:hover{
+border: 1px solid rgba(0, 153, 255, 0.532);
+}
+
+.rightMenu-item:hover{
+    background-color: rgba(0, 153, 255, 0.532);
+    color: #fff;
+    box-shadow:  0 8px 12px -3px #4259ef23;
+}
