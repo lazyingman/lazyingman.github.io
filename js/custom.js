@@ -129,14 +129,14 @@ $(document).ready(function () {
             },
             messages: {
                 name: {
-                    required: "This field is required",
-                    minlength: "your name must consist of at least 2 characters"
+                    required: "你的名字不能为空",
+                    minlength: "你的名字必须包含至少两个字符"
                 },
                 email: {
-                    required: "This field is required"
+                    required: "你的Email不能为空"
                 },
                 message: {
-                    required: "This field is required"
+                    required: "你的信息不能为空"
                 }
             },
             submitHandler: function (form) {

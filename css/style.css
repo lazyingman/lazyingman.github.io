@@ -568,8 +568,8 @@ a.active {
 }
 
 .portfolio_item img {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+    /* -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); */
 }
 
 .portfolio-padding {
@@ -628,7 +628,7 @@ a.active {
 #contact-form textarea {
     height: 50px;
     margin-bottom: 10px;
-    border-radius: 0;
+    border-radius: 5px;
 }
 
 #contact-form label {
@@ -666,7 +666,7 @@ a.active {
 #contact-form input[type="time"].error,
 #contact-form input[type="url"].error,
 #contact-form textarea.error {
-    border-color: #D33E43
+    border-color: #f0464f
 }
 
 textarea {
@@ -715,7 +715,7 @@ fieldset {
     background-color: #425BB5;
     color: #fff;
     padding: 10px 40px;
-    border-radius: 0;
+    border-radius: 5px;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
