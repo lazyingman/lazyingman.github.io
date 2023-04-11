@@ -27,9 +27,17 @@
     <!-- Preloader -->
     <div id="preloader">
         <div id="status">
-
-            <div class="preloader" aria-busy="true" aria-label="Loading, please wait." role="progressbar">
-            </div>
+			<div id="loading">
+				<div id="loading-center">
+					<div id="loading-center-absolute">
+						<div class="object" id="object_one"></div>
+						<div class="object" id="object_two" style="left:20px;"></div>
+						<div class="object" id="object_three" style="left:40px;"></div>
+						<div class="object" id="object_four" style="left:60px;"></div>
+						<div class="object" id="object_five" style="left:80px;"></div>
+					</div>
+				</div> 
+			</div>
 
         </div>
     </div>
@@ -66,7 +74,7 @@
                 <h4>01</h4>
                 <h1 class="size-50">Know <br /> 了解我</h1>
                 <div class="h-50"></div>
-                <p>拒绝精神内耗，当我们真正热爱这世界时，我们才真正生活在这世上</p>
+                <p>当我们真正热爱这世界时，我们才真正生活在这世上</p>
                 <p></p>
                 <div class="h-50"></div>
             </div>
@@ -328,6 +336,7 @@
             </div>
         </div>
     </div>
+	<div id="jsi-flying-fish-container" class="fishContainer"></div>
     <!-- ./contact -->
 
     <!--DEMO01-->
@@ -357,48 +366,14 @@
     </div>
 </div>
 
-	<!--  APlayer -->
-    <link rel="stylesheet" href="./css/APlayer.min.css">
-    <link rel="stylesheet" href="./css/custom.css" media="defer" onload="this.media='all'">
-    <link rel="stylesheet" href="./css/RightMenu.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" type="module"></script>
-    <!--  MetingJS -->
-    <script src="./js/Meting.js" type="module"></script>
-    <script src="./js/music2.js" type="module"></script>
-    <div id="nav-music">
-        <div id="nav-music-hoverTips">音乐已暂停</div>
-        <meting-js server="netease" type="playlist" id="8106091931" mini="true">
-        </meting-js>
-    </div>
-
-    <!-- jQuery -->
-    <script src="./js/jquery.js"></script>
+	<!--  MetingJS -->	
+	<div id="nav-music">
+	    <div id="nav-music-hoverTips">音乐已暂停</div>
+	    <meting-js server="netease" type="playlist" id="8106091931" mini="true">
+	    </meting-js>
+	</div>
 	
-	<!-- pjax -->
-	<!-- <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script> -->
-    <!-- <script>
-        $(function() {
-        $(document).pjax('a[target!=_blank]', '#pageContent', {fragment:'#pageContent', timeout:6000});
-        $(document).on('pjax:send', function() {
-        $('#pageContent').fadeTo(700,0.0);
-        });
-        $(document).on('pjax:complete', function() {
-        $('#pageContent').fadeTo(700,1);
-        });
-        });
-    </script> -->
-	
-    <!--  plugins  -->
-    <script src="https://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/aos.js"></script>
-
-    <script src="js/jquery.validate.min.js"></script>
-
-    <!--  main script  -->
-    <script src="js/custom.js"></script>
-
+	<!-- rightMenu -->
     <div id="rightMenu">
         <div class="rightMenu-group rightMenu-small">
             <div class="rightMenu-item" id="menu-backward">
@@ -438,6 +413,48 @@
             </div>
         </div>
     </div>
+
+    <!-- jQuery -->
+    <script src="./js/jquery.js"></script>
+	
+	<!--核心特效定义js-->
+	<script src='./js/fish.js'></script>
+	
+	<!-- pjax -->
+	<!-- <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script> -->
+    <!-- <script>
+        $(function() {
+        $(document).pjax('a[target!=_blank]', '#pageContent', {fragment:'#pageContent', timeout:6000});
+        $(document).on('pjax:send', function() {
+        $('#pageContent').fadeTo(700,0.0);
+        });
+        $(document).on('pjax:complete', function() {
+        $('#pageContent').fadeTo(700,1);
+        });
+        });
+    </script> -->
+	
+    <!--  plugins  -->
+    <script src="https://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/aos.js"></script>
+
+    <script src="js/jquery.validate.min.js"></script>
+
+    <!--  main script  -->
+    <script src="js/custom.js"></script>
+	
+	<!--  APlayer -->
+	<link rel="stylesheet" href="./css/APlayer.min.css">
+	<link rel="stylesheet" href="./css/custom.css" media="defer" onload="this.media='all'">
+	<link rel="stylesheet" href="./css/RightMenu.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+	<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" type="module"></script>
+	<!--  MetingJS -->
+	<script src="./js/Meting.js" type="module"></script>
+	<script src="./js/music2.js" type="module"></script>
+	
+	
 </body>
 
 </html>
