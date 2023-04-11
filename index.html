@@ -23,7 +23,7 @@
 </head>
 
 <body>
-
+<div id="pageContent">
     <!-- Preloader -->
     <div id="preloader">
         <div id="status">
@@ -355,20 +355,9 @@
             </div>
         </div>
     </div>
-    <!-- jQuery -->
-    <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-    <!--  plugins  -->
-    <script src="https://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/aos.js"></script>
+</div>
 
-    <script src="js/jquery.validate.min.js"></script>
-
-    <!--  main script  -->
-    <script src="js/custom.js"></script>
-
-
-    <!--  APlayer -->
+	<!--  APlayer -->
     <link rel="stylesheet" href="./css/APlayer.min.css">
     <link rel="stylesheet" href="./css/custom.css" media="defer" onload="this.media='all'">
     <link rel="stylesheet" href="./css/RightMenu.css">
@@ -382,6 +371,33 @@
         <meting-js server="netease" type="playlist" id="8106091931" mini="true">
         </meting-js>
     </div>
+
+    <!-- jQuery -->
+    <script src="./js/jquery.js"></script>
+	
+	<!-- pjax -->
+	<!-- <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script> -->
+    <!-- <script>
+        $(function() {
+        $(document).pjax('a[target!=_blank]', '#pageContent', {fragment:'#pageContent', timeout:6000});
+        $(document).on('pjax:send', function() {
+        $('#pageContent').fadeTo(700,0.0);
+        });
+        $(document).on('pjax:complete', function() {
+        $('#pageContent').fadeTo(700,1);
+        });
+        });
+    </script> -->
+	
+    <!--  plugins  -->
+    <script src="https://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/aos.js"></script>
+
+    <script src="js/jquery.validate.min.js"></script>
+
+    <!--  main script  -->
+    <script src="js/custom.js"></script>
 
     <div id="rightMenu">
         <div class="rightMenu-group rightMenu-small">
