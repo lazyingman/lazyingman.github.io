@@ -114,7 +114,7 @@ element.style {
 /* .playing */
 #nav-music.playing .aplayer {
     background: rgba(89,114,192,0.8)!important;
-    border:1px solid rgba(0, 153, 255, 0.532)!important;
+    border:1px solid rgba(89,114,192, 0.8)!important;
     backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: blur(20px);
     transform: translateZ(0);
