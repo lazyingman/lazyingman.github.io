@@ -17,7 +17,7 @@
 @media screen and (max-width: 768px) {
     #category-bar {
         border-radius: 0;
-        border: none;
+        border: none!important;
     }
 }
 
