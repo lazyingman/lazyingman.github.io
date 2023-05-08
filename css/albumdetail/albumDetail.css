@@ -1,0 +1,64 @@
+.fj-gallery {
+  position: relative;
+  overflow: hidden;
+}
+
+.fj-gallery::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.fj-gallery .fj-gallery-item {
+  float: left;
+  top: 0;
+  left: 0;
+}
+
+.fj-gallery .fj-gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition:all .4s ease-in-out;
+}
+
+.fj-gallery .fj-gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+
+#album_detail .type-gallery {
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+#content-inner .gallery {
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+#content-inner .gallery .fj-gallery .gallery-data {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  visibility: hidden;
+}
+
+#album_detail .tag-address {
+  display: flex;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  padding: 4px 6px;
+  border-radius: 8px;
+  background: var(--bieyinan-black-op);
+  font-size: 12px;
+  color: var(--bieyinan-white);
+  transition: .3s;
+  z-index: 1;
+  user-select: none;
+}
+
+#album_detail .album-info .bi.bi-instagram {
+  margin-right: 8px;
+}
