@@ -11732,7 +11732,7 @@ body[data-type=about] #web_bg {
 #about-page .about-statistic {
     min-height: 380px;
     width: 39%;
-    background: url(https://img02.anzhiy.cn/adminuploads/1/2022/09/23/632d634f8376d.jpg) no-repeat top;
+    background: url(https://cdn.jsdelivr.net/gh/lazyingman/pictureCollection/33.jpg) no-repeat top;
     background-size: cover;
     color: var(--bieyinan-white);
     overflow: hidden
@@ -12252,6 +12252,11 @@ body[data-type=about] #web_bg {
 
     .post-tips {
         left: auto
+    }
+
+    #post {
+        background: var(--bieyinan-background)!important;
+        border: none;
     }
 
     .author-content-item.personalities .image {
