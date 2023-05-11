@@ -4242,15 +4242,17 @@ body:has(#console.show) #nav-music {
 }
 
 #anMusic-page meting-js .aplayer .aplayer-body .aplayer-info .aplayer-lrc p {
-    font-size: 20px;
+    /* font-size: 20px;
     line-height: 20px !important;
     height: 20px !important;
-    margin: 20px 0 !important;
+    margin: 20px 0 !important; */
     color: #fff
 }
 
 #anMusic-page meting-js .aplayer .aplayer-body .aplayer-info .aplayer-lrc p.aplayer-lrc-current {
-    min-height: 20px
+    min-height: 27px;
+    font-size: 16px;
+    margin: 10px!important;
 }
 
 #anMusic-page meting-js .aplayer .aplayer-body .aplayer-info .aplayer-lrc::after,
@@ -7701,7 +7703,7 @@ h1.page-title+.tag-cloud-list {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: box;
-    display: flex;
+    display: flex!important;
     -webkit-box-pack: left;
     -moz-box-pack: left;
     -o-box-pack: left;
@@ -15831,10 +15833,6 @@ body[data-type=essay] #page .author-content-item .card-content .banner-button-gr
 
 #bber .aplayer .aplayer-lrc p {
     color: var(--bieyinan-fontcolor);
-    min-height: 40px;
-    line-height: 40px !important;
-    height: 40px !important;
-    margin: 0 !important
 }
 
 #bbTimeList {
