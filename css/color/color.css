@@ -153,8 +153,8 @@
 
 [data-theme=light] {
   --bieyinan-meta-theme-post-color: #f7f9fe;
-  --bieyinan-meta-theme-color: #f7f9fe;
-  --bieyinan-theme-op-deep: #4259efdd;
+  --bieyinan-meta-theme-color: #3b70fc;
+  --bieyinan-theme-op-deep: #61a0ff;
   --global-bg: #f7f9fe;
   --bieyinan-theme: #3b70fc;
   --bieyinan-theme-deep: #1856fb;
@@ -238,7 +238,7 @@
   --heo-shadow-green: 0 8px 12px -3px #87ee7936;
   --heo-logo-color: linear-gradient(215deg,#4584ff 30%,#ff7676 70%);
   --style-border: 1px solid var(--heo-card-border);
-  --style-border-hover: 1px solid var(--heo-theme);
+  --style-border-hover: 1px solid var(--bieyinan-bar-background);
 }
 
 ::selection {
@@ -247,7 +247,7 @@
 }
 
 [data-theme=light] {
-  --heo-theme: #425AEF;
+  --heo-theme: var(--bieyinan-bar-background);
   --heo-theme-op: #4259ef23;
   --heo-blue: #425AEF;
   --heo-red: #D8213C;

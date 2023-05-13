@@ -387,9 +387,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const title = i.title ? `title="${replaceDq(i.title)}"` : "";
         const address = i.address ? i.address : "";
         if (address) {
-          str += `<div class="fj-gallery-item"><div class="tag-address">${address}</div><img src="${i.url}" ${
-            alt + title
-          }"></div>`;
+          str += `<div class="fj-gallery-item"><div class="tag-address">${address}</div><img src="${i.url}" ${alt + title
+            }"></div>`;
         } else {
           str += `<div class="fj-gallery-item"><img src="${i.url}" ${alt + title}"></div>`;
         }
@@ -456,8 +455,8 @@ document.addEventListener("DOMContentLoaded", function () {
       ele.forEach(item => {
         item.classList.contains("url")
           ? fetchUrl(item.textContent).then(res => {
-              runJustifiedGallery(item, res);
-            })
+            runJustifiedGallery(item, res);
+          })
           : runJustifiedGallery(item, JSON.parse(item.textContent));
       });
     };
@@ -1139,7 +1138,7 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(runLazyLoad, 100);
       }
     }
-    
+
 
     // 绑定滚动处理函数
     window.bieyinanScrollFnToDo = bieyinan.throttle(scrollFn, 48); // 执行函数
@@ -1149,8 +1148,9 @@ document.addEventListener("DOMContentLoaded", function () {
   //封面纯色
   const coverColor = function () {
     var path = document.getElementById("post-top-bg")?.src;
-    // console.log(path);
     const root = document.querySelector(":root");
+    const colorThief = new ColorThief();
+    const image = new Image();
     if (path !== undefined) {
       var httpRequest = new XMLHttpRequest(); //第一步：建立所需的对象
       httpRequest.open("GET", path + "?imageAve", true); //第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
@@ -1165,7 +1165,6 @@ document.addEventListener("DOMContentLoaded", function () {
             var obj = JSON.parse(json, function (key, value) {
               return value;
             });
-
             var value = obj.RGB;
             value = "#" + value.slice(2);
 
@@ -1178,8 +1177,14 @@ document.addEventListener("DOMContentLoaded", function () {
             // 修改顶栏tab bar状态栏
             bieyinan.initThemeColor();
           } catch (err) {
+            image.src = path + "?imageAve";
+            image.setAttribute('crossOrigin', 'anonymous')
+            image.onload = function () {
+              let color = colorThief.getColor(image);
+              root.style.setProperty("--bieyinan-bar-background", `rgb(${color[0]}, ${color[1]}, ${color[2]})`);
+            }
             // 在这里处理 JSON.parse() 抛出的错误
-            root.style.setProperty("--bieyinan-bar-background", "var(--bieyinan-main)");
+            // root.style.setProperty("--bieyinan-bar-background", "var(--bieyinan-main)");
             // 修改顶栏tab bar状态栏
             bieyinan.initThemeColor();
           }
