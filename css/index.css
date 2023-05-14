@@ -5735,7 +5735,7 @@ h1.page-title+.tag-cloud-list {
 
 #footer {
     position: relative;
-    background: var(--global-bg);
+    /* background: var(--global-bg); */
     background-attachment: scroll;
     background-position: bottom;
     background-size: cover
@@ -5750,8 +5750,6 @@ h1.page-title+.tag-cloud-list {
 
 #footer-wrap {
     position: relative;
-    padding: 40px 20px;
-    color: var(--light-grey);
     text-align: center
 }
 
@@ -5760,7 +5758,8 @@ h1.page-title+.tag-cloud-list {
 }
 
 #footer-wrap a:hover {
-    text-decoration: underline
+    color: var(--bieyinan-white);
+    background: var(--bieyinan-main);
 }
 
 #footer-wrap .footer-separator {
@@ -6202,6 +6201,36 @@ h1.page-title+.tag-cloud-list {
         -o-transition: 0;
         -ms-transition: 0;
         transition: 0
+    }
+
+    #post-info #post-meta>.meta-firstline,
+    #post-info #post-meta>.meta-secondline {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: box;
+        display: flex!important;
+        font-size: 90%;
+        -webkit-box-lines: multiple;
+        -moz-box-lines: multiple;
+        -o-box-lines: multiple;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-align: center;
+        -moz-box-align: center;
+        -o-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -moz-box-pack: center;
+        -o-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+
     }
 }
 
@@ -15703,8 +15732,8 @@ body[data-type=essay] #web_bg {
 
 #bber .bber-content .datacont {
     order: 0;
-    font-size: .8rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: bold;
     color: var(--bieyinan-fontcolor);
     width: 100%;
     line-height: 1.38;

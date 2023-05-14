@@ -1149,8 +1149,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const coverColor = function () {
     var path = document.getElementById("post-top-bg")?.src;
     const root = document.querySelector(":root");
-    const colorThief = new ColorThief();
-    const image = new Image();
     if (path !== undefined) {
       var httpRequest = new XMLHttpRequest(); //第一步：建立所需的对象
       httpRequest.open("GET", path + "?imageAve", true); //第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
@@ -1177,6 +1175,8 @@ document.addEventListener("DOMContentLoaded", function () {
             // 修改顶栏tab bar状态栏
             bieyinan.initThemeColor();
           } catch (err) {
+            const colorThief = new ColorThief();
+            const image = new Image();
             image.src = path + "?imageAve";
             image.setAttribute('crossOrigin', 'anonymous')
             image.onload = function () {
