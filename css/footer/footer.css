@@ -69,4 +69,8 @@ img.footer_mini_logo {
     img.footer_mini_logo {
         display: none;
     }
+
+    #footer .container {
+        display: none;
+    }
 }

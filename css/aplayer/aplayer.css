@@ -308,6 +308,10 @@
   display: none;
 }
 
+.aplayer .aplayer-lrc:after, .aplayer .aplayer-lrc:before {
+  display: none!important;
+}
+
 #nav-music .aplayer .aplayer-lrc p {
   color: #ffffffb3;
 }

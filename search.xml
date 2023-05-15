@@ -31,6 +31,35 @@
     
     
     <entry>
+      <title>使用PS去除图片水印</title>
+      <link href="/posts/e2a091a6.html"/>
+      <url>/posts/e2a091a6.html</url>
+      
+        <content type="html"><![CDATA[<p>PS在电脑里吃灰太久，以至于前段时间帮别去除图片中的一些文字内容花了不少时间去复习，在这里记录一下，以防止之后在笨头笨脑的去百度，本教程可以通过PS去除图片中的一些比较简单的文字和水印。我这里使用的PS版本是2018，其他版本可能会有一些不同</p><h2 id="最终效果">最终效果</h2><p><img src="https://cdn.jsdelivr.net/gh/lazyingman/pictureCollection/ps10.webp" alt=""></p><center><small>未去除水印</small></center><p><img src="https://cdn.jsdelivr.net/gh/lazyingman/pictureCollection/ps9.webp" alt=""></p><center><small>使用本教程方式去水印</small></center><h2 id="创建选区">创建选区</h2><ol><li><p>首先使用矩形选框工具框选水印</p><p><img src="https://cdn.jsdelivr.net/gh/lazyingman/pictureCollection/ps1.webp" alt=""></p></li><li><p>点击选择-&gt;色彩范围</p><p><img src="https://cdn.jsdelivr.net/gh/lazyingman/pictureCollection/ps2.webp" alt=""></p></li><li><p>因为图片的水印是纯色的，所以我们在取色状态下点一下要去除水印的颜色。通过调整颜色容差让预览框的水印部分为白色，其他内容为黑色。</p><p><img src="https://cdn.jsdelivr.net/gh/lazyingman/pictureCollection/ps3.webp" alt=""></p></li><li><p>确定之后进入快速蒙板模式</p><p><img src="https://cdn.jsdelivr.net/gh/lazyingman/pictureCollection/ps4.webp" alt=""></p></li><li><p>使用快速蒙板调整选区的阈值<br>阈值调整之后点击确定，调整阈值的目的为了让选区的半透明像素变成纯色像素</p><p><img src="https://cdn.jsdelivr.net/gh/lazyingman/pictureCollection/ps5.webp" alt=""></p></li><li><p>确认之后取消蒙版模式，因为图片水印是有一个阴影，我们需要扩展一下选区，扩展选区的数值在<code>3-5</code>左右即可</p><p><img src="https://cdn.jsdelivr.net/gh/lazyingman/pictureCollection/ps6.webp" alt=""></p></li></ol><h2 id="内容识别填充">内容识别填充</h2><ol start="3"><li><p>编辑 -&gt; 内容识别填充 填充水印，快捷键<code>shift+F5</code></p><p><img src="https://cdn.jsdelivr.net/gh/lazyingman/pictureCollection/ps7.webp" alt=""></p></li><li><p>点击确认之后的效果</p><p><img src="https://cdn.jsdelivr.net/gh/lazyingman/pictureCollection/ps8.webp" alt=""></p></li><li><p>按<code>ctrl+D</code>取消选区，就的到去除完水印的图片了</p><p><img src="https://cdn.jsdelivr.net/gh/lazyingman/pictureCollection/ps10.webp" alt=""></p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 经验分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PS </tag>
+            
+            <tag> 教程 </tag>
+            
+            <tag> 必看 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>什么是CDN</title>
       <link href="/posts/fcbdffd2.html"/>
       <url>/posts/fcbdffd2.html</url>
