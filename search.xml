@@ -4,27 +4,6 @@
   
     
     <entry>
-      <title>使用 GitHub Action (一键部署的快乐)</title>
-      <link href="/posts/95fa9691.html"/>
-      <url>/posts/95fa9691.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> 教程 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Hello World</title>
       <link href="/posts/4a17b156.html"/>
       <url>/posts/4a17b156.html</url>
@@ -68,9 +47,9 @@
       
         <tags>
             
-            <tag> 教程 </tag>
-            
             <tag> PS </tag>
+            
+            <tag> 教程 </tag>
             
             <tag> 必看 </tag>
             
