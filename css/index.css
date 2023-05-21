@@ -10126,7 +10126,8 @@ div.videos[col='4'] iframe {
 }
 
 .note.primary:not(.no-icon)::before {
-    content: '\e615'
+    font-family: bootstrap-icons;
+    content: '\F1D3'
 }
 
 .note.primary:not(.no-icon):not(.modern)::before {
@@ -10164,7 +10165,8 @@ div.videos[col='4'] iframe {
 }
 
 .note.info:not(.no-icon)::before {
-    content: '\e611'
+    font-family: bootstrap-icons;
+    content: '\F1D3'
 }
 
 .note.info:not(.no-icon):not(.modern)::before {
@@ -10202,7 +10204,8 @@ div.videos[col='4'] iframe {
 }
 
 .note.success:not(.no-icon)::before {
-    content: '\e613'
+    font-family: bootstrap-icons;
+    content: '\F1D3'
 }
 
 .note.success:not(.no-icon):not(.modern)::before {
@@ -10278,7 +10281,8 @@ div.videos[col='4'] iframe {
 }
 
 .note.danger:not(.no-icon)::before {
-    content: '\e614'
+    font-family: bootstrap-icons;
+    content: '\F1D3'
 }
 
 .note.danger:not(.no-icon):not(.modern)::before {
@@ -18743,8 +18747,8 @@ a#toPageButton {
 }
 
 #article-container .headerlink::before {
-    content: "\e64a";
-    font-family: bieyinanfont;
+    content: "\F470";
+    font-family: bootstrap-icons;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
 }
