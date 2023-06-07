@@ -9150,7 +9150,7 @@ details.folding-tag {
     padding: 16px;
     margin: 1em 0;
     border-radius: 4px;
-    background: #fff;
+    background: none!important;
     font-size: var(--global-font-size);
     -webkit-transition: all .28s ease;
     -moz-transition: all .28s ease;
@@ -10088,7 +10088,8 @@ div.videos[col='4'] iframe {
 }
 
 .note.default:not(.no-icon)::before {
-    content: '\e62d'
+    font-family: bootstrap-icons;
+    content: '\F133';
 }
 
 .note.default:not(.no-icon):not(.modern)::before {
@@ -10127,7 +10128,7 @@ div.videos[col='4'] iframe {
 
 .note.primary:not(.no-icon)::before {
     font-family: bootstrap-icons;
-    content: '\F1D3'
+    content: '\F4F9'
 }
 
 .note.primary:not(.no-icon):not(.modern)::before {
@@ -10166,7 +10167,7 @@ div.videos[col='4'] iframe {
 
 .note.info:not(.no-icon)::before {
     font-family: bootstrap-icons;
-    content: '\F1D3'
+    content: '\F430'
 }
 
 .note.info:not(.no-icon):not(.modern)::before {
@@ -10205,7 +10206,7 @@ div.videos[col='4'] iframe {
 
 .note.success:not(.no-icon)::before {
     font-family: bootstrap-icons;
-    content: '\F1D3'
+    content: '\F26A'
 }
 
 .note.success:not(.no-icon):not(.modern)::before {
@@ -10243,7 +10244,8 @@ div.videos[col='4'] iframe {
 }
 
 .note.warning:not(.no-icon)::before {
-    content: '\e645'
+    font-family: bootstrap-icons;
+    content: '\F332'
 }
 
 .note.warning:not(.no-icon):not(.modern)::before {
@@ -10282,7 +10284,7 @@ div.videos[col='4'] iframe {
 
 .note.danger:not(.no-icon)::before {
     font-family: bootstrap-icons;
-    content: '\F1D3'
+    content: '\F2E5'
 }
 
 .note.danger:not(.no-icon):not(.modern)::before {

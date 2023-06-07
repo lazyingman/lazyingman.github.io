@@ -19,11 +19,14 @@
   display: block;
   width: 100%;
   height: auto;
-  transition:all .4s ease-in-out;
+  transition:all .25s ease-in-out;
 }
 
 .fj-gallery .fj-gallery-item:hover img {
-  transform: scale(1.04);
+  z-index: 22;
+  -moz-box-shadow: 0px 0px 20px #000000;
+  -webkit-box-shadow: 0px 0px 20px #000000;
+  box-shadow: 0px 0px 20px #000000;
 }
 
 
