@@ -1,0 +1,15 @@
+#page {
+    background: none;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    min-height: calc(100vh - 464px);
+}
+
+#page h1.page-title {
+    margin: 0.4rem 0px 1rem;
+}
+
+.page-title {
+    display: none;
+}
