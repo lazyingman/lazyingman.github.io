@@ -13499,8 +13499,6 @@ html::-webkit-scrollbar {
 }
 
 #article-container a:not([data-fancybox=gallery]):not(.headerlink):not(.cf-friends-link):not(.tag-Link):not(.btn-bieyinan):not(.no-text-decoration) {
-    font-weight: 500;
-    border-bottom: solid 2px var(--bieyinan-lighttext);
     color: var(--bieyinan-fontcolor);
     padding: 0 .2em;
     text-decoration: none
@@ -22003,7 +22001,7 @@ div#runtime {
 }
 
 .author-content.author-content-item {
-    height: 19rem;
+    height: 23rem;
     background-color: var(--bieyinan-main);
     background-position: left 28%;
     background-repeat: no-repeat;
