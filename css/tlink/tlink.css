@@ -89,8 +89,6 @@
     border-bottom: 2px solid var(--bieyinan-lighttext);
     color: var(--bieyinan-fontcolor);
     font-weight: bold;
-    padding: 0 4px;
-    border-radius: 4px 4px 0 0;
 }
 
 .flink#article-container .flink-list>.flink-list-item a img {
