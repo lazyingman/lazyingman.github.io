@@ -1181,6 +1181,8 @@ document.addEventListener("DOMContentLoaded", function () {
             image.onload = function () {
               let color = colorThief.getColor(image);
               root.style.setProperty("--bieyinan-bar-background", `rgb(${color[0]}, ${color[1]}, ${color[2]})`);
+              root.style.setProperty("--bieyinan-main", `rgb(${color[0]}, ${color[1]}, ${color[2]})`);
+              root.style.setProperty("--bieyinan-theme-op-deep", `rgb(${color[0]}, ${color[1]}, ${color[2]},0.6)`);
             }
             // 在这里处理 JSON.parse() 抛出的错误
             // root.style.setProperty("--bieyinan-bar-background", "var(--bieyinan-main)");
