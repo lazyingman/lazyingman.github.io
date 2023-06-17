@@ -1,4 +1,4 @@
-#page {
+body[data-type=tlink] #page {
     background: none!important;
     border: none;
     padding: 0;
@@ -11,7 +11,7 @@
     margin: 0.4rem 0px 1rem;
 }
 
-.page-title {
+body[data-type=tlink] .page-title {
     display: none;
 }
 

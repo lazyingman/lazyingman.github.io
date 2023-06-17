@@ -5750,16 +5750,15 @@ h1.page-title+.tag-cloud-list {
 
 #footer-wrap {
     position: relative;
-    text-align: center
 }
 
 #footer-wrap a {
     color: var(--light-grey)
 }
 
-#footer-wrap a:hover {
-    color: var(--bieyinan-white);
-    background: var(--bieyinan-main);
+a.deal_link:hover {
+    color: var(--heo-white);
+    background: var(--heo-main);
 }
 
 #footer-wrap .footer-separator {
