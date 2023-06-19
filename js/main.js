@@ -1115,13 +1115,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const waterfallResult = scrollTop % document.documentElement.clientHeight; // 卷去一个视口
         if (!scrollBottomFirstFlag && waterfallResult + 100 >= document.documentElement.clientHeight) {
           setTimeout(() => {
-            waterfall("#waterfall");
-          }, 500);
-        } else {
-          setTimeout(() => {
             waterfallDom || waterfall("#waterfall");
           }, 500);
-        }
+        } 
       }
 
       function runLazyLoad() {
