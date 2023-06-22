@@ -476,7 +476,7 @@ const bieyinan = {
           essay_bar_swiper.autoplay.start();
         };
       }
-    }, 100);
+    }, 1000);
   },
   // 修改时间显示"最近"
   diffDate: function (d, more = false) {

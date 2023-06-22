@@ -270,7 +270,7 @@ div#banners {
   display: none;
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1200px) {
   .topGroup {
     display: flex;
     flex-direction: row;
@@ -280,6 +280,7 @@ div#banners {
     align-content: space-between;
     width: calc(600px + 1.5rem);
     position: relative;
+    animation: slide-in 0.6s 0.1s backwards;
   }
 
   div#bannerGroup {
@@ -305,7 +306,8 @@ div#banners {
     flex-direction: column;
     overflow: hidden;
     transition: 0.3s;
-    clip-path: inset(0 0 0 0 round 12px);
+    will-change: transform;
+    animation: slide-in 0.6s 0.1s backwards;
   }
 
   div#banners:hover {
@@ -488,7 +490,7 @@ div#banners {
     filter: blur(0)
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1200px) {
     .categoryItem:hover i {
         transform:scale(1.03) rotate(0)
     }
@@ -509,7 +511,7 @@ div#banners {
     display: none
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1200px) {
     .recent-post-top .categoryGroup {
         flex-direction:row;
         height: 24%
