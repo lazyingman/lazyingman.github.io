@@ -530,13 +530,11 @@ const bieyinan = {
   },
   // 刷新瀑布流
   reflashEssayWaterFall: function () {
-    const waterfallEl = document.getElementById("waterfall");
-    if (waterfallEl) {
-      setTimeout(function () {
-        waterfall(waterfallEl);
-        waterfallEl.classList.add("show");
-      }, 800);
-    }
+    document.querySelector("#waterfall") && setTimeout((function() {
+            waterfall("#waterfall"),
+            document.getElementById("waterfall").classList.add("show")
+        }
+        ), 500)
   },
   sayhi: function () {
     const $sayhiEl = document.getElementById("author-info__sayhi");
@@ -1080,4 +1078,113 @@ const bieyinan = {
     document.querySelector(".reward-main").style.display = "none";
     document.getElementById("quit-box").style.display = "none";
   },
+  keyboardToggle: function () {
+    const isKeyboardOn = bieyinan_keyboard;
+
+    if (isKeyboardOn) {
+      const consoleKeyboard = document.querySelector("#consoleKeyboard");
+      consoleKeyboard.classList.remove("on");
+      bieyinan_keyboard = false;
+    } else {
+      const consoleKeyboard = document.querySelector("#consoleKeyboard");
+      consoleKeyboard.classList.add("on");
+      bieyinan_keyboard = true;
+    }
+
+    localStorage.setItem("keyboardToggle", isKeyboardOn ? "false" : "true");
+  },
+  rightMenuToggle: function () {
+    if (window.oncontextmenu) {
+      window.oncontextmenu = null;
+    } else if (!window.oncontextmenu && oncontextmenuFunction) {
+      window.oncontextmenu = oncontextmenuFunction;
+    }
+  },
+  // 定义 intersectionObserver 函数，并接收两个可选参数
+  intersectionObserver: function (enterCallback, leaveCallback) {
+    let observer;
+    return () => {
+      if (!observer) {
+        observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.intersectionRatio > 0) {
+              enterCallback?.();
+            } else {
+              leaveCallback?.();
+            }
+          });
+        });
+      } else {
+        // 如果 observer 对象已经存在，则先取消对之前元素的观察
+        observer.disconnect();
+      }
+      return observer;
+    };
+  },
+  // CategoryBar滚动
+  scrollCategoryBarToRight: function () {
+    // 获取需要操作的元素
+    const items = document.getElementById("catalog-list");
+    const nextButton = document.getElementById("category-bar-next");
+
+    // 检查元素是否存在
+    if (items && nextButton) {
+      const itemsWidth = items.clientWidth;
+
+      // 判断是否已经滚动到最右侧
+      if (items.scrollLeft + items.clientWidth + 1 >= items.scrollWidth) {
+        // 滚动到初始位置并更新按钮内容
+        items.scroll({
+          left: 0,
+          behavior: "smooth",
+        });
+        nextButton.innerHTML = '<i class="bieyinanfont bieyinan-icon-angle-double-right"></i>';
+      } else {
+        // 滚动到下一个视图
+        items.scrollBy({
+          left: itemsWidth,
+          behavior: "smooth",
+        });
+      }
+    } else {
+      console.error("Element(s) not found: 'catalog-list' and/or 'category-bar-next'.");
+    }
+  },
+  // 分类条
+  categoriesBarActive: function () {
+    const urlinfo = decodeURIComponent(window.location.pathname);
+    const $categoryBar = document.getElementById("category-bar");
+    if (!$categoryBar) return;
+
+    if (urlinfo === "/") {
+      $categoryBar.querySelector("#首页").classList.add("select");
+    } else {
+      const pattern = /\/categories\/.*?\//;
+      const patbool = pattern.test(urlinfo);
+      if (!patbool) return;
+
+      const nowCategorie = urlinfo.split("/")[2];
+      $categoryBar.querySelector(`#${nowCategorie}`).classList.add("select");
+    }
+  },
+  topCategoriesBarScroll: function () {
+    const $categoryBarItems = document.getElementById("category-bar-items");
+    if (!$categoryBarItems) return;
+
+    $categoryBarItems.addEventListener("mousewheel", function (e) {
+      const v = -e.wheelDelta / 2;
+      this.scrollLeft += v;
+      e.preventDefault();
+    });
+  },
+  // 切换菜单显示热评
+  switchRightClickMenuHotReview: function () {
+    const postComment = document.getElementById("post-comment")
+    const menuCommentBarrageDom = document.getElementById("menu-commentBarrage")
+    if (postComment) {
+      menuCommentBarrageDom.style.display = "flex"
+    } else {
+      menuCommentBarrageDom.style.display = "none"
+    }
+  }
 };

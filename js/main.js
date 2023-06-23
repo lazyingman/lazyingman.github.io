@@ -414,7 +414,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const runJustifiedGallery = (item, arr) => {
       const limit = item.getAttribute("data-limit") ?? arr.length;
-      if (!item.classList.contains("lazyload")) item.innerHTML = htmlStr(arr);
+      if (!item.classList.contains("lazyload")) {
+        // 不懒加载
+        item.innerHTML = htmlStr(arr);
+      }
       else {
         if (!item.classList.contains("btn_album_detail_lazyload")) {
           // 滚动懒加载
@@ -1072,7 +1075,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 缓存常用dom元素
     const musicDom = document.getElementById("nav-music"),
       footerDom = document.getElementById("footer"),
-      waterfallDom = document.getElementById("waterfall"),
+      // waterfallDom = document.getElementById("waterfall"),
       percentBtn = document.getElementById("percent");
 
     // 页面底部Dom是否存在
@@ -1111,16 +1114,16 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // 如果当前页面需要瀑布流，就处理瀑布流
-      if (waterfallDom) {
+      if (document.getElementById("waterfall")) {
         const waterfallResult = scrollTop % document.documentElement.clientHeight; // 卷去一个视口
         if (!scrollBottomFirstFlag && waterfallResult + 100 >= document.documentElement.clientHeight) {
-          console.info(waterfallResult, document.documentElement.clientHeight);
+          // console.info(waterfallResult, document.documentElement.clientHeight);
           setTimeout(() => {
             waterfall("#waterfall");
           }, 500);
         } else {
           setTimeout(() => {
-            waterfallDom || waterfall("#waterfall");
+            document.getElementById("waterfall") && waterfall("#waterfall");
           }, 500);
         } 
       }

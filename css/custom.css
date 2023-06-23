@@ -35,8 +35,8 @@
     border-radius: 12px;
     overflow: hidden;
     min-width: 200px;
-    height: 164px;
-    max-height: 164px;
+    height: 162px;
+    max-height: 162px;
     border: var(--style-border-always);
     transition: .3s;
     position: relative;
