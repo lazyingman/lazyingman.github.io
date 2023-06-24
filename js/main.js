@@ -1334,6 +1334,13 @@ document.addEventListener("DOMContentLoaded", function () {
           bieyinan_musicPlaying = false;
           navMusicEl.classList.remove("stretch");
         });
+        navMusicEl.querySelector("#nav-music meting-js").aplayer.on("play", function() {
+          navMusicEl.classList.add("playing"),
+          document.getElementById("menu-music-toggle").innerHTML = 
+          '<i class="bi bi-pause-fill"></i><span>暂停音乐</span>',
+          document.querySelector("#consoleMusic").classList.add("on"),
+          bieyinan_musicPlaying = true
+        })
       }
     }, 16);
   };

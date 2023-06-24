@@ -1,3 +1,36 @@
+(async function() {
+    async function getIpInfo() {
+        var fetchUrl = "https://api.qjqq.cn/api/Local";
+        try {
+            var response = await fetch(fetchUrl);
+            var json = await response.json();
+
+            var ip = json.ip;
+            var continent = json.data.continent;
+            var country = json.data.country;
+            var prov = json.data.prov;
+            var city = json.data.city;
+            var district = json.data.district;
+            var isp = json.data.isp;
+
+            document.getElementById("userAgentIp").innerHTML = ip;
+            document.getElementById("userAgentState").innerHTML = continent;
+            document.getElementById("userAgentCountry").innerHTML = country;
+            document.getElementById("userAgentProv").innerHTML = prov;
+            document.getElementById("userAgentCity").innerHTML = city;
+            document.getElementById("userAgentDistrict").innerHTML = district;
+            document.getElementById("userAgentISP").innerHTML = isp;
+
+            var uaInfo = navigator.userAgent;
+            document.getElementById("userAgentDevice").innerHTML = uaInfo;
+        } catch (error) {
+            // console.error("An error occurred while fetching IP info:", error);
+        }
+    }
+
+    await getIpInfo();
+})();
+
 var QRCode;
 !function() {
     function a(a) {

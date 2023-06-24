@@ -591,7 +591,11 @@ const bieyinan = {
       });
   },
   //切换音乐播放状态
-  musicToggle: function () {
+  musicToggle: function (changePaly = true) {
+    if (!bieyinan_musicFirst) {
+      bieyinan.musicBindEvent();
+      bieyinan_musicFirst = true;
+    }
     let msgPlay = '<i class="bi bi-play-fill"></i><span>播放音乐</span>'; // 此處可以更改為你想要顯示的文字
     let msgPause = '<i class="bi bi-pause-fill"></i><span>暂停音乐</span>'; // 同上，但兩處均不建議更改
     if (bieyinan_musicPlaying) {
@@ -600,15 +604,25 @@ const bieyinan = {
       document.getElementById("nav-music-hoverTips").innerHTML = "音乐已暂停";
       document.querySelector("#consoleMusic").classList.remove("on");
       bieyinan_musicPlaying = false;
+      navMusicEl.classList.remove("stretch");
     } else {
       navMusicEl.classList.add("playing");
       document.getElementById("menu-music-toggle").innerHTML = msgPause;
       document.querySelector("#consoleMusic").classList.add("on");
       bieyinan_musicPlaying = true;
+      navMusicEl.classList.add("stretch");
     }
 
-    document.querySelector("meting-js").aplayer.toggle();
+    if (changePaly) document.querySelector("meting-js").aplayer.toggle();
     rm.hideRightMenu();
+  },
+  // 音乐伸缩
+  musicTelescopic: function () {
+    if (navMusicEl.classList.contains("stretch")) {
+      navMusicEl.classList.remove("stretch");
+    } else {
+      navMusicEl.classList.add("stretch");
+    }
   },
 
   //音乐上一曲
@@ -620,6 +634,7 @@ const bieyinan = {
   //音乐下一曲
   musicSkipForward: function () {
     navMusicEl.querySelector("meting-js").aplayer.skipForward();
+    navMusicEl.classList.add("playing");
     rm.hideRightMenu();
   },
 
@@ -1023,6 +1038,16 @@ const bieyinan = {
   // 工具函数替换字符串
   replaceAll: function (e, n, t) {
     return e.split(n).join(t);
+  },
+
+  // 音乐绑定事件
+  musicBindEvent: function () {
+    document.querySelector("#nav-music .aplayer-music").addEventListener("click", function () {
+      bieyinan.musicTelescopic();
+    });
+    document.querySelector("#nav-music .aplayer-button").addEventListener("click", function () {
+      bieyinan.musicToggle(false);
+    });
   },
 
   // 判断是否是移动端

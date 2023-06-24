@@ -38,6 +38,7 @@
 }
 
 #nav-music.playing {
+  border: var(--style-border);
   box-shadow: 0 0px 12px -3px var(--bieyinan-none);
   animation: playingShadow 5s linear infinite;
 }
@@ -292,10 +293,18 @@
   margin-left: 8px;
 }
 
-#nav-music.playing .aplayer.aplayer-withlrc .aplayer-lrc {
+#nav-music .aplayer.aplayer-withlrc .aplayer-lrc {
+  width: 0;
+  opacity: 0;
+  transition: .3s;
+  margin-top: -2px;
+  padding: 5px 0
+}
+
+#nav-music.stretch.playing .aplayer.aplayer-withlrc .aplayer-lrc {
   width: 200px;
-  margin-bottom: 0;
-  opacity: 1;
+  margin-left: 8px;
+  opacity: 1
 }
 
 #nav-music .aplayer .aplayer-lrc p.aplayer-lrc-current {
@@ -340,6 +349,8 @@
   border: none;
   filter: blur(0px);
 }
+
+
 
 
 
