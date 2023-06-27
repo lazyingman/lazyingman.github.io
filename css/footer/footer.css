@@ -107,6 +107,27 @@ img.footer_mini_logo {
     padding: 2px 0;
 }
 
+#byn-footer .footer-title-group {
+    display: flex;
+    align-items: center;
+}
+
+#byn-footer .footer-title-group a {
+    margin-left: 8px;
+}
+
+#byn-footer .random-friends-btn {
+    display: flex;
+}
+
+#byn-footer .footer-title-group i {
+    line-height: 1;
+    color: var(--heo-secondtext);
+    transition: 0.3s;
+    font-size: 16px;
+    opacity: 0.6;
+}
+
 h1, h2, h3, h4, h5, h6 {
     margin-top: 1rem;
     padding-top: 0;

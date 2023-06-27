@@ -44,7 +44,7 @@ let domImgSrc = '';
 let globalEvent = null;
 
 // 监听右键初始化
-window.oncontextmenu = function (event) {
+var oncontextmenuFunction = function (event) {
   if (document.body.clientWidth > 768) {
     let pageX = event.clientX + 10;	//加10是为了防止显示时鼠标遮在菜单上
     let pageY = event.clientY;
