@@ -181,18 +181,34 @@ document.addEventListener("DOMContentLoaded", function () {
   const sidebarFn = {
     open: () => {
       bieyinan.sidebarPaddingR();
-      document.body.style.overflow = "hidden";
+      bieyinan.changeThemeMetaColor("#607d8b");
       bieyinan.animateIn(document.getElementById("menu-mask"), "to_show 0.5s");
-      document.getElementById("sidebar-menus").classList.add("open");
+      $sidebarMenus.classList.add("open");
+      $web_box.classList.add("open");
+      $rightside.classList.add("hide");
+      $nav.style.borderTopLeftRadius = "12px";
       mobileSidebarOpen = true;
+      document.body.style.overflow = "hidden";
+      $web_box.addEventListener("mousedown", onDragStart);
+      $web_box.addEventListener("touchstart", onDragStart, { passive: false });
+      if (window.location.pathname.startsWith("/music/")) {
+        $web_container.style.background = "rgb(255 255 255 / 20%)";
+      } else {
+        $web_container.style.background = "var(--global-bg)";
+      }
     },
     close: () => {
       const $body = document.body;
-      $body.style.overflow = "";
+      bieyinan.initThemeColor();
       $body.style.paddingRight = "";
       bieyinan.animateOut(document.getElementById("menu-mask"), "to_hide 0.5s");
-      document.getElementById("sidebar-menus").classList.remove("open");
+      $sidebarMenus.classList.remove("open");
+      $web_box.classList.remove("open");
+      $rightside.classList.remove("hide");
+      $nav.style.borderTopLeftRadius = "0px";
       mobileSidebarOpen = false;
+      document.body.style.overflow = "auto";
+      bieyinan.addNavBackgroundInit();
     },
   };
 
@@ -838,10 +854,10 @@ document.addEventListener("DOMContentLoaded", function () {
       if (consoleKeyboard) {
         if (localStorage.getItem("keyboardToggle") === "true") {
           consoleKeyboard.classList.add("on");
-          anzhiyu_keyboard = true;
+          bieyinan_keyboard = true;
         } else {
           consoleKeyboard.classList.remove("on");
-          anzhiyu_keyboard = false;
+          bieyinan_keyboard = false;
         }
       }
     },

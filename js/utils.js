@@ -600,13 +600,19 @@ const bieyinan = {
     $sayhiEl && ($sayhiEl.innerHTML = getTimeState() + "！我是");
   },
   // 友链注入预设评论
-  addFriendLink() {
+  addFriendLink(value) {
     var input = document.getElementsByClassName("el-textarea__inner")[0];
     if (!input) return;
     let evt = document.createEvent("HTMLEvents");
     evt.initEvent("input", true, true);
-    input.value =
+    if(!value){
+      input.value =
       "昵称（请勿包含博客等字样）：\n网站地址（要求博客地址，请勿提交个人主页）：\n头像图片url（请提供尽可能清晰的图片，我会上传到我自己的图床）：\n描述：\n站点截图（可选）：\n";
+    } else {
+      input.value =
+      "```yml\n- name:\n  link: \n  avatar:\n  descr: \n  siteshot:\n```";
+    }
+    
     input.dispatchEvent(evt);
     input.focus();
     input.setSelectionRange(-1, -1);
@@ -808,7 +814,6 @@ const bieyinan = {
       // player listswitch 会进入此处
       const musiccover = document.querySelector("#anMusic-page .aplayer-pic");
       anMusicBg.style.backgroundImage = musiccover.style.backgroundImage;
-      $web_container.style.background = "none";
     } else {
       // 第一次进入，绑定事件，改背景
       let timer = setInterval(() => {

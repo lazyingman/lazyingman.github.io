@@ -94,7 +94,7 @@ img.footer_mini_logo {
 }
 
 #byn-footer .footer-item {
-    font-size: 1rem;
+    font-size: .9rem;
     line-height: 0.8rem;
     margin: 8px 0;
     color: var(--heo-fontcolor);
