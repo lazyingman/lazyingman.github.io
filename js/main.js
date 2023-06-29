@@ -143,8 +143,11 @@ var vegetablesAndFruits = [
   "火龙果",
 ];
 document.addEventListener("DOMContentLoaded", function () {
-  let blogNameWidth, menusWidth, searchWidth, $nav;
+  let blogNameWidth, menusWidth, searchWidth;
   let mobileSidebarOpen = false;
+  const $sidebarMenus = document.getElementById("sidebar-menus");
+  const $rightside = document.getElementById("rightside");
+  let $nav = document.getElementById("nav");
 
   const adjustMenu = init => {
     if (init) {
@@ -181,34 +184,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const sidebarFn = {
     open: () => {
       bieyinan.sidebarPaddingR();
-      bieyinan.changeThemeMetaColor("#607d8b");
-      bieyinan.animateIn(document.getElementById("menu-mask"), "to_show 0.5s");
-      $sidebarMenus.classList.add("open");
-      $web_box.classList.add("open");
-      $rightside.classList.add("hide");
-      $nav.style.borderTopLeftRadius = "12px";
-      mobileSidebarOpen = true;
       document.body.style.overflow = "hidden";
-      $web_box.addEventListener("mousedown", onDragStart);
-      $web_box.addEventListener("touchstart", onDragStart, { passive: false });
-      if (window.location.pathname.startsWith("/music/")) {
-        $web_container.style.background = "rgb(255 255 255 / 20%)";
-      } else {
-        $web_container.style.background = "var(--global-bg)";
-      }
+      bieyinan.animateIn(document.getElementById("menu-mask"), "to_show 0.5s");
+      document.getElementById("sidebar-menus").classList.add("open");
+      mobileSidebarOpen = true;
     },
     close: () => {
       const $body = document.body;
-      bieyinan.initThemeColor();
+      $body.style.overflow = "";
       $body.style.paddingRight = "";
       bieyinan.animateOut(document.getElementById("menu-mask"), "to_hide 0.5s");
-      $sidebarMenus.classList.remove("open");
-      $web_box.classList.remove("open");
-      $rightside.classList.remove("hide");
-      $nav.style.borderTopLeftRadius = "0px";
+      document.getElementById("sidebar-menus").classList.remove("open");
       mobileSidebarOpen = false;
-      document.body.style.overflow = "auto";
-      bieyinan.addNavBackgroundInit();
     },
   };
 
