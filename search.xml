@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>隐私协议中使用js获取用户ip信息</title>
+      <link href="/posts/1b260d4b.html"/>
+      <url>/posts/1b260d4b.html</url>
+      
+        <content type="html"><![CDATA[<p class='p '>想要在隐私协议里面添加展示用户自己会被暴露的信息，研究了一个获取用户信息并展示的方法，利用了ipip.net来获取用户的ip和地理信息。</p><h2 id="Demo">Demo</h2><p><a href="/privacy">Demo</a></p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://bu.dusays.com/2023/06/29/649da940a9fa8.png"/></div></div><h2 id="引入js">引入js</h2><p>创建<strong>custom.js</strong>,并且引入到<strong>inject</strong>中</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">async</span> <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getIpInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> fetchUrl = <span class="string">&quot;https://api.qjqq.cn/api/Local&quot;</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> response = <span class="keyword">await</span> <span class="title function_">fetch</span>(fetchUrl);</span><br><span class="line">            <span class="keyword">var</span> json = <span class="keyword">await</span> response.<span class="title function_">json</span>();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> ip = json.<span class="property">ip</span>;</span><br><span class="line">            <span class="keyword">var</span> country = json.<span class="property">data</span>.<span class="property">country</span>;</span><br><span class="line">            <span class="keyword">var</span> prov = json.<span class="property">data</span>.<span class="property">prov</span>;</span><br><span class="line">            <span class="keyword">var</span> city = json.<span class="property">data</span>.<span class="property">city</span>;</span><br><span class="line">            <span class="keyword">var</span> isp = json.<span class="property">data</span>.<span class="property">isp</span>;</span><br><span class="line"></span><br><span class="line">            <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;userAgentIp&quot;</span>).<span class="property">innerHTML</span> = ip;</span><br><span class="line">            <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;userAgentCountry&quot;</span>).<span class="property">innerHTML</span> = country;</span><br><span class="line">            <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;userAgentProv&quot;</span>).<span class="property">innerHTML</span> = prov;</span><br><span class="line">            <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;userAgentCity&quot;</span>).<span class="property">innerHTML</span> = city;</span><br><span class="line">            <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;userAgentISP&quot;</span>).<span class="property">innerHTML</span> = isp;</span><br><span class="line">            </span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> uaInfo = navigator.<span class="property">userAgent</span>;</span><br><span class="line"></span><br><span class="line">            <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;userAgentDevice&quot;</span>).<span class="property">innerHTML</span> = uaInfo;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;An error occurred while fetching IP info:&quot;</span>, error);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">await</span> <span class="title function_">getIpInfo</span>();</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure><p>页面引入MarkDown</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">| 类型<span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width:100px&quot;</span>&gt;</span></span>          | 信息                                  |</span><br><span class="line">|-------------|-------------------------------------|</span><br><span class="line">| IP地址        | <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;userAgentIp&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>                  |</span><br><span class="line">| 国家        | <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;userAgentCountry&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>                  |</span><br><span class="line">| 省份        | <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;userAgentRegion&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>                  |</span><br><span class="line">| 城市        | <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;userAgentCity&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>                  |</span><br><span class="line">| 运营商        | <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;userAgentIsp&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>                  |</span><br><span class="line">| 设备        | <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;userAgentDevice&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>                  |</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo魔改 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> butterfly教程 </tag>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo + butterfly 使用Algolia搜索</title>
       <link href="/posts/aa9e9787.html"/>
       <url>/posts/aa9e9787.html</url>
@@ -131,6 +158,31 @@
         <tags>
             
             <tag> 科普 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>目前免费可用的CDN</title>
+      <link href="/posts/da523892.html"/>
+      <url>/posts/da523892.html</url>
+      
+        <content type="html"><![CDATA[<h1>推荐几款目前免费可用的CDN</h1><h2 id="jsdelivr">jsdelivr</h2><p><a href="https://cdn.jsdelivr.net/npm">https://cdn.jsdelivr.net/npm</a></p><h2 id="unpkg">unpkg</h2><p><a href="https://unpkg.com/">https://unpkg.com/</a></p><h2 id="unpkg-自建">unpkg 自建</h2><p><a href="https://cdn.cbd.int">https://cdn.cbd.int</a></p><h2 id="npm-element">npm element</h2><p><a href="http://npm.elemecdn.com/">http://npm.elemecdn.com/</a></p><h2 id="cdn1-tianli0-top">cdn1.tianli0.top</h2><p><a href="https://tianli-blog.club/jsd/">https://tianli-blog.club/jsd/</a> 处申请</p><h2 id="cdn-afdelivr-top">cdn.afdelivr.top</h2><p><a href="https://cdn.afdelivr.top/npm/%E5%8C%85%E5%90%8D@%E7%89%88%E6%9C%AC%E5%8F%B7/%E6%96%87%E4%BB%B6%E5%90%8D">https://cdn.afdelivr.top/npm/包名@版本号/文件名</a></p><p><a href="https://arcitcgn.cn/202.html">https://arcitcgn.cn/202.html</a></p><h1>其他 CDN</h1><h2 id="bootcdn">bootcdn</h2><p><a href="https://www.bootcdn.cn/">https://www.bootcdn.cn/</a></p><h2 id="loli-（cdnjs）">loli （cdnjs）</h2><p><a href="https://cdnjs.loli.net/">https://cdnjs.loli.net/</a></p><h2 id="Staticfile">Staticfile</h2><p><a href="https://staticfile.org/">https://staticfile.org/</a></p><h2 id="75CDN">75CDN</h2><p><a href="https://cdn.baomitu.com/">https://cdn.baomitu.com/</a></p><h2 id="今日头条-CDN">今日头条 CDN</h2><p><a href="https://cdn.bytedance.com/">https://cdn.bytedance.com/</a></p><h2 id="cdnjs">cdnjs</h2><p><a href="https://cdnjs.com/">https://cdnjs.com/</a></p><h2 id="字节跳动">字节跳动</h2><p><a href="https://cdn.bytedance.com/">https://cdn.bytedance.com/</a></p><p><code>Github CDN</code></p><blockquote><p><a href="https://xn--CDN-t33e/gh/:user/:repo/:tag/:file">https://CDN名/gh/:user/:repo/:tag/:file</a><br><strong>user为Github的用户名 repo为仓库名 tag为发布的版本号 file文件路径</strong></p></blockquote><h2 id="结语">结语</h2><p>以上几款免费的CDN，能用字节的优先用字节，可以用于个人的项目，公司的项目请酌情考虑使用，可能会存在<strong>流量过大</strong>导致出现一些问题。<br>一些比较：<br>1、jsdelivr：图片资源过多可能会出现一些问题，例如本站的表情图片，之前用的一直是jsdelivr，经常出现一大片的表情加载失败的情况，也可能和我表情图片CDN用的是master主版本的原因，因为经常提交有变动，本站其他的静态资源一切都好。<br>2、Staticfile：和jsdelivr的问题一样，过多的表情图片有时候个别的几个表情加载不出来，通过地址直接打开页面503报错。不过staticaly有个imgpx可以优化图片，具体参考：<a href="https://www.staticaly.com/imgpx">https://www.staticaly.com/imgpx</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 资源中心 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 干货 </tag>
             
         </tags>
       

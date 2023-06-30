@@ -7120,6 +7120,18 @@ a.deal_link:hover {
     margin: 0 0 16px
 }
 
+#article-container p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+#article-container p {
+    margin: 1rem 0;
+    text-align: left;
+    letter-spacing: 0.6px;
+}
+
 #article-container iframe {
     margin: 0 0 20px
 }
@@ -13870,13 +13882,20 @@ html.hide-aside .layout>div:first-child {
 }
 
 #aside-content .card-widget#card-wechat {
-    display: flex;
+    display: cloumn;
     justify-content: center;
     align-content: center;
-    padding: 0;
+    padding: 15px 20px;
     cursor: pointer;
     border: none;
-    height: 200px
+}
+
+#aside-content .card-widget#card-wechat p a strong:hover {
+    color: #0092ff;
+}
+
+#friendlink_checkboxs input {
+    margin-right: 4px;
 }
 
 [data-theme=dark] #aside-content .card-widget#card-wechat {
