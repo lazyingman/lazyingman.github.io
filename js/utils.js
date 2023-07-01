@@ -1282,5 +1282,10 @@ const bieyinan = {
     } else {
       menuCommentBarrageDom.style.display = "none"
     }
-  }
+  },
+  enterFullscreen: function(e) {
+        console.log("进入全屏的元素", e),
+        e.requestFullscreen ? e.requestFullscreen() : e.msRequestFullscreen ? e.msRequestFullscreen() : e.mozRequestFullScreen ? e.mozRequestFullScreen() : e.webkitRequestFullscreen ? e.webkitRequestFullscreen() : shine.noFullscreenSupport(),
+        shine.is_mobile() && window.screen.orientation.lock("landscape-primary")
+  },
 };
