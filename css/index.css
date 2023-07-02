@@ -23551,3 +23551,57 @@ span.tags-punctuation .icon-biaoqian {
     -ms-transition: .1s;
     transition: .1s;
 }
+
+
+body[data-type=muyu] #article-container {
+    display: flex;
+}
+
+.muyu-layout {
+    background: #76b5ed;
+    display: flex;
+    width: 50%;
+    border-radius: 20px;
+    position: relative;
+    justify-content: center;
+    height: 50vh;
+    align-items: center;
+}
+#muyu-box img,#muyu2-box img,#muyu3-box img,#muyu4-box img {
+    width: 200px;
+    color: #a4d5ef;
+}
+#jishu-box, #jishu2-box, #jishu3-box, #jishu4-box{
+    top: 55px;
+    position: absolute;
+ }
+#muyu-box p,#muyu2-box p,#muyu3-box p,#muyu4-box p {
+    color: white;
+    opacity: 0;
+    font-size: 25px;
+}
+#jishu-box p,#jishu2-box p,#jishu3-box p,#jishu4-box p {
+    color: white;
+    font-size: 30px;
+}
+
+.pt {
+    margin-top: 1rem!important;
+}
+
+@media screen and (max-width: 1300px) {
+    body[data-type=muyu] #article-container {
+        display: block;
+    }
+
+    .muyu-layout {
+        background: #76b5ed;
+        display: flex;
+        width: 100%;
+        border-radius: 20px;
+        position: relative;
+        justify-content: center;
+        height: 50vh;
+        align-items: center;
+    }
+}
