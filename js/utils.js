@@ -755,7 +755,7 @@ const bieyinan = {
     }
 
     // 否则重新从服务器获取数据
-    fetch("/json/music.json")
+    fetch("/json/music2.json")
       .then(response => response.json())
       .then(songs => {
         const cacheData = {
@@ -971,7 +971,40 @@ const bieyinan = {
         songs = cacheData.songs;
       } else {
         // 否则重新从服务器获取数据
-        const response = await fetch("/json/music.json");
+        const response = await fetch("/json/music2.json");
+        songs = await response.json();
+        cacheData.timestamp = currentTime;
+        cacheData.songs = songs;
+        localStorage.setItem("musicData", JSON.stringify(cacheData));
+      }
+    }
+
+    // 清除当前播放列表并添加新的歌曲
+    metingAplayer.list.clear();
+    metingAplayer.list.add(songs);
+
+    // 切换标志位
+    changeMusicListFlag = !changeMusicListFlag;
+  },
+  // 切换歌单2
+  changeMusicList2: async function () {
+    const bieMusicPage = document.getElementById("nav-music");
+    const metingAplayer = bieMusicPage.querySelector("meting-js").aplayer;
+    const currentTime = new Date().getTime();
+    const cacheData = JSON.parse(localStorage.getItem("musicData")) || { timestamp: 0 };
+    let songs = [];
+
+    if (changeMusicListFlag) {
+      songs = defaultPlayMusicList;
+    } else {
+      // 保存当前默认播放列表，以使下次可以切换回来
+      defaultPlayMusicList = metingAplayer.list.audios;
+      // 如果缓存的数据没有过期，直接使用
+      if (currentTime - cacheData.timestamp < 24 * 60 * 60 * 1000) {
+        songs = cacheData.songs;
+      } else {
+        // 否则重新从服务器获取数据
+        const response = await fetch("/json/music2.json");
         songs = await response.json();
         cacheData.timestamp = currentTime;
         cacheData.songs = songs;
