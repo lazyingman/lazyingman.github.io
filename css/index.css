@@ -15242,20 +15242,37 @@ details .content>:nth-child(1) {
 }
 
 #console .close-btn {
-    width: 35px;
-    height: 35px;
+    width: 100%;
+    height: 60px;
     position: fixed;
-    right: 35px;
-    top: 35px;
+    right: max(0, calc((100% - 1400px) / 2));
+    top: 0;
     font-size: 35px;
     color: var(--bieyinan-fontcolor);
     cursor: pointer;
-    transition: .3s;
-    display: flex
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1400px;
 }
 
 #console .close-btn:hover {
     color: var(--bieyinan-hovertext)
+}
+
+#console.show .close-btn i {
+    transform: rotate(0deg);
+}
+
+#console .close-btn i {
+    font-size: 32px;
+    margin-right: 1.5rem;
+    margin-left: auto;
+    transition: 0.3s;
+    line-height: 1;
+    transform: rotate(-30deg);
+    transition: 0.6s;
 }
 
 #console .console-card.history {
@@ -18105,6 +18122,13 @@ ul.menus_item_child {
 #page-header.nav-fixed #nav #page-name:hover {
     color: var(--bieyinan-main)
 }
+
+@media screen and (max-width: 768px) {
+    #randomPost_button {
+        display: none!important;
+    }
+}
+
 
 @media screen and (min-width: 900px) {
     #page-header.nav-fixed #nav #page-name::after {
