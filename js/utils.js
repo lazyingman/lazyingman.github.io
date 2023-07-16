@@ -483,7 +483,7 @@ const bieyinan = {
         mousewheel: false,
       });
 
-      let essay_bar_comtainer = document.getElementById("bber-talk");
+      let essay_bar_comtainer = document.getElementById("bbtalk");
       if (essay_bar_comtainer !== null) {
         essay_bar_comtainer.onmouseenter = function () {
           essay_bar_swiper.autoplay.stop();
@@ -971,7 +971,7 @@ const bieyinan = {
         songs = cacheData.songs;
       } else {
         // 否则重新从服务器获取数据
-        const response = await fetch("/json/music.json");
+        const response = await fetch("/json/music2.json");
         songs = await response.json();
         cacheData.timestamp = currentTime;
         cacheData.songs = songs;

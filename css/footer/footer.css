@@ -133,6 +133,53 @@ img.footer_mini_logo {
     color:var(--bieyinan-main)
 }
 
+#footer-bar {
+    padding: 1rem;
+    color: var(--bieyinan-fontcolor);
+    margin-top: 1rem;
+    background: var(--bieyinan-secondbg);
+    display: flex;
+    overflow: hidden;
+    z-index: 1002;
+    transition: 0.3s;
+}
+
+#footer-bar .footer-bar-links {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-items: center;
+    line-height: 1;
+}
+
+#footer-bar .footer-bar-left {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 32px;
+    align-items: center;
+}
+
+.footer-bar-right {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+@keyframes myrotate {
+    0% {transform: rotate(0);}
+    50% {transform: rotate(180deg);}
+    100% {transform: rotate(360deg);}
+}
+
+.footer-bar-right .bi.bi-capsule {
+    margin-right: 6px;
+    animation: myrotate 5s linear infinite;
+}
+
 h1, h2, h3, h4, h5, h6 {
     margin-top: 1rem;
     padding-top: 0;

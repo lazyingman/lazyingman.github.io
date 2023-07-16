@@ -8710,10 +8710,6 @@ mjx-container[display] {
     margin: 0 -8px
 }
 
-#hexo-circle-of-friends-root .fcircle_page .fish-pond-item {
-    width: 25%
-}
-
 [data-theme=dark] div.btns {
     filter: brightness(.7)
 }
@@ -13482,7 +13478,7 @@ body[data-type=album] #page .page-title {
 }
 
 #album .card-album:hover>.card:not(:hover) .card_cover {
-    filter: brightness(.5) saturate(.9) contrast(1.2) blur(20px)
+    filter: brightness(.5) saturate(.9) contrast(1.2) blur(8px)
 }
 
 #album .card__content {
@@ -18414,8 +18410,15 @@ center#name-container {
 }
 
 #blog_name #site-name .title {
-    transition: .3s ease-in;
-    letter-spacing: normal
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    -ms-transition: .3s;
+    transition: .3s;
+    letter-spacing: normal;
+    font-size: 1.2rem;
+    padding: 0 5px;
+    line-height: 2rem;
 }
 
 .post #blog_name #site-name .title {
@@ -22218,23 +22221,8 @@ body[data-type=room] #page .page-title {
     }
 }
 
-div#runtime {
-    width: 180px;
-    margin: auto;
-    color: #fff;
-    padding-inline: 5px;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, .7)
-}
-
 #workboard {
     font-size: 12px
-}
-
-[data-theme=dark] div#runtime {
-    color: #28b4c8;
-    box-shadow: 0 0 5px rgba(28, 69, 218, .71);
-    animation: flashlight 1s linear infinite alternate
 }
 
 #ghbdages .github-badge img {
