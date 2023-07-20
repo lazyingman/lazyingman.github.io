@@ -298,7 +298,6 @@
   opacity: 0;
   transition: .3s;
   margin-top: -2px;
-  padding: 5px 0
 }
 
 #nav-music.stretch.playing .aplayer.aplayer-withlrc .aplayer-lrc {

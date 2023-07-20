@@ -128,11 +128,6 @@ img.footer_mini_logo {
     opacity: 0.6;
 }
 
-#footer-banner-tips {
-    margin-left: 2rem;
-    color:var(--bieyinan-main)
-}
-
 #footer-bar {
     padding: 1rem;
     color: var(--bieyinan-fontcolor);

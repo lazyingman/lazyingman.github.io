@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>使用github+mongondb部署朋友圈</title>
+      <link href="/posts/86ba0ac5.html"/>
+      <url>/posts/86ba0ac5.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="前提">前提</h2><p>之前想部署一下朋友圈，但是看了半天<a href="https://fcircle-doc.yyyzyyyz.cn/#/">朋友圈</a>教程,发现部署方式好像需要有服务器，我是白嫖党<psw>(没有服务器)</psw>，速度当然也没有那么理想，不过对我来说也够了，之前部署评论用了一下Mongodb，看到有用github+mongdb的方法，但是没有对应的教程，部署了半天都没有成功<psw>(我菜鸟一个)</psw>，最后还是看文档才部署成功了。部署方式其实和教程中的差不多，但是有些地方要修改。</p><div class="tip simple"><p>文章内容参考<a href="https://fcircle-doc.yyyzyyyz.cn/#/backenddeploy">后端朋友圈部署</a></p></div><h2 id="Github-Mongodb部署">Github+Mongodb<strong>部署</strong></h2><p>部署方法：</p><p>fork友链朋友圈的项目仓库，地址：<a href="https://github.com/Rock-Candy-Tea/hexo-circle-of-friends">https://github.com/Rock-Candy-Tea/hexo-circle-of-friends</a></p><p>编辑/hexo_circle_of_friends/fc_settings.yaml文件，需要修改的配置如下：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">LINK:</span></span><br><span class="line">    <span class="bullet">-</span> &#123;<span class="attr">link:</span> <span class="string">&quot;https://www.yyyzyyyz.cn/link/&quot;</span>, <span class="attr">theme:</span> <span class="string">&quot;common2&quot;</span>&#125;  </span><br><span class="line">    <span class="comment"># link改为你的友链页地址，theme选择你的博客主题</span></span><br></pre></td></tr></table></figure><p><strong>注意</strong>：这里theme要改成适配自己网站友链的主题，友链页的抓取是通过css选择器进行的，即只要你的友链页面符合我们抓取规则中的任意一种，就可以获取到友链信息。这里提供两个通用的css规则：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/* 规则一（common1）：*/</span><br><span class="line">/*  avatar : &#x27;.cf-friends img::attr(src)&#x27;  */</span><br><span class="line">/*  link : &#x27;.cf-friends a::attr(href)&#x27;  */</span><br><span class="line">/*  name : &#x27;.cf-friends a::text&#x27;  */</span><br><span class="line">/* 规则二（common2）：*/</span><br><span class="line">/*  avatar : &#x27;img.cf-friends-avatar&#x27;  */</span><br><span class="line">/*  link : &#x27;a.cf-friends-link&#x27;  */</span><br><span class="line">/*  name : &#x27;.cf-friends-name&#x27;  */</span><br></pre></td></tr></table></figure><p>然后点击仓库的Settings–&gt;Secrets and variables–&gt;New repository secret</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://bu.dusays.com/2023/07/20/64b8091c5f034.png" style="width:80%;"/></div></div><p>添加5个环境变量secret：</p><ul><li>GH_NAME：github名称，也就是你的用户名</li><li>GH_EMAIL：github邮箱，填写你注册github的邮箱</li><li>GH_TOKEN：github访问token，获取方式，请参考<a href="https://docs.github.com/zh/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">官方文档</a>，其中，Select scopes选择repo和workflow。</li><li>MONGODB_URI:  <a href="https://mongodb.net.cn/manual/reference/connection-string/">MongoDB连接字符串</a> mongodb URI 支持’mongodb://‘和’mongodb+srv://’</li><li>STORAGE_TYPE：存储方式，填写mongondb</li></ul><p>配置完成后，应该如下图所示：</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://bu.dusays.com/2023/07/20/64b8091c58fc3.png" style="width:80%;"/></div></div><p>然后点击仓库的<code>setting--&gt;Actions--&gt;General--&gt;勾选Read and write permissions--&gt;Save</code></p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://bu.dusays.com/2023/07/20/64b947e97ccf4.png" style="width:80%;"/></div></div><p>前往<a href="https://vercel.com/dashboard">vercel</a>官网，直接用github创建账号并用手机号绑定。</p><p>点击New Project新建项目</p><p>找到Import Git Repository，应该可以看见你刚刚fork的仓库，点击Import。</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://bu.dusays.com/2023/07/20/64b947e97db65.png" style="width:80%;"/></div></div><p>然后点击Deploy，回到首页，等待一会，应该会部署完成。</p><p>添加vercel环境变量，进入刚才创建的项目主页，点击<code>Settings--&gt;Environment Variables</code></p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://bu.dusays.com/2023/07/20/64b947e970c6f.png" style="width:80%;"/></div></div><p>与前面的secret相同，添加 <strong>GH_NAME</strong>、<strong>GH_EMAIL</strong>、<strong>GH_TOKEN</strong>，<strong>MONGODB_URI</strong> 此外，还需要添加<strong>VERCEL_ACCESS_TOKEN</strong>，获取方式如下：</p><p>点击vercel页面右上角的<code>Settings--&gt;Tokens---&gt;Create</code></p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://bu.dusays.com/2023/07/20/64b947e97258c.png" style="width:80%;"/></div></div><p>随便输入一个名称后，点击<strong>CREATE TOKEN</strong>，复制生成的token，添加到vercel环境变量中即可</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://bu.dusays.com/2023/07/20/64b947e981c02.png" style="width:80%;"/></div></div><p>接下来，回到github，启用fork后仓库的github action，点击Actions–&gt;I understand my workflows, go ahead and enable them</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://bu.dusays.com/2023/07/20/64b947e97ebb3.png" style="width:80%;"/></div></div><p>等待运行完毕后，仓库应该会上传data.db，并且vercel也会同步更新。</p><p>前往vercel，在项目中找到DOMAINS下面的地址，如：<a href="https://hexo-friendcircle4-api.vercel.app">https://hexo-friendcircle4-api.vercel.app</a>， （注：本来只需要这个地址，但由于vercel被墙，需要绑定自定义域名后，使用自定义域名的地址）。在这个地址后面拼接/all尝试访问，出现数据就说明配置成功，这个地址就是前端所需的api地址。</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://bu.dusays.com/2023/07/20/64b947e98181e.png" style="width:80%;"/></div></div><p>至此，后端部分搭建完成。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo魔改 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> butterfly教程 </tag>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>隐私协议中使用js获取用户ip信息</title>
       <link href="/posts/1b260d4b.html"/>
       <url>/posts/1b260d4b.html</url>
@@ -74,9 +101,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> 教程 </tag>
+            
+            <tag> 学习笔记 </tag>
             
         </tags>
       
@@ -101,9 +128,9 @@
       
         <tags>
             
-            <tag> 教程 </tag>
-            
             <tag> Hexo </tag>
+            
+            <tag> 教程 </tag>
             
         </tags>
       
