@@ -1229,6 +1229,22 @@ const bieyinan = {
       window.oncontextmenu = oncontextmenuFunction;
     }
   },
+  FPSToggle: function () {
+    const isKeyboardOn = bieyinan_FPS;
+    const FPSgroup = document.querySelector("#fps-group");
+    const consoleFPS = document.querySelector("#consoleFPS");
+    if (isKeyboardOn) {
+      FPSgroup.classList.remove("show");
+      consoleFPS.classList.remove("on");
+      bieyinan_FPS = false;
+    } else {
+      FPSgroup.classList.add("show");
+      consoleFPS.classList.add("on");
+      bieyinan_FPS = true;
+    }
+
+    localStorage.setItem("FPSToggle", isKeyboardOn ? "false" : "true");
+  },
   // 定义 intersectionObserver 函数，并接收两个可选参数
   intersectionObserver: function (enterCallback, leaveCallback) {
     let observer;

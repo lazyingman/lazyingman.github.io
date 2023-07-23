@@ -4,6 +4,7 @@ var bieyinan_musicFirst = false;
 var bieyinan_musicPlaying = false;
 // 是否开启快捷键
 var bieyinan_keyboard = localStorage.getItem("keyboardToggle") ? localStorage.getItem("keyboardToggle") : false;
+var bieyinan_FPS = localStorage.getItem("FPSToggle") ? localStorage.getItem("FPSToggle") : false;
 var $web_container = document.getElementById("web_container");
 var $web_box = document.getElementById("web_box");
 var $bodyWrap = document.getElementById("body-wrap");
@@ -845,6 +846,16 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           consoleKeyboard.classList.remove("on");
           bieyinan_keyboard = false;
+        }
+      }
+      const FPSboard = document.querySelector("#consoleFPS");
+      if (FPSboard) {
+        if (localStorage.getItem("FPSToggle") === "true") {
+          FPSboard.classList.add("on");
+          bieyinan_FPS = true;
+        } else {
+          FPSboard.classList.remove("on");
+          bieyinan_FPS = false;
         }
       }
     },

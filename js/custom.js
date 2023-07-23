@@ -9,7 +9,7 @@
             var country = json.data.country;
             var prov = json.data.prov;
             var city = json.data.city;
-            var district = json.data.district;
+            // var district = json.data.district;
             var isp = json.data.isp;
 
             document.getElementById("userAgentIp").innerHTML = ip;
@@ -31,6 +31,37 @@
 
     await getIpInfo();
 })();
+
+// FPS
+        var showFPS = (function () {
+            var requestAnimationFrame =
+                window.requestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame ||
+                window.oRequestAnimationFrame ||
+                window.msRequestAnimationFrame ||
+                function (callback) {
+                    window.setTimeout(callback, 1000 / 60);
+                };
+            var e, pe, pid, fps, last, offset, step, appendFps;
+
+            fps = 0;
+            last = Date.now();
+            step = function () {
+                offset = Date.now() - last;
+                fps += 1;
+                if (offset >= 1000) {
+                    last += offset;
+                    appendFps(fps);
+                    fps = 0;
+                }
+                requestAnimationFrame(step);
+            };
+            appendFps = function (fps) {
+                $('#fps').html(fps);
+            };
+            step();
+        })();
 
 setInterval(() => {
     // let create_time = Math.round(new Date('2021-10-15 00:00:00').getTime() / 1000); //在此行修改建站时间
