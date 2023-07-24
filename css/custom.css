@@ -620,6 +620,10 @@ psw:hover {
   color: var(--bieyinan-fontcolor);
 }
 
+body[data-type=music] #fps-group {
+  color: var(--bieyinan-white)
+}
+
 #fps-group {
   opacity: 0;
   display: flex;
