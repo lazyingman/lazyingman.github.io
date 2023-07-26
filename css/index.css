@@ -6248,7 +6248,7 @@ a.deal_link:hover {
 #page-header #post-info {
     position: absolute;
     top: 0;
-    padding: 0 12%;
+    padding: 0 calc((100% - 1352px)/ 2);
     width: 100%;
     height: 100%;
     display: -webkit-box;
@@ -12030,7 +12030,7 @@ body[data-type=about] #web_bg {
     overflow: hidden;
     width: 180px;
     height: 180px;
-    box-shadow: 0 0 6px 6px #FBDA61;
+    animation: bieyinanloading 3s ease-in-out infinite;
 }
 
 #about-page .author-box .author-img img {
@@ -12924,8 +12924,8 @@ body[data-type=about] #web_bg {
 .author-content-item.careers img {
     position: absolute;
     right: 10px;
-    bottom: -20px;
-    width: 70%;
+    bottom: -54px;
+    max-width: 100%;
     height: 70%;
     object-fit: cover;
     transition: .6s;
@@ -13931,7 +13931,7 @@ html.hide-aside .layout>div:first-child {
     align-content: center;
     padding: 15px 20px;
     cursor: pointer;
-    border: none;
+    border: var(--style-border);
 }
 
 #aside-content .card-widget#card-wechat p a strong:hover {

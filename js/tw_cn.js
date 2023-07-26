@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
   function translatePage () {
+    if (rm) rm.hideRightMenu();
     if (targetEncoding === 1) {
       currentEncoding = 1
       targetEncoding = 2

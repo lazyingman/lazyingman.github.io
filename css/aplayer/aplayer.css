@@ -221,7 +221,7 @@
 
 #nav-music .aplayer .aplayer-info .aplayer-music .aplayer-title {
   cursor: pointer;
-  line-height: 1;
+  line-height: normal;
   display: inline-block;
   white-space: nowrap;
   max-width: 120px;
