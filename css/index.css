@@ -3443,6 +3443,25 @@ body[data-type=link] #page .page-title {
     transform: translateZ(0);
 }
 
+.site-card-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 4px 8px;
+    background-color: var(--bieyinan-theme);
+    -webkit-box-shadow: var(--bieyinan-shadow-blue);
+    box-shadow: var(--bieyinan-shadow-blue);
+    color: var(--bieyinan-white);
+    z-index: 1;
+    border-radius: 12px 0 12px 0;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    -ms-transition: .3s;
+    transition: .3s;
+    font-size: .6rem;
+}
+
 #article-container .bieyinan-flink-list .flink-list-item .cf-friends-link {
     display: -webkit-box;
     display: -moz-box;
@@ -5630,6 +5649,19 @@ h1.page-title+.tag-cloud-list {
     color: var(--bieyinan-black);
 }
 
+#aside-content .card-info .con-animals {
+    position: absolute;
+    right: -2%;
+    max-width: 195px;
+    top: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    #aside-content .card-info .con-animals {
+        display: none;
+    }
+}
+
 #aside-content .card-info .card-info-avatar .author-status-box {
     top: 0;
     left: 0
@@ -6044,7 +6076,6 @@ h1.page-title+.tag-cloud-list {
 
 #footer {
     position: relative;
-    /* background: var(--global-bg); */
     background-attachment: scroll;
     background-position: bottom;
     background-size: cover
@@ -6085,11 +6116,6 @@ a.deal_link:hover {
     position: relative;
     width: 100%
 }
-
-/* #page-header.full_page {
-    height: 100vh;
-    background-attachment: fixed
-} */
 
 #page-header.full_page #site-info {
     position: absolute;
@@ -12924,7 +12950,7 @@ body[data-type=about] #web_bg {
 .author-content-item.careers img {
     position: absolute;
     right: 10px;
-    bottom: -54px;
+    bottom: -62px;
     max-width: 100%;
     height: 70%;
     object-fit: cover;

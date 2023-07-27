@@ -98,5 +98,6 @@ setInterval(() => {
         currentTimeHtml += time[0] + ' 年 '
     }
     currentTimeHtml += time[1] + ' 天 ' + time[2] + ' 时 ' + time[3] + ' 分 ' + time[4] + ' 秒 ';
+    if(!document.getElementById("runtime"))return;
     document.getElementById("runtime").innerHTML = currentTimeHtml;
 }, 1000);
