@@ -19,16 +19,6 @@ const bieyinan = {
     };
   },
 
-  changeSayHelloText: function () {
-    const e = ["🤖️ 数码科技爱好者", "🔍 分享与热心帮助", "🏠 智能家居小能手", "🔨 设计开发一条龙", "🤝 专修交互与设计", "🏃 脚踏实地行动派", "🧱 团队小组发动机", "💢 壮汉人狠话不多"]
-      , t = document.getElementById("author-info__sayhi");
-    let o = e[Math.floor(Math.random() * e.length)];
-    for (; o === lastSayHello;)
-      o = e[Math.floor(Math.random() * e.length)];
-    t.textContent = o,
-      lastSayHello = o
-  },
-
   throttle: function (func, wait, options) {
     let timeout, context, args;
     let previous = 0;
@@ -586,18 +576,18 @@ const bieyinan = {
         t = "";
       return (
         0 <= e && e <= 5
-          ? (t = "晚安😴")
+          ? (t = "睡个好觉，保证精力充沛")
           : 5 < e && e <= 10
-            ? (t = "早上好👋")
+            ? (t = "一日之计在于晨")
             : 10 < e && e <= 14
-              ? (t = "中午好👋")
+              ? (t = "吃饱了才有力气干活")
               : 14 < e && e <= 18
-                ? (t = "下午好👋")
-                : 18 < e && e <= 24 && (t = "晚上好👋"),
+                ? (t = "集中精力，攻克难关")
+                : 18 < e && e <= 24 && (t = "不要太劳累了，早睡更健康"),
         t
       );
     };
-    $sayhiEl && ($sayhiEl.innerHTML = getTimeState() + "！我是");
+    $sayhiEl && ($sayhiEl.innerHTML = getTimeState());
   },
   // 友链注入预设评论
   addFriendLink(value) {
@@ -1335,5 +1325,19 @@ const bieyinan = {
   enterFullscreen: function(e) {
         e.requestFullscreen ? e.requestFullscreen() : e.msRequestFullscreen ? e.msRequestFullscreen() : e.mozRequestFullScreen ? e.mozRequestFullScreen() : e.webkitRequestFullscreen ? e.webkitRequestFullscreen() : shine.noFullscreenSupport(),
         shine.is_mobile() && window.screen.orientation.lock("landscape-primary")
+  },
+  // 切换作者卡片状态文字
+  changeSayHelloText: function () {
+    const greetings = GLOBAL_CONFIG.authorStatus.skills;
+
+    const authorInfoSayHiElement = document.getElementById("author-info__sayhi");
+
+    let lastSayHello = authorInfoSayHiElement.textContent;
+
+    let randomGreeting = lastSayHello;
+    while (randomGreeting === lastSayHello) {
+      randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+    }
+    authorInfoSayHiElement.textContent = randomGreeting;
   },
 };
