@@ -32,7 +32,7 @@
   --bieyinan-shadow-border: 0 8px 16px -4px #2c2d300c;
   --bieyinan-shadow-blackdeep: 0 2px 16px -3px rgba(0, 0, 0, 0.15);
   --bieyinan-logo-color: linear-gradient(215deg, #4584ff 30%, #ff7676 70%);
-  --bieyinan-code-stress: #3477f6;
+  --bieyinan-code-stress: var(--bieyinan-main);
   --style-border: 1px solid var(--bieyinan-card-border);
   --bieyinan-blue-main: #3b70fc;
   --style-border-hover: 1px solid var(--bieyinan-main);
@@ -123,7 +123,7 @@
   --bieyinan-blue-tint: rgba(92, 161, 255, 0.1);
   --bieyinan-theme-op-deep: #0084ffdd;
   --global-bg: #18171d;
-  --bieyinan-theme: #0084ff;
+  --bieyinan-theme: #f2b94b;
   --bieyinan-theme-deep: #0076e5;
   --bieyinan-theme-op: #0084ff23;
   --bieyinan-blue: #0084ff;
@@ -169,7 +169,7 @@
   --heo-shadow-green: 0 8px 12px -3px #87ee7936;
   --heo-logo-color: linear-gradient(215deg,#4584ff 30%,#ff7676 70%);
   --style-border: 1px solid var(--heo-card-border);
-  --style-border-hover: 1px solid var(--bieyinan-bar-background);
+  --style-border-hover: 1px solid var(--bieyinan-main);
 }
 
 ::selection {
