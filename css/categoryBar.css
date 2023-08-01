@@ -6,7 +6,6 @@
     display: flex;
     white-space: nowrap;
     overflow: hidden;
-    margin-bottom: 1rem;
     border: var(--style-border);
     transition: 0.3s;
     width: 100%;
@@ -81,7 +80,6 @@
 
 @media screen and (min-width: 1300px){
     #category-bar {
-        margin-bottom: 0.75rem;
         box-shadow: var(--bieyinan-shadow-border);
         animation: slide-in 0.6s 0.3s backwards;
     }
