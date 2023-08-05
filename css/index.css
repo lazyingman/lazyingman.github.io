@@ -3616,6 +3616,26 @@ body[data-type=link] #page .page-title {
     color: var(--bieyinan-white);
 }
 
+#article-container .bieyinan-flink-list .flink-list-item .flink-item-info a img {
+    position: absolute;
+    opacity: 0 ;
+    right: -30px !important;
+    bottom: -40px !important;
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 50% !important;
+    z-index: -1;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+#article-container .bieyinan-flink-list .flink-list-item:hover .flink-item-info a img {
+    opacity: .8 !important;
+}
+
 .addBtn {
     display: flex;
     justify-content: center;
@@ -4461,11 +4481,12 @@ body[data-type=link] #page .page-title {
 
 @media screen and (max-width: 768px) {
     #recent-posts>.recent-post-item:has(.newPost) .unvisited-post {
-        left: calc(88px)!important;
+        left: calc(78px)!important;
         top: 61%;
     }
 
     #recent-posts>.recent-post-item .unvisited-post {
+        left: 22px;
         top: 61%;
     }
 }
@@ -4520,6 +4541,12 @@ body[data-type=link] #page .page-title {
     }
 }
 
+@media screen and (max-width: 768px) {
+    #recent-posts>.recent-post-item .recent-post-info>.article-title {
+        padding: 0 20px;
+    }
+}
+
 #recent-posts>.recent-post-item .recent-post-info>.article-meta-wrap {
     margin-bottom: 1rem
 }
@@ -4527,6 +4554,11 @@ body[data-type=link] #page .page-title {
 @media screen and (max-width: 768px) {
     #recent-posts>.recent-post-item {
         width: 100%
+    }
+
+    #recent-posts>.recent-post-item .recent-post-info>.article-meta-wrap {
+        margin-bottom: .5rem;
+        padding: 0 20px;
     }
 
     #recent-posts>.recent-post-item>.recent-post-info>.article-meta-wrap>.tags>.article-meta__separator {
@@ -14213,7 +14245,7 @@ html::-webkit-scrollbar {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #3b70fc;
+    background-color: #b4bccc;
     border-radius: 2em
 }
 
@@ -19127,6 +19159,12 @@ center#name-container {
     top: 20px;
     left: 32px;
     position: absolute;
+}
+
+@media screen and (max-width:768px) {
+    #recent-posts>.recent-post-item .recent-post-info .newPost {
+        left:20px;
+    }
 }
 
 #recent-posts>.recent-post-item>.recent-post-info>.article-title {
