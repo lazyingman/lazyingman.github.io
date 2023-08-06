@@ -24311,3 +24311,41 @@ body[data-type=muyu] #article-container {
 #about-page .author-tag:nth-child(4) {
     animation-delay: 1.8s;
 }
+
+/* twikoo */
+#twikoo .OwO-body {
+    max-width: 100% !important;
+}
+
+.tk-comment .tk-owo-emotion[alt*=iKun] {
+    width: 160px !important;
+}
+
+.tk-comment .vemoji[alt|=ikun], .tk-comment .tk-owo-emotion[alt*=iKun] {
+    max-width: 160px !important;
+    max-height: 160px !important;
+}
+
+.tk-comment .vemoji[alt|=menhera], .tk-comment .tk-owo-emotion[alt*=menhera], .tk-comment .vemoji[alt|=iKsun], .tk-comment .tk-owo-emotion[alt*=iKun] {
+    margin: 8px 1px;
+    display: block !important;
+    border-radius: 6px;
+}
+
+#twikoo .OwO .OwO-body .OwO-items:nth-child(2) .OwO-item {
+    width: calc((100% / 7) - 10px) !important;
+    margin: 5px;
+}
+
+#twikoo .OwO .OwO-body .OwO-items:nth-child(2) {
+    max-height: 360px !important;
+}
+
+.OwO .OwO-body .OwO-items .OwO-item {
+    width: 4em !important;
+    padding: 4px 3px !important;
+}
+
+#twikoo .OwO-items li[title|=menhera] img, #twikoo .OwO-items li[title|=iKun] img {
+    width: 100% !important;
+}
