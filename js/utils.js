@@ -691,8 +691,12 @@ const bieyinan = {
     let theme = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
     if (theme == "light") {
       $(".menu-darkmode-text").text("深色模式");
+      if(document.querySelector("#selfie"))
+      document.querySelector("#selfie").src="https://bu.dusays.com/2023/06/23/64959b78666b9.jpg"
     } else {
       $(".menu-darkmode-text").text("浅色模式");
+      if(document.querySelector("#selfie"))
+      document.querySelector("#selfie").src="https://bu.dusays.com/2023/08/07/64d109ee3e865.webp"
     }
   },
 
