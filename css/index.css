@@ -3360,6 +3360,13 @@ body[data-type=link] #page .page-title {
     display: flex
 }
 
+@media screen and (max-width: 768px) {
+    #flink-banners .banner-button-group {
+        display: none;
+    }
+}
+
+
 #flink-banners .banner-button-group .banner-button {
     color: var(--bieyinan-card-bg)
 }
@@ -9012,10 +9019,113 @@ a.deal_link:hover {
     padding: 0 10px 40px
 }
 
+#sidebar #sidebar-menus span.sidebar-menu-item-title {
+    font-size: 12px;
+    color: var(--bieyinan-secondtext);
+    margin-left: 16px;
+}
+
+#sidebar #sidebar-menus .sidebar-menu-item {
+    display: flex;
+    flex-direction: row;
+    padding: 0 16px;
+    margin: 0 -8px;
+}
+
+#sidebar #sidebar-menus .sidebar-menu-item a.menu-child {
+    width: calc(50% - 16px);
+    margin: 4px 8px;
+    background: var(--bieyinan-card-bg);
+    border-radius: 8px;
+    border: var(--style-border-always);
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding: 4px 8px!important;
+}
+
+#sidebar #sidebar-menus .sidebar-menu-item a.menu-child i {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sidebar #sidebar-menus .sidebar-menu-item a.menu-child span {
+    margin-left: 10px;
+}
+
+#sidebar #sidebar-menus .back-menu-list-groups {
+    padding: 0 16px;
+}
+
+.back-menu-list-groups .back-menu-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 340px;
+    justify-content: space-between;
+}
+
+#sidebar #sidebar-menus .back-menu-list-groups .back-menu-list-title {
+    font-size: 12px;
+    color: var(--bieyinan-secondtext);
+}
+
+#sidebar #sidebar-menus .back-menu-list-groups .back-menu-list {
+    width: calc(100% + 16px);
+    justify-content: flex-start;
+    margin: 0 -8px;
+}
+
+.back-menu-list-groups .back-menu-list .back-menu-item {
+    display: flex;
+    align-items: center;
+    margin: 4px 8px;
+    padding: 4px 8px!important;
+    transition: .3s;
+    border-radius: 8px;
+}
+
+#sidebar #sidebar-menus .back-menu-list-groups .back-menu-list .back-menu-item {
+    background: var(--bieyinan-card-bg);
+    border: var(--style-border-always);
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 768px) {
+    #sidebar #sidebar-menus .back-menu-list-groups .back-menu-list .back-menu-item {
+        width: calc(50% - 16px);
+    }
+}
+
+.back-menu-list-groups .back-menu-list .back-menu-item .back-menu-item-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 10px;
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+}
+
+
 #sidebar #sidebar-menus .menus_item>.site-page {
     display: flex;
     font-size: 12px;
     color: var(--bieyinan-secondtext);
+}
+
+.back-menu-list-groups .back-menu-list .back-menu-item .back-menu-item-text {
+    font-size: 16px;
+    margin-left: .5rem;
+    color: var(--heo-fontcolor);
+    transition: .3s;
+}
+
+@media screen and (max-width: 768px) {
+    .back-menu-list-groups .back-menu-list .back-menu-item .back-menu-item-text {
+        font-size: 14px;
+    }    
 }
 
 
@@ -14437,11 +14547,6 @@ html.hide-aside .layout>div:first-child {
     margin-right: 4px;
 }
 
-[data-theme=dark] #aside-content .card-widget#card-wechat {
-    background-color: #121121;
-    border: var(--style-border)
-}
-
 [data-theme=dark] #aside-content .card-widget#card-wechat:hover {
     box-shadow: 0 0 8px 0 rgba(232, 237, 250, .6), 0 2px 4px 0 rgba(232, 237, 250, .5);
 }
@@ -18775,6 +18880,13 @@ center#name-container {
     border-radius: 8px
 }
 
+@media screen and (max-width: 768px) {
+    .back-home-button {
+        display: none;
+    }
+}
+
+
 .back-home-button:hover .back-menu-list-groups {
     display: flex;
     opacity: 1;
@@ -18863,7 +18975,8 @@ center#name-container {
     width: 24px;
     height: 24px;
     border-radius: 24px;
-    background: var(--bieyinan-secondbg)
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
 }
 
 #page-header #nav .back-home-button {
@@ -24335,6 +24448,12 @@ body[data-type=muyu] #article-container {
 #twikoo .OwO .OwO-body .OwO-items:nth-child(2) .OwO-item {
     width: calc((100% / 7) - 10px) !important;
     margin: 5px;
+}
+
+@media screen and (max-width:768px) {
+    #twikoo .OwO .OwO-body .OwO-items:nth-child(2) .OwO-item {
+        width: calc((170% / 7) - 10px) !important;
+    }
 }
 
 #twikoo .OwO .OwO-body .OwO-items:nth-child(2) {
