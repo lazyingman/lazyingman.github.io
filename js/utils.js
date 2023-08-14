@@ -1231,10 +1231,12 @@ const bieyinan = {
       FPSgroup.classList.remove("show");
       consoleFPS.classList.remove("on");
       bieyinan_FPS = false;
+      GLOBAL_CONFIG.Snackbar !== undefined && bieyinan.snackbarShow("已关闭FPS");
     } else {
       FPSgroup.classList.add("show");
       consoleFPS.classList.add("on");
       bieyinan_FPS = true;
+      GLOBAL_CONFIG.Snackbar !== undefined && bieyinan.snackbarShow("已开启FPS");
     }
 
     localStorage.setItem("FPSToggle", isKeyboardOn ? "false" : "true");

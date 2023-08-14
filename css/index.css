@@ -9044,6 +9044,11 @@ a.deal_link:hover {
     padding: 4px 8px!important;
 }
 
+#sidebar #sidebar-menus .sidebar-menu-item a.menu-child.on {
+    background: var(--bieyinan-orange);
+    color:var(--bieyinan-white);
+}
+
 #sidebar #sidebar-menus .sidebar-menu-item a.menu-child i {
     width: 24px;
     height: 24px;
@@ -9088,6 +9093,11 @@ a.deal_link:hover {
     border-radius: 8px;
 }
 
+.back-menu-list-groups .back-menu-list .back-menu-item:hover {
+    background: var(--bieyinan-main)!important;
+    transform: scale(1)!important;
+}
+
 #sidebar #sidebar-menus .back-menu-list-groups .back-menu-list .back-menu-item {
     background: var(--bieyinan-card-bg);
     border: var(--style-border-always);
@@ -9120,6 +9130,10 @@ a.deal_link:hover {
     margin-left: .5rem;
     color: var(--heo-fontcolor);
     transition: .3s;
+}
+
+.back-menu-list-groups .back-menu-list .back-menu-item:hover .back-menu-item-text {
+    color:var(--bieyinan-white);
 }
 
 @media screen and (max-width: 768px) {
@@ -15971,6 +15985,11 @@ details .content>:nth-child(1) {
     margin: 2px
 }
 
+[data-theme=dark] #sidebar #sidebar-menus .sidebar-menu-item a.menu-child:nth-child(1) {
+    background: var(--bieyinan-orange)!important;
+    color: var(--bieyinan-white)!important;
+}
+
 [data-theme=dark] #console .button-group .console-btn-item a.darkmode_switchbutton {
     background: var(--bieyinan-orange);
     color: var(--bieyinan-white)
@@ -18610,7 +18629,8 @@ div#bannerGroup {
     }
 
     #sidebar #sidebar-menus .menus_items .site-page:hover {
-        background: 0 0
+        background: var(--bieyinan-main);
+        color: var(--bieyinan-white);
     }
 
     div#travellings_button {
