@@ -9151,10 +9151,6 @@ a.deal_link:hover {
     font-size: 1.15em
 }
 
-#sidebar-menus .menus_items .site-page:hover {
-    background: var(--text-bg-hover)
-}
-
 #sidebar-menus .menus_items .site-page i:first-child {
     width: 15%;
     text-align: left
@@ -18628,7 +18624,7 @@ div#bannerGroup {
         box-shadow: none !important
     }
 
-    #sidebar #sidebar-menus .menus_items .site-page:hover {
+    #sidebar #sidebar-menus .menus_items ul .site-page:hover {
         background: var(--bieyinan-main);
         color: var(--bieyinan-white);
     }
