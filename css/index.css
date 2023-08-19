@@ -8856,7 +8856,8 @@ a.deal_link:hover {
     color: var(--bieyinan-white);
     background: var(--bieyinan-red);
     -webkit-box-shadow: var(--bieyinan-shadow-red);
-    box-shadow: var(--bieyinan-shadow-red)
+    box-shadow: var(--bieyinan-shadow-red);
+    background-image: url(https://bu.dusays.com/2022/03/20/4fc0f1d46ceac.gif);
 }
 
 .post-reward .reward-main .reward-all .reward-main-btn .reward-text {
@@ -14448,14 +14449,6 @@ html::-webkit-scrollbar {
     text-decoration: none
 }
 
-#article-container a:not([data-fancybox=gallery]):not(.headerlink):not(.cf-friends-link):not(.btn-bieyinan):not(.no-text-decoration):hover {
-    color: var(--bieyinan-white);
-    background: var(--bieyinan-theme);
-    box-shadow: var(--bieyinan-shadow-lightblack);
-    border-radius: .25em;
-    text-decoration: none
-}
-
 html.hide-aside .layout>div:first-child {
     width: 100%
 }
@@ -18949,7 +18942,7 @@ center#name-container {
     position: absolute;
     top: 65px;
     left: 0;
-    background: var(--heo-maskbgdeep);
+    background: var(--bieyinan-maskbgdeep);
     border-radius: 12px;
     border: var(--style-border);
     flex-direction: column;
@@ -23934,7 +23927,7 @@ span.tags-punctuation .icon-biaoqian {
     }
 
     .OwO .OwO-body {
-        width: 260px
+        width: 85%;
     }
 
     .tk-comments .tk-main .tk-row-actions-start {
@@ -24476,7 +24469,7 @@ body[data-type=muyu] #article-container {
 
 /* twikoo */
 #twikoo .OwO-body {
-    max-width: 100% !important;
+    max-width: 80% !important;
 }
 
 .tk-comment .tk-owo-emotion[alt*=iKun] {
@@ -24495,18 +24488,7 @@ body[data-type=muyu] #article-container {
 }
 
 #twikoo .OwO .OwO-body .OwO-items:nth-child(2) .OwO-item {
-    width: calc((100% / 7) - 10px) !important;
     margin: 5px;
-}
-
-@media screen and (max-width:768px) {
-    #twikoo .OwO .OwO-body .OwO-items:nth-child(2) .OwO-item {
-        width: calc((170% / 7) - 10px) !important;
-    }
-}
-
-#twikoo .OwO .OwO-body .OwO-items:nth-child(2) {
-    max-height: 360px !important;
 }
 
 .OwO .OwO-body .OwO-items .OwO-item {

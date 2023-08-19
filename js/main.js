@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isHighlightCopy) {
       highlightCopyEle = '<div class="copy-notice"></div><i class="bi bi-clipboard2-fill copy-button"></i>';
     }
-
+    
     const copy = (text, ctx) => {
       if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
         document.execCommand("copy");
@@ -561,7 +561,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (document.getElementById("waterfall")) {
         const waterfallResult = currentTop % document.documentElement.clientHeight; // 卷去一个视口
         if (!scrollBottomFirstFlag && waterfallResult + 100 >= document.documentElement.clientHeight) {
-          console.info(waterfallResult, document.documentElement.clientHeight);
           setTimeout(() => {
             waterfall("#waterfall");
           }, 500);
