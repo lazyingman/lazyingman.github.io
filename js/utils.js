@@ -1106,7 +1106,7 @@ const bieyinan = {
       for (var j = 0; j < lmail.length; j++) {
         var mail = document.querySelector(lmail[j]);
         if (mail != null) {
-          mail.value = visitorMail;
+          // mail.value = visitorMail;
           mail.dispatchEvent(new Event("input"));
           mail.dispatchEvent(new Event("change"));
           break;
@@ -1346,4 +1346,5 @@ const bieyinan = {
     }
     authorInfoSayHiElement.textContent = randomGreeting;
   },
+  
 };
