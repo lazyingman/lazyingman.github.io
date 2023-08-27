@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>使用Java批量修改文件名</title>
+      <link href="/posts/df7374b0.html"/>
+      <url>/posts/df7374b0.html</url>
+      
+        <content type="html"><![CDATA[ <!-- background: linear-gradient(180deg, rgba(255,255,255, 0.01), rgba(255,255,255, 1) 85%),radial-gradient(ellipse at top left, rgba(13,110,253, 0.5), transparent 50%),radial-gradient(ellipse at top right, rgba(255,228,132, 0.5), transparent 50%),radial-gradient(ellipse at center right, rgba(112.520718,44.062154,249.437846, 0.5), transparent 50%),radial-gradient(ellipse at center left, rgba(214,51,132, 0.5), transparent 50%); --><h2 id="前提">前提</h2><p>在逛别人网站的时候意外获得一组表情包，但是下载完成之后的图片名是由随机数组成的文件名，想把表情包整理并放入网站中使用，又想把图片名改成有规律的名字，于是就有了下面的代码。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test3</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;D:/BaiduNetdiskDownload/ikun&quot;</span>);<span class="comment">// 寻找文件目录</span></span><br><span class="line">        File[] files = file.listFiles(); <span class="comment">//获取目录中的所有文件和子目录</span></span><br><span class="line">        <span class="type">int</span> a=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(Objects.nonNull(files) &amp;&amp; files.length&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span> (File file1:files) &#123;</span><br><span class="line">                <span class="keyword">if</span>(file1.isDirectory())&#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> file1.getName();<span class="comment">//获取图片名</span></span><br><span class="line">                    <span class="type">File</span> <span class="variable">parentPath</span> <span class="operator">=</span> file1.getParentFile();<span class="comment">//获取父目录</span></span><br><span class="line">                    String[] params = fileName.split(<span class="string">&quot;\\.&quot;</span>);<span class="comment">//分割图片名和后缀名</span></span><br><span class="line">                    <span class="type">String</span> <span class="variable">newName</span> <span class="operator">=</span> fileName;<span class="comment">//初始值</span></span><br><span class="line">                    <span class="keyword">if</span>(params.length&gt;=<span class="number">2</span>)&#123;</span><br><span class="line">                        newName = <span class="string">&quot;iKun-&quot;</span>+a+<span class="string">&quot;.&quot;</span>+params[<span class="number">1</span>];</span><br><span class="line">                        a++;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="type">File</span> <span class="variable">newDir</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(parentPath + <span class="string">&quot;/&quot;</span> + newName);<span class="comment">//创建新目录文件</span></span><br><span class="line">                    file1.renameTo(newDir);<span class="comment">//替换掉原来文件名</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><h2 id="效果图">效果图</h2><div class="img-wrap"><div class="img-bg"><img class="img" src="https://bu.dusays.com/2023/08/27/64eb5575254c0.png" style="width:80%;"/></div></div><p>于是就有了评论区的表情包<br>好东西要分享：<a href="https://fe32.top/articles/ikun0001/">表情包地址来源</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用颜色窃贼(js)来获取文章封面主题色</title>
       <link href="/posts/27a9cc74.html"/>
       <url>/posts/27a9cc74.html</url>
