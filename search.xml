@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>在博客侧边栏添加旋转小人</title>
+      <link href="/posts/5788839b.html"/>
+      <url>/posts/5788839b.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="旋转小人">旋转小人</h2><br/><div class="tip faa-horizontal animated"><p>参考自<a href="https://codepen.io">codepen</a></p></div><p>下面是codepen中的代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;twopeople&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;container&quot; style=&quot;height:200px;&quot;&gt;</span><br><span class="line">        &lt;canvas class=&quot;illo&quot; width=&quot;800&quot; height=&quot;800&quot; style=&quot;max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;&quot;&gt;&lt;/canvas&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/js/twopeople1.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/js/zdog.dist.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script id=&quot;rendered-js&quot; src=&quot;https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/js/twopeople.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        .twopeople&#123;</span><br><span class="line">            margin: 0;</span><br><span class="line">            align-items: center;</span><br><span class="line">            justify-content: center;</span><br><span class="line">            text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line">        canvas &#123;</span><br><span class="line">            display: block;</span><br><span class="line">            margin: 0 auto;</span><br><span class="line">            cursor: move;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure><h2 id="引入到Hexo主题中">引入到Hexo主题中</h2><p>在<code>themes/butterfly/layout/includes/widget</code>中创建一个文件命名为<code>card_anim.pug</code><br>在文件中复制以下代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.twopeople(style=&quot;margin: 0;align-items: center;justify-content: center;text-align: center;&quot;)</span><br><span class="line">    .container(style=&quot;height: 180px; margin: 0; align-items: center; justify-content: center; text-align: center;&quot;)</span><br><span class="line">      canvas.illo(width=&quot;600&quot; height=&quot;600&quot; style=&quot;display: block;margin: 0 auto;cursor: move;max-width: 200px; max-height: 200px; touch-action: none; width: 480px; height: 480px;&quot;)</span><br><span class="line">    </span><br><span class="line">&lt;script src=&quot;https://npm.elemecdn.com/justlovesmile-static/js/twopeople1.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;https://npm.elemecdn.com/justlovesmile-static/js/zdog.dist.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script id=&quot;rendered-js&quot; src=&quot;https://npm.elemecdn.com/justlovesmile-static/js/twopeople.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure><p>在<code>themes/butterfly/layout/includes/widget/index.pug</code>中引入我们刚刚添加的文件到页面，+号的是引入的文件,记得把+号删除</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#aside-content.aside-content</span><br><span class="line">  if is_post()</span><br><span class="line">    - const tocStyle = page.toc_style_simple</span><br><span class="line">    - const tocStyleVal = tocStyle === true || tocStyle === false ? tocStyle : theme.toc.style_simple</span><br><span class="line">    if showToc &amp;&amp; tocStyleVal</span><br><span class="line">      .sticky_layout</span><br><span class="line">        include ./card_post_toc.pug</span><br><span class="line">    else</span><br><span class="line">      !=partial(&#x27;includes/widget/card_author&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br><span class="line">      !=partial(&#x27;includes/widget/card_announcement&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br><span class="line">      !=partial(&#x27;includes/widget/card_top_self&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br><span class="line">  else</span><br><span class="line">    !=partial(&#x27;includes/widget/card_author&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br><span class="line">    !=partial(&#x27;includes/widget/card_announcement&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br><span class="line">    !=partial(&#x27;includes/widget/card_top_self&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br><span class="line"></span><br><span class="line">+include ./card_anim.pug</span><br><span class="line"></span><br><span class="line">.sticky_layout</span><br><span class="line">  if !is_post()</span><br><span class="line">    if showToc</span><br><span class="line">      include ./card_post_toc.pug</span><br><span class="line">    .card-widget</span><br><span class="line">      !=partial(&#x27;includes/widget/card_ad&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br><span class="line">      !=partial(&#x27;includes/widget/card_categories&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br><span class="line">      !=partial(&#x27;includes/widget/card_tags&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br><span class="line">      !=partial(&#x27;includes/widget/card_archives&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br><span class="line">      !=partial(&#x27;includes/widget/card_webinfo&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br><span class="line">      !=partial(&#x27;includes/widget/card_bottom_self&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br><span class="line">  else </span><br><span class="line">      include ./card_post_toc.pug</span><br><span class="line">      include ./card_recent_post.pug</span><br></pre></td></tr></table></figure><p>添加完成之后重新启动服务就可以看到效果了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo魔改 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用Java批量修改文件名</title>
       <link href="/posts/df7374b0.html"/>
       <url>/posts/df7374b0.html</url>
@@ -47,7 +72,7 @@
             
             <tag> 教程 </tag>
             
-            <tag> color </tag>
+            <tag> Color </tag>
             
         </tags>
       
@@ -65,7 +90,7 @@
       
       <categories>
           
-          <category> Hexo魔改 </category>
+          <category> Hexo </category>
           
       </categories>
       
@@ -99,9 +124,9 @@
       
         <tags>
             
-            <tag> butterfly教程 </tag>
+            <tag> Butterfly教程 </tag>
             
-            <tag> hexo </tag>
+            <tag> Hexo </tag>
             
         </tags>
       
@@ -153,9 +178,9 @@
       
         <tags>
             
-            <tag> butterfly教程 </tag>
+            <tag> Butterfly教程 </tag>
             
-            <tag> hexo </tag>
+            <tag> Hexo </tag>
             
         </tags>
       
@@ -207,9 +232,9 @@
       
         <tags>
             
-            <tag> 教程 </tag>
-            
             <tag> Hexo </tag>
+            
+            <tag> 教程 </tag>
             
         </tags>
       
@@ -313,9 +338,9 @@
       
         <tags>
             
-            <tag> butterfly教程 </tag>
+            <tag> Butterfly教程 </tag>
             
-            <tag> hexo </tag>
+            <tag> Hexo </tag>
             
         </tags>
       
@@ -340,7 +365,7 @@
       
         <tags>
             
-            <tag> hexo教程 </tag>
+            <tag> Hexo </tag>
             
         </tags>
       
@@ -365,9 +390,9 @@
       
         <tags>
             
-            <tag> hexo </tag>
+            <tag> Hexo </tag>
             
-            <tag> node.js </tag>
+            <tag> Node.js </tag>
             
         </tags>
       
