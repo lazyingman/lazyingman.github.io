@@ -1,4 +1,4 @@
-(async function() {
+(async function () {
     async function getIpInfo() {
         var fetchUrl = "https://api.qjqq.cn/api/Local";
         try {
@@ -19,7 +19,7 @@
             document.getElementById("userAgentCity").innerHTML = city;
             // document.getElementById("userAgentDistrict").innerHTML = district;
             document.getElementById("userAgentISP").innerHTML = isp;
-            
+
 
             var uaInfo = navigator.userAgent;
 
@@ -32,36 +32,47 @@
     await getIpInfo();
 })();
 
-// FPS
-        var showFPS = (function () {
-            var requestAnimationFrame =
-                window.requestAnimationFrame ||
-                window.webkitRequestAnimationFrame ||
-                window.mozRequestAnimationFrame ||
-                window.oRequestAnimationFrame ||
-                window.msRequestAnimationFrame ||
-                function (callback) {
-                    window.setTimeout(callback, 1000 / 60);
-                };
-            var e, pe, pid, fps, last, offset, step, appendFps;
+//检查是否开启FPS
+if (localStorage.getItem('FPSToggle') == 'true') {
+    bieyinan_FPS = true;
+    document.querySelector("#fps-group").classList.add("show");
+    document.querySelector("#consoleFPS").classList.add("on");
+} else {
+    bieyinan_FPS = false;
+    document.querySelector("#fps-group").classList.remove("show");
+    document.querySelector("#consoleFPS").classList.remove("on");
+}
 
+// FPS
+var showFPS = (function () {
+    var requestAnimationFrame =
+        window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function (callback) {
+            window.setTimeout(callback, 1000 / 60);
+        };
+    var e, pe, pid, fps, last, offset, step, appendFps;
+
+    fps = 0;
+    last = Date.now();
+    step = function () {
+        offset = Date.now() - last;
+        fps += 1;
+        if (offset >= 1000) {
+            last += offset;
+            appendFps(fps);
             fps = 0;
-            last = Date.now();
-            step = function () {
-                offset = Date.now() - last;
-                fps += 1;
-                if (offset >= 1000) {
-                    last += offset;
-                    appendFps(fps);
-                    fps = 0;
-                }
-                requestAnimationFrame(step);
-            };
-            appendFps = function (fps) {
-                document.querySelector("#fps").innerHTML=fps
-            };
-            step();
-        })();
+        }
+        requestAnimationFrame(step);
+    };
+    appendFps = function (fps) {
+        document.querySelector("#fps").innerHTML = fps
+    };
+    step();
+})();
 // 页脚计时器
 setInterval(() => {
     // let create_time = Math.round(new Date('2021-10-15 00:00:00').getTime() / 1000); //在此行修改建站时间
@@ -71,7 +82,7 @@ setInterval(() => {
     let second = timestamp - create_time;
     let time = new Array(0, 0, 0, 0, 0);
 
-    var nol = function(h) {
+    var nol = function (h) {
         return h > 9 ? h : '0' + h;
     }
     if (second >= 365 * 24 * 3600) {
@@ -98,6 +109,6 @@ setInterval(() => {
         currentTimeHtml += time[0] + ' 年 '
     }
     currentTimeHtml += time[1] + ' 天 ' + time[2] + ' 时 ' + time[3] + ' 分 ' + time[4] + ' 秒 ';
-    if(!document.getElementById("runtime"))return;
+    if (!document.getElementById("runtime")) return;
     document.getElementById("runtime").innerHTML = currentTimeHtml;
 }, 1000);
