@@ -616,7 +616,8 @@ psw:hover {
   overflow: hidden;
 }
 
-.nav-fixed #fps-group, .not-top-img #fps-group {
+.nav-fixed #fps-group,
+.not-top-img #fps-group {
   color: var(--bieyinan-fontcolor);
 }
 
@@ -665,3 +666,188 @@ body[data-type=music] #fps-group {
   }
 }
 
+/* 留言板 */
+
+[data-type=envelope] .page-title {
+    display: none;
+}
+
+#maincontent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+  background: url(https://bu.dusays.com/2023/09/01/64f1f6d687dcf.png) no-repeat 50%;
+}
+
+#maincontent .article-innerbox {
+  max-width: 1080px;
+  width: 825px;
+  height: 505px;
+  position: relative;
+  left: 133px;
+  top: 9px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: #383c44;
+}
+
+#maincontent .article-innerbox .inner-title {
+  margin: 40px 0 5px;
+  font-size: 45px;
+  font-weight: bold;
+  color: #494a4d;
+}
+
+#maincontent .article-innerbox .inner-article {
+  width: 100%;
+  margin: 0 6px;
+}
+
+#maincontent .article-innerbox .article-ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 75px;
+  height: 235px;
+}
+
+#maincontent .article-innerbox .article-ul .article-li {
+  border-top: 2px solid #f0f1f2;
+  height: 58px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#maincontent .article-innerbox .article-ul .article-li:last-child {
+  border-bottom: 2px solid #f0f1f2;
+}
+
+#maincontent .article-innerbox .article-ul .article-li p {
+  transition: color .25s ease;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  margin: 0 !important;
+  font-size: 18px;
+  font-weight: 600;
+  color: #494a4d;
+}
+
+#maincontent .article-innerbox .article-ul .article-li p:hover {
+  color:#ffc000;
+}
+
+@media screen and (max-width:1230px) {
+  #maincontent {
+    background: image-set(url(https://bu.dusays.com/2023/09/02/64f2c3db40a6e.png) 1x,url(https://bu.dusays.com/2023/09/02/64f2c3db40a6e.png) 2x) 50% no-repeat;
+  }
+
+  #maincontent .article-innerbox {
+    position: relative;
+    max-width: 560px;
+  }
+
+  #maincontent .article-innerbox .inner-title {
+    margin: 40px 10px;
+    font-size: 40px;
+  }
+
+  #maincontent .article-innerbox .article-ul {
+    padding: 0 50px;
+  }
+
+  #maincontent .article-innerbox .article-ul .article-li {
+    height: 56px;
+  }
+}
+
+@media screen and (max-width:910px) {
+  #maincontent {
+    background: image-set(url(https://bu.dusays.com/2023/09/02/64f2cc8dcc0ac.png) 1x,url(https://bu.dusays.com/2023/09/02/64f2cc8dcc0ac.png) 2x) 50% no-repeat;
+  }
+
+  #maincontent .article-innerbox {
+    position: unset;
+    max-width: 682px;
+  }
+
+  #maincontent .article-innerbox .inner-title {
+    margin: 40px 0 10px;
+    font-size: 40px;
+  }
+
+  #maincontent .article-innerbox .article-ul {
+    padding: 0 45px;
+  }
+
+  #maincontent .article-innerbox .article-ul .article-li {
+    height: 56px;
+  }
+}
+
+@media screen and (max-width:790px) {
+  #maincontent {
+    background: image-set(url(https://bu.dusays.com/2023/09/02/64f2cd2b3332c.png) 1x,url(https://bu.dusays.com/2023/09/02/64f2cd2b3332c.png) 2x) 50% no-repeat;
+  }
+
+  #maincontent .article-innerbox {
+    height: 430px!important;
+  }
+
+  #maincontent .article-innerbox {
+    position: unset;
+    max-width: 682px;
+  }
+
+  #maincontent .article-innerbox .inner-title {
+    margin: 35px 0 10px;
+    font-size: 32px;
+  }
+
+  #maincontent .article-innerbox .article-ul {
+    padding: 0 25px;
+    max-width: 370px;
+    margin: 0 auto;
+  }
+
+  #maincontent .article-innerbox .article-ul .article-li {
+    height: 56px;
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width:440px) {
+  #maincontent {
+    background: image-set(url(https://bu.dusays.com/2023/09/02/64f2cd4a03ea4.png) 1x,url(https://bu.dusays.com/2023/09/02/64f2cd4a03ea4.png) 2x) 50% no-repeat;
+  }
+
+  #maincontent .article-innerbox {
+    position: unset;
+    max-width: 682px;
+  }
+
+  #maincontent .article-innerbox .inner-title {
+    margin: 50px 0 24px;
+    font-size: 26px;
+  }
+
+  #maincontent .article-innerbox .article-ul {
+    padding: 0 25px;
+    max-width: 300px;
+  }
+
+  #maincontent .article-innerbox .article-ul .article-li {
+    height: 46px;
+  }
+}
