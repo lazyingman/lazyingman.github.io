@@ -8842,6 +8842,21 @@ a.deal_link:hover {
     width: 100%
 }
 
+.post-reward:hover .reward-main {
+    display: -webkit-box!important;
+    display: -moz-box!important;
+    display: -webkit-flex!important;
+    display: -ms-flexbox!important;
+    display: box!important;
+    display: flex!important;
+    -webkit-box-pack: left;
+    -moz-box-pack: left;
+    -o-box-pack: left;
+    -ms-flex-pack: left;
+    -webkit-justify-content: left;
+    justify-content: left;
+}
+
 .post-reward .reward-main .reward-all {
     border-radius: 12px;
     background: var(--bieyinan-background);
@@ -13668,14 +13683,24 @@ body[data-type=about] #web_bg {
     color: var(--bieyinan-secondtext)
 }
 
+@keyframes heat_bwedk_1 {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(30px);
+    }
+}
+
 .author-content-item.careers img {
     position: absolute;
-    right: 10px;
-    bottom: -62px;
+    right: 60px;
+    bottom: 15px;
     max-width: 100%;
-    height: 70%;
+    height: 90%;
     object-fit: cover;
     transition: .6s;
+    animation: heat_bwedk_1 1.3s ease-in-out infinite alternate;
 }
 
 .author-content-item.careers img:hover {
@@ -15524,7 +15549,6 @@ details.folding-tag[open]>summary {
 
 details.folding-tag>summary {
     border: var(--style-border) !important;
-    background: var(--bieyinan-card-bg) !important;
     border-radius: 14px !important;
     box-shadow: var(--bieyinan-shadow-border);
     color: var(--font-color) !important;
@@ -19097,7 +19121,8 @@ center#name-container {
 
 .back-home-button .back-menu-list-group .back-menu-list-title {
     margin: 8px 0 0 16px;
-    transition: .3s
+    transition: .3s;
+    cursor: default;
 }
 
 .back-home-button .back-menu-list {

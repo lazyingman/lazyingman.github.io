@@ -854,6 +854,14 @@ body[data-type=music] #fps-group {
 
 /* video */
 
+[data-type=video] div#page {
+  /* background: none;
+  box-shadow: none;
+  border: none;
+  margin: 0;
+  padding: 0 !important; */
+}
+
 [data-type=video] #page h1.page-title {
   display: none;
 }
@@ -880,7 +888,7 @@ body[data-type=music] #fps-group {
   position: absolute;
   font-size: 72px;
   color: #fad16d;
-  right: 60px;
+  right: 40px;
   min-width: 65%;
   top: 0;
   font-weight: 600;
@@ -897,7 +905,7 @@ body[data-type=music] #fps-group {
 .video-nav .nav-innerbox .nav-png .input-box select {
   position: absolute;
   right: 2%;
-  top: 66.5%;
+  top: 65%;
   outline: none;
   border: 0;
   font-size: 20px;
@@ -905,6 +913,10 @@ body[data-type=music] #fps-group {
   font-weight: 600;
   background-color: hsla(0, 0%, 100%, 0);
   z-index: 1;
+}
+
+.video-nav .nav-innerbox .nav-png .input-box select option {
+  background: var(--bieyinan-maskbgdeep);
 }
 
 .video-nav .nav-innerbox .nav-png .input-box input {
@@ -924,12 +936,38 @@ body[data-type=music] #fps-group {
   color: rgba(66, 63, 63, 0.3);
 }
 
+.video-nav .nav-innerbox .barrage {
+  position: relative;
+  top: -30px;
+  height: 0;
+  max-width: 1080px;
+  width: 100%;
+  font-size: 14px;
+  color: var(--font-color);
+}
+
 .video-nav .nav-innerbox .player {
   max-width: 1080px;
   width: 100%;
-  height: 80vh;
-  background: var(--bieyinan-black);
+  height: 38rem;
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
   border-radius: 10px;
+}
+
+.video-nav .nav-innerbox .player-siderbar {
+  max-width: 1080px;
+  width: 100%;
+}
+
+.video-nav .nav-innerbox .player-siderbar .rewardLeftButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-nav .nav-innerbox .player-siderbar .rewardLeftButton .post-reward .reward-main {
+  left: -90px;
 }
 
 @media screen and (max-width:1230px) {
@@ -938,6 +976,12 @@ body[data-type=music] #fps-group {
     width: 800px;
     background: -webkit-image-set(url(https://bu.dusays.com/2023/09/03/64f49ac4dcd45.png) 1x, url(https://bu.dusays.com/2023/09/03/64f49ac4dcd45.png) 2x) 50% no-repeat;
     background: image-set(url(https://bu.dusays.com/2023/09/03/64f49ac4dcd45.png) 1x, url(https://bu.dusays.com/2023/09/03/64f49ac4dcd45.png) 2x) 50% no-repeat;
+  }
+
+  .video-nav .nav-innerbox .barrage {
+    width: 800px;
+    margin-top: 3px;
+    top: -28px;
   }
 
   .video-nav .nav-innerbox .nav-png .input-box .search {
@@ -965,7 +1009,8 @@ body[data-type=music] #fps-group {
     top: 15px;
   }
 
-  .video-nav .nav-innerbox .player {
+  .video-nav .nav-innerbox .player,
+  .video-nav .nav-innerbox .player-siderbar {
     width: 800px;
   }
 }
@@ -976,6 +1021,12 @@ body[data-type=music] #fps-group {
     background: -webkit-image-set(url(https://bu.dusays.com/2023/09/03/64f4a0b15a8c6.png) 1x, url(https://bu.dusays.com/2023/09/03/64f4a0b15a8c6.png) 2x) 50% no-repeat;
     background: image-set(url(https://bu.dusays.com/2023/09/03/64f4a0b15a8c6.png) 1x, url(https://bu.dusays.com/2023/09/03/64f4a0b15a8c6.png) 2x) 50% no-repeat;
     max-width: 692px;
+  }
+
+  .video-nav .nav-innerbox .barrage {
+    max-width: 692px;
+    margin-top: 5px;
+    top: -26px;
   }
 
   .video-nav .nav-innerbox .nav-png .input-box .search {
@@ -1002,7 +1053,8 @@ body[data-type=music] #fps-group {
     position: relative;
   }
 
-  .video-nav .nav-innerbox .player {
+  .video-nav .nav-innerbox .player,
+  .video-nav .nav-innerbox .player-siderbar {
     max-width: 692px;
   }
 }
@@ -1015,17 +1067,23 @@ body[data-type=music] #fps-group {
     justify-content: center;
     align-content: center;
     align-items: center;
-    height: 190px;
+    height: 150px;
     background: none;
     width: 100%;
+  }
+
+  .video-nav .nav-innerbox .barrage {
+    max-width: 440px;
+    margin-top: 5px;
+    top: -28px;
   }
 
   .video-nav .nav-innerbox .nav-png .input-box {
     width: 95%;
     max-width: 440px;
     height: 102px;
-    background: -webkit-image-set(url(https://bu.dusays.com/2023/09/03/64f4a64f25bda.png) 1x,url(https://bu.dusays.com/2023/09/03/64f4a64f25bda.png) 2x) 50% no-repeat;
-    background: image-set(url(https://bu.dusays.com/2023/09/03/64f4a64f25bda.png) 1x,url(https://bu.dusays.com/2023/09/03/64f4a64f25bda.png) 2x) 50% no-repeat;
+    background: -webkit-image-set(url(https://bu.dusays.com/2023/09/03/64f4a64f25bda.png) 1x, url(https://bu.dusays.com/2023/09/03/64f4a64f25bda.png) 2x) 50% no-repeat;
+    background: image-set(url(https://bu.dusays.com/2023/09/03/64f4a64f25bda.png) 1x, url(https://bu.dusays.com/2023/09/03/64f4a64f25bda.png) 2x) 50% no-repeat;
     background-size: 100% 100%;
     display: flex;
     flex-direction: row;
@@ -1059,21 +1117,37 @@ body[data-type=music] #fps-group {
 
   .video-nav .nav-innerbox .player {
     max-width: 440px;
+    height: 30rem;
+  }
+
+  .video-nav .nav-innerbox .player-siderbar {
+    max-width: 440px;
   }
 }
 
 @media screen and (max-width:440px) {
+  #body-wrap .layout {
+    margin: 0;
+  }
+
   .video-nav .nav-innerbox .nav-png .input-box {
     width: 95%;
     max-width: 340px;
-    background: -webkit-image-set(url(https://bu.dusays.com/2023/09/04/64f52b09d12da.png) 1x,url(https://bu.dusays.com/2023/09/04/64f52b09d12da.png) 2x) 50% no-repeat;
-    background: image-set(url(https://bu.dusays.com/2023/09/04/64f52b09d12da.png) 1x,url(https://bu.dusays.com/2023/09/04/64f52b09d12da.png) 2x) 50% no-repeat;
+    background: -webkit-image-set(url(https://bu.dusays.com/2023/09/04/64f52b09d12da.png) 1x, url(https://bu.dusays.com/2023/09/04/64f52b09d12da.png) 2x) 50% no-repeat;
+    background: image-set(url(https://bu.dusays.com/2023/09/04/64f52b09d12da.png) 1x, url(https://bu.dusays.com/2023/09/04/64f52b09d12da.png) 2x) 50% no-repeat;
     background-size: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     position: relative;
+  }
+
+  .video-nav .nav-innerbox .barrage {
+    max-width: 340px;
+    width: 95%;
+    top: -24px;
+    font-size: 13px;
   }
 
   .video-nav .nav-innerbox .nav-png .input-box .search {
@@ -1088,7 +1162,7 @@ body[data-type=music] #fps-group {
 
   .video-nav .nav-innerbox .nav-png .input-box select {
     right: 8%;
-    top: 26.5%;
+    top: 22.5%;
   }
 
   .video-nav .nav-innerbox .nav-png .text-msg {
@@ -1096,8 +1170,93 @@ body[data-type=music] #fps-group {
     margin: 11px 0 0;
   }
 
-  .video-nav .nav-innerbox .player {
+  .video-nav .nav-innerbox .player,
+  .video-nav .nav-innerbox .player-siderbar {
     max-width: 340px;
     width: 95%;
+  }
+}
+
+/* videoLogo */
+
+.videoLogo {
+  padding: 0;
+  margin: 0.5rem -6px 1rem -6px;
+  overflow-x: hidden;
+}
+
+.videoLogo .videoLogoItem {
+  margin: 6px 6px;
+  transition: 0.3s;
+  border-radius: 12px;
+  transition-timing-function: ease-in-out;
+  position: relative;
+  width: calc(20% - 12px);
+  border: var(--style-border);
+  box-shadow: var(--bieyinan-shadow-border);
+  background: var(--bieyinan-card-bg);
+  display: flex;
+}
+
+.videoLogo .videoLogoItem {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  width: calc(19% - 2px);
+  height: 90px;
+  border-radius: 5px;
+  line-height: 17px;
+  transform: translateZ(0px);
+  transition: all 0.3s ease 0s;
+}
+
+.videoLogo .videoLogoItem:hover {
+  border: var(--style-border-hover);
+  box-shadow: var(--bieyinan-shadow-main);
+}
+
+.videoLogo .videoLogoItem a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.videoLogo .videoLogoItem a img{
+  margin: 0 auto;
+}
+
+[data-type=video] code {
+  padding: .2rem .4rem;
+    border-radius: 4px;
+    margin: 0 4px;
+    line-height: 2;
+    box-shadow: var(--bieyinan-shadow-border);
+    background: var(--bieyinan-pink);
+    color: #fff;
+    font-size: var(--global-font-size);
+    font-family: consolas, Menlo, "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif !important;
+}
+
+@media screen and (max-width:1230px) {
+  .videoLogo .videoLogoItem {
+    width: calc(25% - 12px) !important;
+  }
+}
+
+@media screen and (max-width:900px) {
+  .videoLogo .videoLogoItem {
+    width: calc(33.3333% - 12px) !important;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .videoLogo .videoLogoItem {
+    width: calc(50% - 12px) !important;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .videoLogo .videoLogoItem {
+    width: calc(100% - 12px) !important;
   }
 }
