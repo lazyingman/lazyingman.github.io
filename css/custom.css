@@ -855,11 +855,11 @@ body[data-type=music] #fps-group {
 /* video */
 
 [data-type=video] div#page {
-  /* background: none;
+  background: none;
   box-shadow: none;
   border: none;
   margin: 0;
-  padding: 0 !important; */
+  padding: 0 !important;
 }
 
 [data-type=video] #page h1.page-title {
@@ -1067,7 +1067,7 @@ body[data-type=music] #fps-group {
     justify-content: center;
     align-content: center;
     align-items: center;
-    height: 150px;
+    height: 180px;
     background: none;
     width: 100%;
   }
@@ -1101,12 +1101,12 @@ body[data-type=music] #fps-group {
   .video-nav .nav-innerbox .nav-png .input-box input {
     left: 24%;
     width: 60%;
-    top: 24.5%;
+    top: 26.5%;
   }
 
   .video-nav .nav-innerbox .nav-png .input-box select {
     right: 8%;
-    top: 24.5%;
+    top: 26.5%;
   }
 
   .video-nav .nav-innerbox .nav-png .text-msg {
@@ -1128,6 +1128,10 @@ body[data-type=music] #fps-group {
 @media screen and (max-width:440px) {
   #body-wrap .layout {
     margin: 0;
+  }
+
+  .video-nav .nav-innerbox .nav-png {
+    height: 162px;
   }
 
   .video-nav .nav-innerbox .nav-png .input-box {
@@ -1157,12 +1161,12 @@ body[data-type=music] #fps-group {
   }
 
   .video-nav .nav-innerbox .nav-png .input-box input {
-    top: 26.5%;
+    top: 24%;
   }
 
   .video-nav .nav-innerbox .nav-png .input-box select {
     right: 8%;
-    top: 22.5%;
+    top: 24%;
   }
 
   .video-nav .nav-innerbox .nav-png .text-msg {
