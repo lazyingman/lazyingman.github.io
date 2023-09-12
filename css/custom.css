@@ -871,7 +871,7 @@ body[data-type=music] #fps-group {
   width: 100%;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column; 
 }
 
 .video-nav .nav-innerbox .nav-png {
@@ -891,7 +891,7 @@ body[data-type=music] #fps-group {
   right: 40px;
   min-width: 65%;
   top: 0;
-  font-weight: 600;
+  font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
 }
 
 .video-nav .nav-innerbox .nav-png .input-box .search {
@@ -910,40 +910,44 @@ body[data-type=music] #fps-group {
   border: 0;
   font-size: 20px;
   color: #3f4141;
-  font-weight: 600;
+  font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
   background-color: hsla(0, 0%, 100%, 0);
   z-index: 1;
 }
 
 .video-nav .nav-innerbox .nav-png .input-box select option {
   background: var(--bieyinan-maskbgdeep);
+  font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
 }
 
 .video-nav .nav-innerbox .nav-png .input-box input {
   position: absolute;
   left: 7%;
-  top: 66.5%;
+  top: 68.5%;
   outline: none;
   border: 0;
   font-size: 20px;
   color: #3f4141;
   width: 78%;
-  font-weight: 600;
   background-color: hsla(0, 0%, 100%, 0);
+  font-weight: 100;
+  font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
 }
 
 .video-nav .nav-innerbox .nav-png .input-box input::placeholder {
   color: rgba(66, 63, 63, 0.3);
+  font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
 }
 
 .video-nav .nav-innerbox .barrage {
   position: relative;
-  top: -30px;
+  top: -24px;
   height: 0;
   max-width: 1080px;
   width: 100%;
   font-size: 14px;
   color: var(--font-color);
+  font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
 }
 
 .video-nav .nav-innerbox .player {
@@ -981,7 +985,7 @@ body[data-type=music] #fps-group {
   .video-nav .nav-innerbox .barrage {
     width: 800px;
     margin-top: 3px;
-    top: -28px;
+    top: -24px;
   }
 
   .video-nav .nav-innerbox .nav-png .input-box .search {
@@ -993,7 +997,7 @@ body[data-type=music] #fps-group {
   }
 
   .video-nav .nav-innerbox .nav-png .input-box input {
-    top: 63.5%;
+    top: 66.5%;
     left: 10%;
   }
 
@@ -1026,7 +1030,7 @@ body[data-type=music] #fps-group {
   .video-nav .nav-innerbox .barrage {
     max-width: 692px;
     margin-top: 5px;
-    top: -26px;
+    top: -23px;
   }
 
   .video-nav .nav-innerbox .nav-png .input-box .search {
@@ -1038,7 +1042,7 @@ body[data-type=music] #fps-group {
   }
 
   .video-nav .nav-innerbox .nav-png .input-box input {
-    top: 56.5%;
+    top: 59%;
     left: 11%;
   }
 
@@ -1075,7 +1079,7 @@ body[data-type=music] #fps-group {
   .video-nav .nav-innerbox .barrage {
     max-width: 440px;
     margin-top: 5px;
-    top: -28px;
+    top: -25px;
   }
 
   .video-nav .nav-innerbox .nav-png .input-box {
@@ -1101,12 +1105,12 @@ body[data-type=music] #fps-group {
   .video-nav .nav-innerbox .nav-png .input-box input {
     left: 24%;
     width: 60%;
-    top: 26.5%;
+    top: 29%;
   }
 
   .video-nav .nav-innerbox .nav-png .input-box select {
     right: 8%;
-    top: 26.5%;
+    top: 22.5%;
   }
 
   .video-nav .nav-innerbox .nav-png .text-msg {
@@ -1150,7 +1154,7 @@ body[data-type=music] #fps-group {
   .video-nav .nav-innerbox .barrage {
     max-width: 340px;
     width: 95%;
-    top: -24px;
+    top: -23px;
     font-size: 13px;
   }
 
@@ -1161,12 +1165,12 @@ body[data-type=music] #fps-group {
   }
 
   .video-nav .nav-innerbox .nav-png .input-box input {
-    top: 24%;
+    top: 29%;
   }
 
   .video-nav .nav-innerbox .nav-png .input-box select {
     right: 8%;
-    top: 24%;
+    top: 20%;
   }
 
   .video-nav .nav-innerbox .nav-png .text-msg {

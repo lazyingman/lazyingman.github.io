@@ -22,7 +22,7 @@ div#footer_deal {
 }
 
 #footer .copyright {
-    padding: 1rem;
+    padding: 1.5rem 1rem 1rem 1rem;
     color: var(--bieyinan-fontcolor);
     background: var(--bieyinan-secondbg);
     display: flex;
@@ -137,6 +137,7 @@ img.footer_mini_logo {
     overflow: hidden;
     z-index: 1002;
     transition: 0.3s;
+    font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
 }
 
 #footer-bar .footer-bar-links {
@@ -162,6 +163,7 @@ img.footer_mini_logo {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    padding: 1.5rem 1rem 1rem 1rem;
 }
 
 @keyframes myrotate {

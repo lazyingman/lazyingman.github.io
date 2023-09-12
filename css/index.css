@@ -5411,7 +5411,8 @@ h1.page-title+.tag-cloud-list {
 
 #aside-content .card-widget .author-info__name {
     text-align: left;
-    font-weight: 700;
+    font-weight: 100;
+    font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
     color: var(--bieyinan-white);
     font-size: 20px;
     line-height: 1;
@@ -7322,7 +7323,7 @@ a.deal_link:hover {
     padding: 0;
     width: max-content;
     border-radius: 5px;
-    background-color: var(--sidebar-bg);
+    background-color: var(--bieyinan-maskbgdeep);
     -webkit-box-shadow: 0 5px 20px -4px rgba(0, 0, 0, .5);
     box-shadow: 0 5px 20px -4px rgba(0, 0, 0, .5);
     -webkit-animation: sub_menus .3s .1s ease both;
@@ -10471,7 +10472,8 @@ details.folding-tag[open]>div.content>ul:last-child {
 }
 
 [data-theme=dark] details>summary {
-    filter: brightness(.7)
+    filter: brightness(1);
+    background: var(--bieyinan-card-bg)!important;
 }
 
 #article-container figure.gallery-group {
@@ -13912,7 +13914,8 @@ body[data-type=about] #web_bg {
 
 @media (min-width: 419px) {
     .hello-about h1 {
-        font-size: calc((.0989119683 * 100vw + (58.5558852621px)))
+        font-size: calc((.0989119683 * 80vw + (58.5558852621px)));
+        font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
     }
 }
 
@@ -18478,7 +18481,8 @@ div#bannerGroup {
     .topGroup .todayCard .todayCard-info .todayCard-title {
         font-size: 28px;
         font-weight: 700;
-        line-height: 36px
+        line-height: 36px;
+        font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
     }
 
     .topGroup .todayCard .todayCard-cover {
@@ -18927,7 +18931,8 @@ ul.menus_item_child {
     box-shadow: var(--bieyinan-shadow-black);
     border: var(--style-border);
     transition: .3s;
-    background-color: var(--bieyinan-card-bg);
+    background-color: var(--bieyinan-maskbgdeep);
+    backdrop-filter: blur(20px);
     border-radius: 50px
 }
 
@@ -24329,6 +24334,12 @@ span.tags-punctuation .icon-biaoqian {
     display: none;
     z-index: 101;
     margin: 0;
+}
+
+@media screen and (max-width:768px) {
+    #quit-box {
+        position: absolute;
+    }
 }
 
 #keyboard-tips {
