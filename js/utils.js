@@ -62,7 +62,7 @@ const bieyinan = {
     }
   },
 
-  snackbarShow: (text, showAction = false, duration = 2000) => {
+  snackbarShow: (text, showActionFunction = false, duration = 2000, actionText = false) => {
     const { position, bgLight, bgDark } = GLOBAL_CONFIG.Snackbar;
     const bg = document.documentElement.getAttribute("data-theme") === "light" ? bgLight : bgDark;
     const root = document.querySelector(":root");
@@ -71,7 +71,9 @@ const bieyinan = {
     Snackbar.show({
       text: text,
       backgroundColor: bg,
-      showAction: showAction,
+      onActionClick: showActionFunction,
+      actionText: actionText,
+      showAction: actionText,
       duration: duration,
       pos: position,
       customClass: "snackbar-css",
@@ -1123,8 +1125,13 @@ const bieyinan = {
 
   // 跳转开往
   totraveling: function () {
-    bieyinan.snackbarShow("即将跳转到「开往」项目的成员博客，不保证跳转网站的安全性和可用性", !1, 5000);
-    setTimeout(function () {
+    bieyinan.snackbarShow("即将跳转到「开往」项目的成员博客，不保证跳转网站的安全性和可用性", element => {
+      element.style.opacity = 0;
+      travellingsTimer && clearTimeout(travellingsTimer);
+    },
+    5000,
+    "取消");
+    travellingsTimer = setTimeout(function () {
       window.open("https://www.travellings.cn/go.html");
     }, "5000");
   },

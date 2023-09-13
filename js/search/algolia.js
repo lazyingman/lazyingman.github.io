@@ -22,6 +22,26 @@ window.addEventListener('load', () => {
     window.addEventListener('resize', fixSafariHeight)
   }
 
+  // shortcut: shift+S
+  if (bieyinan_keyboard) {
+    window.addEventListener("keydown", function (event) {
+      if (event.keyCode == 83 && event.shiftKey) {
+        if (selectTextNow) {
+          openSearch();
+          const t = document.querySelector("#algolia-search-input > div > form > input");
+          t.value = selectTextNow;
+          t.dispatchEvent(new Event("input"));
+          setTimeout(() => {
+            document.querySelector("#algolia-search-input > div > form > button.ais-SearchBox-submit").click();
+          }, 64);
+        } else {
+          openSearch();
+        }
+        return false;
+      }
+    });
+  }
+
   const closeSearch = () => {
     const bodyStyle = document.body.style
     bodyStyle.width = ''
@@ -40,11 +60,24 @@ window.addEventListener('load', () => {
 
   const searchClickFn = () => {
     document.querySelector('#search-button > .search').addEventListener('click', openSearch)
+    $searchMask.addEventListener("click", closeSearch);
+    document.querySelector("#algolia-search .search-close-button").addEventListener("click", closeSearch);
   }
 
   const searchFnOnce = () => {
     $searchMask.addEventListener('click', closeSearch)
     document.querySelector('#algolia-search .search-close-button').addEventListener('click', closeSearch)
+    const menuSearch = document.querySelector("#menu-search");
+    menuSearch.addEventListener("click", function () {
+      rm.hideRightMenu();
+      openSearch();
+      const t = document.querySelector("#algolia-search-input > div > form > input");
+      t.value = selectTextNow;
+      t.dispatchEvent(new Event("input"));
+      setTimeout(() => {
+        document.querySelector("#algolia-search-input > div > form > button.ais-SearchBox-submit").click();
+      }, 64);
+    });
   }
 
   const cutContent = content => {
@@ -110,17 +143,42 @@ window.addEventListener('load', () => {
         const content = result.contentStripTruncate
           ? cutContent(result.contentStripTruncate.value)
           : result.contentStrip
-            ? cutContent(result.contentStrip.value)
-            : result.content
-              ? cutContent(result.content.value)
-              : ''
-        return `
-          <a href="${link}" class="algolia-hit-item-link">
-          <span class="algolia-hits-item-title">${result.title.value || 'no-title'}</span>
-          <p class="algolia-hit-item-content">${content}</p>
-          </a>`
+          ? cutContent(result.contentStrip.value)
+          : result.content
+          ? cutContent(result.content.value)
+          : "";
+        const tags = data.tags;
+        let templates = `
+          <div class="search-result">
+            <a href="${link}" class="algolia-hit-item-link">
+            ${result.title.value || "no-title"}
+            </a>
+            <p class="algolia-hit-item-content">${content}</p>
+            <div class="search-result-tags">
+        `;
+        for (let i = 0; i < tags.length; i++) {
+          templates += `<a class="tag-list" href="/tags/${tags[i]}/">#${tags[i]}</a>`;
+        }
+        templates += `
+          </div>
+        </div>`;
+        const loadingLogo = document.querySelector("#algolia-hits .bi-snow");
+        if (loadingLogo) {
+          loadingLogo.style.display = "none";
+        }
+        setTimeout(() => {
+          document.querySelector("#algolia-search .ais-SearchBox-input").focus();
+        }, 100);
+        return templates;
       },
       empty: function (data) {
+        const loadingLogo = document.querySelector("#algolia-hits .bi-snow");
+        if (loadingLogo) {
+          loadingLogo.style.display = "none";
+        }
+        setTimeout(() => {
+          document.querySelector("#algolia-search .ais-SearchBox-input").focus();
+        }, 100);
         return (
           '<div id="algolia-hits-empty">' +
           GLOBAL_CONFIG.algolia.languages.hits_empty.replace(/\$\{query}/, data.query) +
@@ -167,7 +225,7 @@ window.addEventListener('load', () => {
   searchFnOnce()
 
   window.addEventListener('pjax:complete', () => {
-    !bieyinan.isHidden($searchMask) && closeSearch()
+    getComputedStyle(document.querySelector("#algolia-search .search-dialog")).display === "block" && closeSearch();
     searchClickFn()
   })
 
