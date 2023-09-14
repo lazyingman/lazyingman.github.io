@@ -24566,18 +24566,27 @@ span.tags-punctuation .icon-biaoqian {
 
 body[data-type=muyu] #article-container {
     display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: space-around;
+}
+
+body[data-type=muyu] #article-container h2 {
+    position: absolute;
+    top: -65px;
 }
 
 /* 敲木鱼 */
 .muyu-layout {
     background: #76b5ed;
     display: flex;
-    width: 50%;
     border-radius: 20px;
     position: relative;
     justify-content: center;
-    height: 50vh;
+    height: 20rem;
     align-items: center;
+    margin-top: 3rem;
+    padding: 0 3rem;
 }
 
 #muyu-box img,
@@ -24592,7 +24601,7 @@ body[data-type=muyu] #article-container {
 #jishu2-box,
 #jishu3-box,
 #jishu4-box {
-    top: 55px;
+    top: 5px;
     position: absolute;
 }
 
@@ -24605,16 +24614,19 @@ body[data-type=muyu] #article-container {
     font-size: 25px;
 }
 
+#muyu-box img,
+#muyu2-box img,
+#muyu3-box img,
+#muyu4-box img {
+    margin: 0px auto 1.8rem!important;
+}
+
 #jishu-box p,
 #jishu2-box p,
 #jishu3-box p,
 #jishu4-box p {
     color: white;
     font-size: 30px;
-}
-
-.pt {
-    margin-top: 1rem !important;
 }
 
 @media screen and (max-width: 1300px) {
@@ -24629,7 +24641,7 @@ body[data-type=muyu] #article-container {
         border-radius: 20px;
         position: relative;
         justify-content: center;
-        height: 50vh;
+        height: 20rem;
         align-items: center;
     }
 }

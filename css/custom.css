@@ -954,9 +954,13 @@ body[data-type=music] #fps-group {
   max-width: 1080px;
   width: 100%;
   height: 38rem;
-  background-color: #8BC6EC;
-  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  /* background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%); */
+  background: url(https://bu.dusays.com/2023/09/15/6503310c7a573.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 10px;
+  animation: gradient 15s ease infinite;
 }
 
 .video-nav .nav-innerbox .player-siderbar {
