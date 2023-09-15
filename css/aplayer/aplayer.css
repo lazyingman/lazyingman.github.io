@@ -349,6 +349,10 @@
   filter: blur(0px);
 }
 
+.aplayer .aplayer-list ol li .aplayer-list-cur {
+  top: 10px!important;
+}
+
 
 
 

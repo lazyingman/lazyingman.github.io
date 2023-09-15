@@ -5412,7 +5412,7 @@ h1.page-title+.tag-cloud-list {
 #aside-content .card-widget .author-info__name {
     text-align: left;
     font-weight: 100;
-    font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
+    font-family: MohrRounded Heavy, FZLanTYK_Black, Microsoft YaHei, sans-serif;
     color: var(--bieyinan-white);
     font-size: 20px;
     line-height: 1;
@@ -8844,12 +8844,12 @@ a.deal_link:hover {
 }
 
 .post-reward:hover .reward-main {
-    display: -webkit-box!important;
-    display: -moz-box!important;
-    display: -webkit-flex!important;
-    display: -ms-flexbox!important;
-    display: box!important;
-    display: flex!important;
+    display: -webkit-box !important;
+    display: -moz-box !important;
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
+    display: box !important;
+    display: flex !important;
     -webkit-box-pack: left;
     -moz-box-pack: left;
     -o-box-pack: left;
@@ -10473,7 +10473,7 @@ details.folding-tag[open]>div.content>ul:last-child {
 
 [data-theme=dark] details>summary {
     filter: brightness(1);
-    background: var(--bieyinan-card-bg)!important;
+    background: var(--bieyinan-card-bg) !important;
 }
 
 #article-container figure.gallery-group {
@@ -13689,6 +13689,7 @@ body[data-type=about] #web_bg {
     0% {
         transform: translateY(0);
     }
+
     100% {
         transform: translateY(30px);
     }
@@ -13915,7 +13916,7 @@ body[data-type=about] #web_bg {
 @media (min-width: 419px) {
     .hello-about h1 {
         font-size: calc((.0989119683 * 80vw + (58.5558852621px)));
-        font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
+        font-family: MohrRounded Heavy, FZLanTYK_Black, Microsoft YaHei, sans-serif;
     }
 }
 
@@ -18482,7 +18483,7 @@ div#bannerGroup {
         font-size: 28px;
         font-weight: 700;
         line-height: 36px;
-        font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
+        font-family: MohrRounded Heavy, FZLanTYK_Black, Microsoft YaHei, sans-serif;
     }
 
     .topGroup .todayCard .todayCard-cover {
@@ -18956,9 +18957,13 @@ ul.menus_item_child {
 #page-header.nav-fixed #nav #page-name {
     background: 0 0;
     text-shadow: none;
+    -webkit-box-shadow: none;
     box-shadow: none;
     font-weight: 700;
-    border-radius: 100px
+    border-radius: 100px;
+    min-width: 100px;
+    line-height: 2rem;
+    font-size: var(--global-font-size);
 }
 
 #page-header.nav-fixed #nav #page-name:hover {
@@ -18975,22 +18980,40 @@ ul.menus_item_child {
 @media screen and (min-width: 900px) {
     #page-header.nav-fixed #nav #page-name::after {
         opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -o-transform: scale(1);
+        -ms-transform: scale(1);
         transform: scale(1);
         content: "回到顶部";
+        -webkit-transition: .2s;
+        -moz-transition: .2s;
+        -o-transition: .2s;
+        -ms-transition: .2s;
         transition: .2s;
         position: absolute;
         left: 0;
         right: 0;
-        bottom: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
         margin: auto;
         color: var(--bieyinan-white) !important;
-        font-weight: 700
+        font-weight: 800;
+        line-height: 2;
     }
 }
 
 @media screen and (min-width: 1024px) {
     #page-header.nav-fixed #nav #page-name:hover:after {
-        opacity: 1
+        opacity: 1;
+        -ms-filter: none;
+        filter: none;
     }
 
     #page-header.nav-fixed #nav #page-name:hover {
@@ -19379,7 +19402,7 @@ center#name-container {
     -webkit-align-items: center;
     align-items: center;
     color: var(--bieyinan-white);
-    background: var(--bieyinan-white-op)!important;
+    background: var(--bieyinan-white-op) !important;
     -webkit-box-shadow: var(--bieyinan-shadow-nav);
     box-shadow: var(--bieyinan-shadow-nav);
     border-radius: var(--bieyinan-radius-full);
@@ -19412,11 +19435,11 @@ center#name-container {
 }
 
 #page-header.not-top-img #travellings_button::after {
-    background: var(--bieyinan-main)!important;
+    background: var(--bieyinan-main) !important;
 }
 
 #body-wrap .nav-fixed #travellings_button::after {
-    background: var(--bieyinan-main)!important;
+    background: var(--bieyinan-main) !important;
 }
 
 #body-wrap #travellings_button:hover::after {
@@ -19431,7 +19454,8 @@ center#name-container {
     visibility: visible;
 }
 
-#body-wrap:has(#travellings_button:hover) #nav #menus, #body-wrap:has(#travellings_button:hover) #page-name {
+#body-wrap:has(#travellings_button:hover) #nav #menus,
+#body-wrap:has(#travellings_button:hover) #page-name {
     display: none;
 }
 
@@ -24618,7 +24642,7 @@ body[data-type=muyu] #article-container h2 {
 #muyu2-box img,
 #muyu3-box img,
 #muyu4-box img {
-    margin: 0px auto 1.8rem!important;
+    margin: 0px auto 1.8rem !important;
 }
 
 #jishu-box p,
