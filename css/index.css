@@ -2125,7 +2125,8 @@ h6 code {
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box
+    box-sizing: border-box;
+    cursor: url("https://bu.dusays.com/2023/09/16/65049159e79cd.png"), auto!important;   
 }
 
 hr {
