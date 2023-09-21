@@ -1132,7 +1132,7 @@ body[data-type=music] #fps-group {
 }
 
 @media screen and (max-width:440px) {
-  #body-wrap .layout {
+  [data-type=video] #body-wrap .layout {
     margin: 0;
   }
 
