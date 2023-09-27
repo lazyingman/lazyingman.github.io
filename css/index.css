@@ -7347,10 +7347,6 @@ a.deal_link:hover {
     list-style: none
 }
 
-#nav .menus_items .menus_item .menus_item_child li:hover {
-    background: var(--text-bg-hover)
-}
-
 #nav .menus_items .menus_item .menus_item_child li:first-child {
     border-top-left-radius: 50px;
     border-top-right-radius: 50px
@@ -14981,7 +14977,7 @@ li.card-archive-list-item {
 
     #aside-content .card-archives ul.card-archive-list>.card-archive-list-item a,
     #aside-content .card-categories ul.card-category-list>.card-category-list-item a {
-        padding: 3px 3px
+        padding: 3px 10px
     }
 }
 
