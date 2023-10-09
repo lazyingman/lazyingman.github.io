@@ -397,13 +397,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const alt = i.alt ? `alt="${replaceDq(i.alt)}"` : "";
         const title = i.title ? `title="${replaceDq(i.title)}"` : "";
         const address = i.address ? i.address : "";
-        if (address) {
-          str += `<div class="fj-gallery-item"><div class="tag-address">${address}</div><img src="${i.url}" ${alt + title
-            }"></div>`;
-        } else {
-          str += `<div class="fj-gallery-item"><img src="${i.url}" ${alt + title}"></div>`;
-        }
+        const galleryItem = `
+        <div class="fj-gallery-item">
+          ${address ? `<div class="tag-address">${address}</div>` : ""}
+          <img src="${i.url}" ${alt + title}>
+        </div>
+      `;
+        str += galleryItem;
       });
+
       return str;
     };
 
@@ -425,12 +427,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const runJustifiedGallery = (item, arr) => {
       const limit = item.getAttribute("data-limit") ?? arr.length;
-      if (!item.classList.contains("lazyload")) {
+      if (!item.classList.contains("lazyload") || arr.length < limit) {
         // 不懒加载
         item.innerHTML = htmlStr(arr);
+        item.nextElementSibling.style.display = "none";
       }
       else {
-        if (!item.classList.contains("btn_album_detail_lazyload")) {
+        if (!item.classList.contains("btn_album_detail_lazyload") || item.classList.contains("page_img_lazyload")) {
           // 滚动懒加载
           lazyloadFn(item, arr, limit);
           const clickBtnFn = () => {
@@ -441,14 +444,25 @@ document.addEventListener("DOMContentLoaded", function () {
               item.querySelectorAll(`.fj-gallery-item:nth-last-child(-n+${lastItemLength})`)
             );
             bieyinan.loadLightbox(item.querySelectorAll("img"));
-            lastItemLength < limit && (window.runJustifiedGalleryNextElementSiblingLazyloadFn = null);
+            if (lastItemLength < Number(limit)) {
+              observer.unobserve(item.nextElementSibling);
+            }
           };
 
-          window.runJustifiedGalleryNextElementSiblingLazyloadFn = clickBtnFn;
+          // 创建IntersectionObserver实例
+          const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              // 如果元素进入视口
+              if (entry.isIntersecting) {
+                // 执行clickBtnFn函数
+                setTimeout(clickBtnFn(), 100);
+              }
+            });
+          });
+          observer.observe(item.nextElementSibling);
         } else {
           // 按钮懒加载
           lazyloadFn(item, arr, limit);
-          // document.querySelector(".gallery .gallery-load-more").style.display = "inline-block";
           const clickBtnFn = () => {
             const lastItemLength = lazyloadFn(item, arr, limit);
             fjGallery(
@@ -456,6 +470,7 @@ document.addEventListener("DOMContentLoaded", function () {
               "appendImages",
               item.querySelectorAll(`.fj-gallery-item:nth-last-child(-n+${lastItemLength})`)
             );
+            bieyinan.loadLightbox(item.querySelectorAll("img"));
             lastItemLength < limit && item.nextElementSibling.removeEventListener("click", clickBtnFn);
           };
           item.nextElementSibling.addEventListener("click", clickBtnFn);
@@ -463,6 +478,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       bieyinan.initJustifiedGallery(item);
       bieyinan.loadLightbox(item.querySelectorAll("img"));
+      window.lazyLoadInstance && window.lazyLoadInstance.update();
     };
 
     const addJustifiedGallery = () => {
@@ -1390,6 +1406,39 @@ document.addEventListener("DOMContentLoaded", function () {
     123 === e.keyCode && bieyinan.snackbarShow("开发者模式已打开，请遵循GPL协议", !1);
   };
 
+  // 欢迎语
+  function greetingInit() {
+    const greetingBoxInfo = GLOBAL_CONFIG.greetingBox.list;
+    const greetingBoxDefault = GLOBAL_CONFIG.greetingBox.default;
+    //- 创建盒子
+    let div = document.createElement("div");
+    //- 设置ID
+    div.id = "greeting";
+    //- 设置class
+    setTimeout(() => {
+      div.classList.add("shown");
+    }, 1000);
+    //- 插入盒子
+    let greetingBox = document.getElementById("greetingBox");
+    if (!greetingBox) return;
+    greetingBox.appendChild(div);
+    const nowTime = new Date().getHours();
+    let greetings = greetingBoxDefault;
+    for (let i = 0; i < greetingBoxInfo.length; i++) {
+      if (nowTime >= greetingBoxInfo[i].startTime && nowTime <= greetingBoxInfo[i].endTime) {
+        greetings = greetingBoxInfo[i].greeting;
+        break;
+      }
+    }
+    div.innerHTML = greetings;
+    setTimeout(() => {
+      div.classList.remove("shown");
+      setTimeout(() => {
+        greetingBox.remove();
+      }, 500);
+    }, 3000);
+  }
+
   const unRefreshFn = function () {
     window.addEventListener("resize", () => {
       adjustMenu(false);
@@ -1404,6 +1453,8 @@ document.addEventListener("DOMContentLoaded", function () {
     GLOBAL_CONFIG.islazyload && lazyloadImg();
     GLOBAL_CONFIG.copyright !== undefined && addCopyright();
     GLOBAL_CONFIG.navMusic && listenNavMusicPause();
+    // 欢迎语
+    GLOBAL_CONFIG.greetingBox && greetingInit();
     clickFnOfSubMenu();
   };
 
@@ -1445,6 +1496,35 @@ document.addEventListener("DOMContentLoaded", function () {
     mouseleaveHomeCard();
     coverColor();
     listenToPageInputPress();
+
+    // needRefresh
+    // nav中间的标题变化
+    document.getElementById("page-name").innerText = document.title.split(` | ${GLOBAL_CONFIG_SITE.configTitle}`)[0];
+    bieyinan.initIndexEssay();
+    bieyinan.changeTimeInEssay();
+    bieyinan.removeBodyPaceClass();
+    bieyinan.qrcodeCreate();
+    bieyinan.changeTimeInAlbumDetail();
+    bieyinan.reflashEssayWaterFall();
+    bieyinan.sayhi();
+    bieyinan.stopImgRightDrag();
+    bieyinan.addNavBackgroundInit();
+    bieyinan.setValueToBodyType();
+    bieyinan.catalogActive();
+    bieyinan.tagsPageActive();
+    bieyinan.categoriesBarActive();
+    bieyinan.topCategoriesBarScroll();
+    bieyinan.switchRightClickMenuHotReview();
+    bieyinan.getCustomPlayList();
+    bieyinan.addEventListenerConsoleMusicList(false);
+    bieyinan.initPaginationObserver();
+
+    setTimeout(() => {
+      setInputFocusListener();
+      if (typeof addFriendLinksInFooter === "function") {
+        addFriendLinksInFooter();
+      }
+    }, 200);
   };
 
   refreshFn();
