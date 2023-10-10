@@ -7224,7 +7224,6 @@ a.deal_link:hover {
 
 #nav i {
     font-size: 1.2rem;
-    font-weight: 700
 }
 
 @media screen and (max-width: 768px) {
@@ -7779,6 +7778,14 @@ a.deal_link:hover {
         align-items: flex-start;
         height: 150px;
     }
+
+    #pagination .next-post a:hover, #pagination .prev-post a:hover {
+        background: var(--bieyinan-main);
+    }
+
+    #pagination .next-post a:hover div, #pagination .prev-post a:hover div {
+        color: var(--bieyinan-white)!important;
+    }
 }
 
 .layout>.recent-posts .pagination>* {
@@ -8146,6 +8153,14 @@ a.deal_link:hover {
     position: relative;
     margin: 80px 0 30px;
     border-radius: 12px;
+}
+
+@media screen and (max-width: 768px) {
+
+    #post .post-copyright {
+        background: var(--bieyinan-card-bg);
+        box-shadow: var(--bieyinan-shadow-border);
+    }
 }
 
 #post .post-copyright__author_box {
@@ -8936,10 +8951,36 @@ a.deal_link:hover {
 }
 
 @media screen and (max-width: 768px) {
+    .relatedPosts {
+        display: none;
+    }
+
     .relatedPosts>.relatedPosts-list>div {
         margin: 2px;
         width: calc(50% - 4px);
         height: 150px
+    }
+
+    #post #pagination {
+        border-radius: 12px;
+        border: var(--style-border-always);
+        box-shadow: var(--bieyinan-shadow-border);
+    }
+
+    .prev-post.pull-left {
+        border-bottom: var(--style-border-always);
+    }
+
+    #pagination .next-post, #pagination .prev-post, .next-post.pull-right, .prev-post.pull-left {
+        background: var(--bieyinan-card-bg);
+    }
+
+    #pagination .next-post .label, #post #pagination .prev-post .label {
+        text-align: left;
+    }
+
+    #pagination .next_info, #post #pagination .prev_info {
+        text-align: left;
     }
 }
 
@@ -17592,6 +17633,12 @@ div#archive {
     border-radius: 10px
 }
 
+#post #pagination {
+    overflow: hidden;
+    position: inherit;
+    border: var(--style-border-always);
+}
+
 .relatedPosts>.relatedPosts-list>div {
     border-radius: var(--bieyinan-border-radius)
 }
@@ -19291,8 +19338,9 @@ center#name-container {
     align-items: center;
     justify-content: center;
     margin-right: 4px;
+    margin-top: 3px;
     transition: .3s;
-    border-radius: 8px
+    border-radius: 18px;
 }
 
 @media screen and (max-width: 768px) {
@@ -19508,8 +19556,8 @@ center#name-container {
     transition: .3s;
     letter-spacing: normal;
     font-size: 1.2rem;
-    padding: 0 5px;
     line-height: 2rem;
+    font-family: cursive;
 }
 
 .post #blog_name #site-name .title {
@@ -19917,6 +19965,29 @@ a.extend.next {
     width: 100%
 }
 
+@media screen and (min-width:1200px) {
+    #post #pagination.show-window {
+        bottom: 20px;
+        opacity: 1;
+    }
+
+    #post #pagination {
+        position: fixed;
+        width: 300px;
+        bottom: -100px;
+        right: 20px;
+        z-index: 1000;
+        height: fit-content;
+        transition: cubic-bezier(.42,0,.3,1.11) .3s;
+        border: var(--style-border);
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 1002;
+    }
+}
+
 @media screen and (max-width: 768px) {
 
     #pagination a.extend.next .pagination_tips_next,
@@ -19926,6 +19997,11 @@ a.extend.next {
 
     #site-name {
         padding: 0 !important
+    }
+
+    #pagination {
+        margin-bottom: 0;
+        margin-top: 0;
     }
 }
 

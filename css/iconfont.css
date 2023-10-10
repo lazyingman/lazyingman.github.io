@@ -64,6 +64,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gengduo1:before {
+  content: "\e6bd";
+}
+
+.icon-gengduoneirong:before {
+  content: "\e606";
+}
+
+.icon-gengduo:before {
+  content: "\e678";
+}
+
 .icon-a-2:before {
   content: "\e600";
 }
