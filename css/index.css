@@ -19558,6 +19558,7 @@ center#name-container {
     font-size: 1.2rem;
     line-height: 2rem;
     font-family: cursive;
+    padding: 0 5px;
 }
 
 .post #blog_name #site-name .title {

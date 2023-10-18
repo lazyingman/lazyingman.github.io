@@ -494,9 +494,9 @@ const bieyinan = {
         loop: true,
         autoplay: {
           disableOnInteraction: true,
-          delay: 3000,
+          delay: 4000,
         },
-        mousewheel: false,
+        mousewheel: true,
       });
 
       let essay_bar_comtainer = document.getElementById("bbtalk");
