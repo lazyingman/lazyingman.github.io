@@ -45,6 +45,8 @@
   --bieyinan-main-none: #b8b8b800!important;
   --bieyinan-bootcolor: linear-gradient(180deg, rgba(var(--bieyinan-body-bg-rgb), 0.01), rgba(var(--bieyinan-body-bg-rgb), 1) 85%),radial-gradient(ellipse at top left, rgba(var(--bieyinan-primary-rgb), 0.5), transparent 50%),radial-gradient(ellipse at top right, rgba(var(--bieyinan-accent-rgb), 0.5), transparent 50%),radial-gradient(ellipse at center right, rgba(var(--bieyinan-violet-rgb), 0.5), transparent 50%),radial-gradient(ellipse at center left, rgba(var(--bieyinan-pink-rgb), 0.5), transparent 50%);
   --bieyinan-radius-full: 50px;
+  --bieyinan-addBtn-blue:#70f3ff;
+  --bieyinan-addBtn-green:#00e09e;
 }
 
 :root {
