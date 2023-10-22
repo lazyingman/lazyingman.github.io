@@ -13170,7 +13170,6 @@ body[data-type=about] #web_bg {
     border: var(--style-border-always);
     box-shadow: var(--bieyinan-shadow-border);
     position: relative;
-    padding: 1rem 2rem;
     overflow: hidden
 }
 
