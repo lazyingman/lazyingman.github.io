@@ -1,83 +1,97 @@
 #tag #tag-page-tags {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: .5rem;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  padding: 1rem 2rem;
+  left: 0;
+  top: 0;
+  max-height: 64px;
+  overflow: hidden;
+  background: var(--bieyinan-card-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  transition: .1s ease-out;
 }
+
+#tag #tag-page-tags:hover {
+  max-height: 1000px;
+  transition: .3s ease-out;
+  background: var(--bieyinan-maskbgdeep);
+}
+
 #tag #tag-page-tags a {
+  padding: .3rem .6rem;
+  margin: .25rem .25rem;
   line-height: 1.6;
+  border-radius: 8px;
+  color: var(--bieyinan-fontcolor) !important;
+  border: var(--style-border-always);
   display: flex;
   align-items: center;
-  color: var(--bieyinan-fontcolor) !important;
-  padding: 0.1rem 0.5rem;
-  margin: 0.25rem;
-  border-radius: 8px;
-  border: var(--style-border-always);
+  background: var(--bieyinan-card-bg);
 }
-#tag #tag-page-tags a.selected {
-  box-shadow: var(--bieyinan-shadow-theme);
-  color: var(--bieyinan-white) !important;
-  background: var(--bieyinan-theme);
-  border: var(--style-border-none);
-}
+
 #tag #tag-page-tags a.select .tagsPageCount {
   background: var(--bieyinan-card-bg);
   color: var(--bieyinan-lighttext);
 }
+
 #post .tag_share .post-meta__box__tags span.tagsPageCount,
 #tag-page-tags .tagsPageCount {
-  padding: 4px 6px;
-  background: var(--bieyinan-secondbg);
+  padding: 3px;
+  background: var(--bieyinan-card-bg);
   border: var(--style-border-always);
   min-width: 22.5px;
   display: inline-block;
   border-radius: 4px;
-  line-height: 0.6rem;
   text-align: center;
-  font-size: 0.7rem;
+  font-size: .6rem;
   color: var(--bieyinan-fontcolor);
   margin-left: 4px;
 }
+
 #tag #tag-page-tags a:hover .tagsPageCount,
 #post .tag_share .post-meta__box__tags:hover span.tagsPageCount {
   background: var(--bieyinan-card-bg);
   color: var(--bieyinan-lighttext);
 }
 
-#tag #tag-page-tags a {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Lato, Roboto, "PingFang SC",
-    "Microsoft YaHei", sans-serif;
-  font-size: 0.9em;
-}
 #tag #tag-page-tags a:hover {
   box-shadow: var(--bieyinan-shadow-theme);
   color: var(--bieyinan-white) !important;
   background: var(--bieyinan-theme);
   border: var(--style-border-none);
 }
-#tag #tag-page-tags a {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Lato, Roboto, "PingFang SC",
-    "Microsoft YaHei", sans-serif;
-}
 
 span.tags-punctuation,
 span.categoryes-punctuation {
   margin-right: 4px;
+  color: #959595;
 }
+
 span.tags-punctuation .icon-biaoqian,
 span.categoryes-punctuation .icon-biaoqian {
   font-size: 13px;
 }
+
 .tagsPageCount {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Lato, Roboto, "PingFang SC",
     "Microsoft YaHei", sans-serif;
 }
+
 [data-theme="light"] #post .tag_share .post-meta__box__tags span.tagsPageCount {
   background-color: transparent;
   color: white;
 }
+
 [data-theme="light"] #post .tag_share .post-meta__box__categoryes span.categoryesPageCount {
   background-color: transparent;
   color: white;
 }
+
 #post .tag_share .post-meta__box__categoryes span.categoryesPageCount {
   padding: 4px 6px;
   background: var(--bieyinan-secondbg);
@@ -91,18 +105,22 @@ span.categoryes-punctuation .icon-biaoqian {
   color: var(--bieyinan-fontcolor);
   margin-left: 4px;
 }
+
 .post-meta__box__categories {
   border-radius: 12px;
 }
+
 /* 文章彩色标签 */
 /*文章随机彩色标签*/
 .post-meta__box a {
   color: var(--bieyinan-white);
   border: none;
 }
+
 [data-theme="dark"] .post-meta__box a {
   opacity: 0.5;
 }
+
 .post-meta__box__tag-list a:nth-child(5n) {
   background-color: #4a4a4a;
   color: #fff;
@@ -158,4 +176,10 @@ span.categoryes-punctuation .icon-biaoqian {
 .post-meta__box__category-list a:nth-child(5n + 4) {
   background-color: #ff5e5c;
   color: #fff;
+}
+
+@media screen and (min-width: 1300px) {
+  #tag {
+    padding: 3rem 2rem 1rem 2rem;
+  }
 }

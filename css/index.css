@@ -5332,14 +5332,28 @@ body:has(#console.show) #nav-music {
     }
 }
 
-.tag-cloud-list a {
-    display: inline-block;
-    padding: 0 8px;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -o-transition: all .3s;
-    -ms-transition: all .3s;
-    transition: all .3s
+#page .tag-cloud-list a {
+    display: flex;
+    width: fit-content;
+    color: var(--bieyinan-fontcolor)!important;
+    font-size: 1.4em!important;
+    padding: .2em .5em;
+    background: var(--bieyinan-card-bg);
+    margin: .5em .5em;
+    border-radius: 12px;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    border: var(--style-border-always);
+    box-shadow: var(--bieyinan-shadow-border);
+    align-items: center;
+    transition: all .3s ease 0s;
+}
+
+#page .tag-cloud-list a:hover {
+    background: var(--bieyinan-main)!important;
+    box-shadow: var(--bieyinan-shadow-blue);
+    color: var(--bieyinan-white)!important;
+    border: var(--style-border-hover);
 }
 
 .tag-cloud-list a:hover {
@@ -14960,8 +14974,16 @@ html.hide-aside .layout>div:first-child {
 }
 
 .layout>div:first-child:not(.recent-posts) {
+    box-shadow: var(--bieyinan-shadow-border);
+    padding: 1rem 2rem;
     border-radius: 12px;
-    animation: slide-in .6s .1s backwards
+    background: var(--bieyinan-card-bg);
+    border: var(--style-border);
+    width: calc(100% - 300px);
+    align-self: flex-start;
+    animation: slide-in .6s .1s backwards;
+    position: relative;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 768px) {
@@ -23768,13 +23790,6 @@ body[data-type=room] #page .page-title {
     border: var(--style-border-always)
 }
 
-#tag #tag-page-tags a.selected {
-    box-shadow: var(--bieyinan-shadow-theme);
-    color: var(--bieyinan-white) !important;
-    background: var(--bieyinan-theme);
-    border: var(--style-border-none)
-}
-
 #tag #tag-page-tags a.select .tagsPageCount {
     background: var(--bieyinan-card-bg);
     color: var(--bieyinan-lighttext)
@@ -23793,6 +23808,19 @@ body[data-type=room] #page .page-title {
     font-size: .7rem;
     color: var(--bieyinan-fontcolor);
     margin-left: 4px
+}
+
+span.tagsPageCount {
+    background: var(--bieyinan-secondbg);
+    padding: 4px 4px;
+    border-radius: 8px;
+    color: var(--bieyinan-secondtext);
+    line-height: 1;
+    text-align: center;
+    min-width: 35px;
+    display: inline-block;
+    font-size: 1rem;
+    margin-left: 4px;
 }
 
 #post .tag_share .post-meta__box__tags:hover span.tagsPageCount,
