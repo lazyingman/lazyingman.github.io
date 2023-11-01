@@ -517,7 +517,8 @@ const bieyinan = {
     };
     $list.addEventListener("mousewheel", scrollHandler, { passive: false });
     if ($target) {
-      $target.classList.add("selected");
+      $target.classList.add("select");
+      $target.style.order="-1"
       $list.scrollLeft = $target.offsetLeft - $list.offsetLeft - ($list.offsetWidth - $target.offsetWidth) / 2;
     }
   },

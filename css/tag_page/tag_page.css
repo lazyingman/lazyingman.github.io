@@ -34,6 +34,12 @@
   background: var(--bieyinan-card-bg);
 }
 
+#tag #tag-page-tags a.select {
+  color: var(--bieyinan-card-bg) !important;
+  background: var(--bieyinan-theme);
+  box-shadow: var(--bieyinan-shadow-theme);
+}
+
 #tag #tag-page-tags a.select .tagsPageCount {
   background: var(--bieyinan-card-bg);
   color: var(--bieyinan-lighttext);
@@ -178,8 +184,14 @@ span.categoryes-punctuation .icon-biaoqian {
   color: #fff;
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 768px) {
   #tag {
     padding: 3rem 2rem 1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #tag #tag-page-tags {
+    display: none;
   }
 }

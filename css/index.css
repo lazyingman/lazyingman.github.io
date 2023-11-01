@@ -5462,7 +5462,7 @@ h1.page-title+.tag-cloud-list {
 #aside-content .card-widget .author-info__name {
     text-align: left;
     font-weight: 100;
-    font-family: MohrRounded Heavy, FZLanTYK_Black, Microsoft YaHei, sans-serif;
+    font-family: MohrRounded Black,HYZhengYuan-65W,Microsoft YaHei,sans-serif;
     color: var(--bieyinan-white);
     font-size: 20px;
     line-height: 1;
@@ -18842,7 +18842,7 @@ div#bannerGroup {
         font-size: 28px;
         font-weight: 700;
         line-height: 36px;
-        font-family: MohrRounded Heavy, FZLanTYK_Black, Microsoft YaHei, sans-serif;
+        font-family: MohrRounded Black,HYZhengYuan-65W,Microsoft YaHei,sans-serif;
     }
 
     .topGroup .todayCard .todayCard-cover {
@@ -19684,6 +19684,12 @@ center#name-container {
     line-height: 2rem;
     font-family: cursive;
     padding: 0 5px;
+}
+
+@media screen and (max-width:930px) {
+    #blog_name #site-name .title {
+        font-family: Nunito-Bold,HYZhengYuan-65W,Microsoft YaHei,sans-serif;
+    }
 }
 
 .post #blog_name #site-name .title {
@@ -23839,10 +23845,6 @@ span.tagsPageCount {
     color: var(--bieyinan-white) !important;
     background: var(--bieyinan-theme);
     border: var(--style-border-none)
-}
-
-#tag #tag-page-tags a {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Lato, Roboto, "PingFang SC", "Microsoft YaHei", sans-serif
 }
 
 span.categoryes-punctuation,

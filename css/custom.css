@@ -910,33 +910,34 @@ body[data-type=music] #fps-group {
   border: 0;
   font-size: 20px;
   color: #3f4141;
-  font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
+  font-family: Nunito-Bold,HYZhengYuan-65W,Microsoft YaHei,sans-serif;
   background-color: hsla(0, 0%, 100%, 0);
   z-index: 1;
 }
 
 .video-nav .nav-innerbox .nav-png .input-box select option {
   background: var(--bieyinan-maskbgdeep);
-  font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
+  font-family: Nunito-Bold,HYZhengYuan-65W,Microsoft YaHei,sans-serif;
 }
 
 .video-nav .nav-innerbox .nav-png .input-box input {
   position: absolute;
   left: 7%;
-  top: 68.5%;
+  top: 66%;
   outline: none;
   border: 0;
   font-size: 20px;
   color: #3f4141;
   width: 78%;
+  height: 12%;
   background-color: hsla(0, 0%, 100%, 0);
   font-weight: 100;
-  font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
+  font-family: Nunito-Bold,HYZhengYuan-65W,Microsoft YaHei,sans-serif;
 }
 
 .video-nav .nav-innerbox .nav-png .input-box input::placeholder {
   color: rgba(66, 63, 63, 0.3);
-  font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
+  font-family: Nunito-Bold,HYZhengYuan-65W,Microsoft YaHei,sans-serif;
 }
 
 .video-nav .nav-innerbox .barrage {
@@ -947,7 +948,7 @@ body[data-type=music] #fps-group {
   width: 100%;
   font-size: 14px;
   color: var(--font-color);
-  font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
+  font-family: Nunito-Bold,HYZhengYuan-65W,Microsoft YaHei,sans-serif;
 }
 
 .video-nav .nav-innerbox .player {
@@ -998,12 +999,12 @@ body[data-type=music] #fps-group {
   }
 
   .video-nav .nav-innerbox .nav-png .input-box input {
-    top: 66.5%;
+    top: 64%;
     left: 10%;
   }
 
   .video-nav .nav-innerbox .nav-png .input-box select {
-    top: 63.5%;
+    top: 62%;
     right: 2%;
     width: 15px;
   }
@@ -1044,8 +1045,9 @@ body[data-type=music] #fps-group {
   }
 
   .video-nav .nav-innerbox .nav-png .input-box input {
-    top: 59%;
+    top: 54%;
     left: 11%;
+    height: 22%;
   }
 
   .video-nav .nav-innerbox .nav-png .input-box select {
@@ -1105,9 +1107,10 @@ body[data-type=music] #fps-group {
   }
 
   .video-nav .nav-innerbox .nav-png .input-box input {
-    left: 24%;
+    left: 18%;
     width: 60%;
-    top: 29%;
+    top: 22%;
+    height: 35%;
   }
 
   .video-nav .nav-innerbox .nav-png .input-box select {
@@ -1167,7 +1170,7 @@ body[data-type=music] #fps-group {
   }
 
   .video-nav .nav-innerbox .nav-png .input-box input {
-    top: 29%;
+    top: 20%;
   }
 
   .video-nav .nav-innerbox .nav-png .input-box select {
