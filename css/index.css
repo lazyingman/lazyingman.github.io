@@ -3751,8 +3751,7 @@ body[data-type=link] #page .page-title {
 
 @keyframes addBtn {
     100% {
-        transform: translate(-50%, -50%) 
-        rotate(1turn)
+        transform: translate(-50%, -50%) rotate(1turn)
     }
 }
 
@@ -3765,17 +3764,17 @@ body[data-type=link] #page .page-title {
 
 .addBtn button {
     position: relative;
-	z-index: 0;
-	width: 160px;
-	height: 60px;
-	color: var(--bieyinan-addBtn-blue);
-	font-size: 15px;
-	border-radius: 12px;
-	text-align: center;
-	margin: auto;
-	overflow: hidden;
-	cursor: pointer;
-	transition: .3s;
+    z-index: 0;
+    width: 160px;
+    height: 60px;
+    color: var(--bieyinan-addBtn-blue);
+    font-size: 15px;
+    border-radius: 12px;
+    text-align: center;
+    margin: auto;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s;
     -webkit-box-reflect: below 10px linear-gradient(transparent, rgba(0, 0, 0, 0.4));
 }
 
@@ -3825,12 +3824,14 @@ body[data-type=link] #page .page-title {
     box-shadow: 0 0 5px var(--bieyinan-addBtn-green), 0 0 25px var(--bieyinan-addBtn-green);
 }
 
-.addBtn button:nth-child(1):hover::after, .addBtn button:nth-child(1):hover::before {
+.addBtn button:nth-child(1):hover::after,
+.addBtn button:nth-child(1):hover::before {
     background-color: var(--bieyinan-addBtn-blue);
     transition: .3s;
 }
 
-.addBtn button:nth-child(2):hover::after, .addBtn button:nth-child(2):hover::before {
+.addBtn button:nth-child(2):hover::after,
+.addBtn button:nth-child(2):hover::before {
     background-color: var(--bieyinan-addBtn-green);
     transition: .3s;
 }
@@ -5335,8 +5336,8 @@ body:has(#console.show) #nav-music {
 #page .tag-cloud-list a {
     display: flex;
     width: fit-content;
-    color: var(--bieyinan-fontcolor)!important;
-    font-size: 1.4em!important;
+    color: var(--bieyinan-fontcolor) !important;
+    font-size: 1.4em !important;
     padding: .2em .5em;
     background: var(--bieyinan-card-bg);
     margin: .5em .5em;
@@ -5350,9 +5351,9 @@ body:has(#console.show) #nav-music {
 }
 
 #page .tag-cloud-list a:hover {
-    background: var(--bieyinan-main)!important;
+    background: var(--bieyinan-main) !important;
     box-shadow: var(--bieyinan-shadow-blue);
-    color: var(--bieyinan-white)!important;
+    color: var(--bieyinan-white) !important;
     border: var(--style-border-hover);
 }
 
@@ -5462,7 +5463,7 @@ h1.page-title+.tag-cloud-list {
 #aside-content .card-widget .author-info__name {
     text-align: left;
     font-weight: 100;
-    font-family: MohrRounded Black,HYZhengYuan-65W,Microsoft YaHei,sans-serif;
+    font-family: MohrRounded Black, HYZhengYuan-65W, Microsoft YaHei, sans-serif;
     color: var(--bieyinan-white);
     font-size: 20px;
     line-height: 1;
@@ -8303,61 +8304,26 @@ a.deal_link:hover {
     margin-top: 1.5rem;
 }
 
-#post .post-copyright__author_box .post-copyright__author_img {
-    width: 66px;
-    height: 66px;
-    margin: auto;
-    border-radius: 66px;
-    overflow: hidden;
+#post .post-copyright__author_box img:hover {
+    --f: 1.3;
+}
+
+#post .post-copyright__author_box img {
     position: absolute;
     left: calc(50% - 33px);
     top: -33px;
-    border: var(--style-border-always);
-    -webkit-box-shadow: var(--bieyinan-shadow-main);
-    box-shadow: var(--bieyinan-shadow-main);
-    background-color: #FBAB7E;
-    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-}
-
-#post .post-copyright__author_box .post-copyright__author_img img {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-#post .post-copyright__author_box .post-copyright__author_img img.post-copyright__author_img_front {
-    z-index: 20;
-    -webkit-transition: .3s;
-    -moz-transition: .3s;
-    -o-transition: .3s;
-    -ms-transition: .3s;
+    background: radial-gradient(circle closest-side, #F7CE68 calc(99% - 5px), #ffffff calc(100% - 5px) 99%, transparent) 50%/calc(100%/var(--f)) 100% no-repeat content-box;
+    --f: 1;
+    border-radius: 0 0 33px 33px;
+    -webkit-mask: linear-gradient(#000 0, #000 0) no-repeat 50% calc((1/var(--f) - 1)*66px/2*-1 - -5px)/calc(100%/var(--f) - 10px) 50%, radial-gradient(circle closest-side, #000 99%, transparent) 50%/calc(100%/var(--f)) 100% no-repeat content-box;
+    -webkit-mask: linear-gradient(#000 0 0) no-repeat 50% calc((1/var(--f) - 1)*66px/2*-1 - -5px)/calc(100%/var(--f) - 10px) 50%, radial-gradient(circle closest-side, #000 99%, transparent) 50%/calc(100%/var(--f)) 100% no-repeat content-box;
+    outline: 5px solid #ffffff;
+    outline-offset: calc((1/var(--f) - 1)*66px/2 - 4px);
+    padding-top: 7px;
+    -webkit-transform: scale(var(--f));
+    transform: scale(var(--f));
     transition: .3s;
-}
-
-#post .post-copyright__author_box .post-copyright__author_img img.post-copyright__author_img_back {
-    display: none;
-    border-radius: 66px;
-    z-index: 10;
-    -webkit-transition: .3s;
-    -moz-transition: .3s;
-    -o-transition: .3s;
-    -ms-transition: .3s;
-    transition: .3s;
-}
-
-
-#post .post-copyright__author_box .post-copyright__author_img:hover img.post-copyright__author_img_back {
-    display: inline-block;
-    transition: all .5s;
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -o-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: scale(0.8);
-}
-
-#post .post-copyright__author_box .post-copyright__author_img:hover img.post-copyright__author_img_front {
-    display: none;
+    width: 66px;
 }
 
 #post .post-copyright__author_box .post-copyright__author_name {
@@ -13130,20 +13096,31 @@ body[data-type=about] #web_bg {
 }
 
 #about-page .author-box .author-img {
-    border: 4px solid #0000;
     margin: auto;
     border-radius: 50%;
-    overflow: hidden;
     width: 180px;
     height: 180px;
     animation: bieyinanloading 3s ease-in-out infinite;
 }
 
 #about-page .author-box .author-img img {
-    border-radius: 50%;
     overflow: hidden;
     width: 180px;
     height: 180px;
+    background: radial-gradient(circle closest-side, #F7CE68 calc(99% - 5px), #ffffff calc(100% - 5px) 99%, transparent) 50%/calc(100%/var(--f)) 100% no-repeat content-box;
+    --f: 1;
+    border-radius: 0 0 90px 90px;
+    -webkit-mask: linear-gradient(#000 0, #000 0) no-repeat 50% calc((1/var(--f) - 1)*90px/2*-1 - -5px)/calc(100%/var(--f) - 10px) 50%, radial-gradient(circle closest-side, #000 99%, transparent) 50%/calc(100%/var(--f)) 100% no-repeat content-box;
+    -webkit-mask: linear-gradient(#000 0 0) no-repeat 50% calc((1/var(--f) - 1)*90px/2*-1 - -5px)/calc(100%/var(--f) - 10px) 50%, radial-gradient(circle closest-side, #000 99%, transparent) 50%/calc(100%/var(--f)) 100% no-repeat content-box;
+    outline: 5px solid #ffffff;
+    outline-offset: calc((1/var(--f) - 1) * 110px/2 - 4px);
+    -webkit-transform: scale(var(--f));
+    transform: scale(var(--f));
+    transition: .4s;
+}
+
+#about-page .author-box .author-img img:hover {
+    --f:1.2;
 }
 
 #about-page .author-box .image-dot {
@@ -18842,7 +18819,7 @@ div#bannerGroup {
         font-size: 28px;
         font-weight: 700;
         line-height: 36px;
-        font-family: MohrRounded Black,HYZhengYuan-65W,Microsoft YaHei,sans-serif;
+        font-family: MohrRounded Black, HYZhengYuan-65W, Microsoft YaHei, sans-serif;
     }
 
     .topGroup .todayCard .todayCard-cover {
@@ -19688,7 +19665,7 @@ center#name-container {
 
 @media screen and (max-width:930px) {
     #blog_name #site-name .title {
-        font-family: Nunito-Bold,HYZhengYuan-65W,Microsoft YaHei,sans-serif;
+        font-family: Nunito-Bold, HYZhengYuan-65W, Microsoft YaHei, sans-serif;
     }
 }
 
