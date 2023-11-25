@@ -328,12 +328,18 @@
   pointer-events: none;
 }
 
-/* .aplayer-body .aplayer-pic div {
-  display: none;
-} */
-
 #nav-music .aplayer .aplayer-pic .aplayer-button {
   pointer-events: all;
+}
+
+@media screen and (min-width: 1300px) {
+  #nav-music .aplayer .aplayer-pic .aplayer-button {
+    opacity: 0!important;
+  }
+
+  #nav-music .aplayer .aplayer-info .aplayer-controller {
+    pointer-events: none;
+  }
 }
 
 /* 把所有歌词高斯模糊 */

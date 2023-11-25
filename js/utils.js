@@ -1025,7 +1025,7 @@ const bieyinan = {
         songs = cacheData.songs;
       } else {
         // 否则重新从服务器获取数据
-        const response = await fetch("/json/music2.json");
+        const response = await fetch("/json/music.json");
         songs = await response.json();
         cacheData.timestamp = currentTime;
         cacheData.songs = songs;

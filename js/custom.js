@@ -113,20 +113,20 @@ setInterval(() => {
     document.getElementById("runtime").innerHTML = currentTimeHtml;
 }, 1000);
 
-setInterval(function () {
-    check();
-}, 2000);
-var check = function () {
-    function doCheck(a) {
-        if (('' + a / a)['length'] !== 1 || a % 20 === 0) {
-            (function () { }['constructor']('debugger')());
-        } else {
-            (function () { }['constructor']('debugger')());
-        }
-        doCheck(++a);
-    }
-    try {
-        doCheck(0);
-    } catch (err) { }
-};
-check();
+// setInterval(function () {
+//     check();
+// }, 2000);
+// var check = function () {
+//     function doCheck(a) {
+//         if (('' + a / a)['length'] !== 1 || a % 20 === 0) {
+//             (function () { }['constructor']('debugger')());
+//         } else {
+//             (function () { }['constructor']('debugger')());
+//         }
+//         doCheck(++a);
+//     }
+//     try {
+//         doCheck(0);
+//     } catch (err) { }
+// };
+// check();

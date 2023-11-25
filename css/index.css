@@ -2092,7 +2092,7 @@ h6 code {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    cursor: url("https://bu.dusays.com/2023/09/16/65049159e79cd.png"), auto !important;
+    cursor: url("https://bu.dusays.com/2023/11/17/655721cf347a5.png"), default!important;
 }
 
 hr {
@@ -2179,7 +2179,8 @@ a {
 }
 
 a:hover {
-    color: #3b70fc
+    color: #3b70fc;
+    cursor:url("https://bu.dusays.com/2023/11/17/655721cf33644.png"), auto!important;
 }
 
 #aside-content .author-info__description,
@@ -6104,8 +6105,8 @@ body[data-type=bieyinan] .con-animals {
     background: -moz-linear-gradient(115deg, var(--bieyinan-main), var(--bieyinan-main-op-deep), var(--bieyinan-main), var(--bieyinan-main-op-deep));
     background: -o-linear-gradient(115deg, var(--bieyinan-main), var(--bieyinan-main-op-deep), var(--bieyinan-main), var(--bieyinan-main-op-deep));
     background: -ms-linear-gradient(115deg, var(--bieyinan-main), var(--bieyinan-main-op-deep), var(--bieyinan-main), var(--bieyinan-main-op-deep));
-    background: linear-gradient(-25deg, var(--bieyinan-main), var(--bieyinan-main-op-deep), var(--bieyinan-main), var(--bieyinan-main-op-deep));
-    background-size: 400%;
+    background: var(--bieyinan-gradient);
+    background-size: 1200% 1200%;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -6116,7 +6117,7 @@ body[data-type=bieyinan] .con-animals {
     -moz-animation: gradient 15s ease infinite;
     -o-animation: gradient 15s ease infinite;
     -ms-animation: gradient 15s ease infinite;
-    animation: gradient 15s ease infinite
+    animation: gradientcard 70s ease infinite
 }
 
 #aside-content .card-info:hover .author-info-top {
@@ -6882,6 +6883,15 @@ a.deal_link:hover {
     animation: slide-in .6s .3s backwards;
 }
 
+@media screen and (max-width: 1400px) {
+    #page-header #post-info {
+        padding: 0 3.5rem;
+        width: 100%;
+        left: 0;
+    }
+}
+
+
 @media screen and (max-width: 768px) {
     #page-header #post-info {
         padding: 11rem 6% 0;
@@ -7504,33 +7514,50 @@ a.deal_link:hover {
     }
 }
 
+@keyframes bynloading{
+    17% {
+        background-image: url("https://lazyingman.s3.bitiful.net/animal/loading-dog-1.png");
+    }
+    34% {
+        background-image: url("https://lazyingman.s3.bitiful.net/animal/loading-dog-2.png");
+    }
+    51% {
+        background-image: url("https://lazyingman.s3.bitiful.net/animal/loading-dog-3.png");
+    }
+    68% {
+        background-image: url("https://lazyingman.s3.bitiful.net/animal/loading-dog-4.png");
+    }
+    85% {
+        background-image: url("https://lazyingman.s3.bitiful.net/animal/loading-dog-5.png");
+    }
+    100% {
+        background-image: url("https://lazyingman.s3.bitiful.net/animal/loading-dog-6.png");
+    }
+}
+
 #loading-box .loading-img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     margin: auto;
     border: 4px solid #f0f0f2;
-    -webkit-animation-duration: .3s;
-    -moz-animation-duration: .3s;
-    -o-animation-duration: .3s;
-    -ms-animation-duration: .3s;
-    animation-duration: .3s;
-    -webkit-animation-name: loadingAction;
-    -moz-animation-name: loadingAction;
-    -o-animation-name: loadingAction;
-    -ms-animation-name: loadingAction;
-    animation-name: loadingAction;
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    -o-animation-duration: 2s;
+    -ms-animation-duration: 2s;
+    animation-duration: .8s;
+    -webkit-animation-name: bynloading;
+    -moz-animation-name: bynloading;
+    -o-animation-name: bynloading;
+    -ms-animation-name: bynloading;
+    animation-name: bynloading;
     -webkit-animation-iteration-count: infinite;
     -moz-animation-iteration-count: infinite;
     -o-animation-iteration-count: infinite;
     -ms-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;
-    -moz-animation-direction: alternate;
-    -o-animation-direction: alternate;
-    -ms-animation-direction: alternate;
-    animation-direction: alternate;
-    animation: bieyinanloading 3s ease-in-out infinite;
+    background: url("https://lazyingman.s3.bitiful.net/animal/loading-dog-1.png") no-repeat;
+    background-size: cover;
 }
 
 #loading-box .loading-image-dot {
@@ -7547,27 +7574,6 @@ a.deal_link:hover {
     -o-transform: translate(18px, 24px);
     -ms-transform: translate(18px, 24px);
     transform: translate(18px, 24px)
-}
-
-#loading-box #loading-percentage {
-    position: absolute;
-    top: 67%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%)
-}
-
-#loading-box #loading-percentage::before {
-    content: "「";
-    margin-right: 10px
-}
-
-#loading-box #loading-percentage::after {
-    content: "」";
-    margin-left: 10px
 }
 
 #loading-box.loaded .loading-bg {
@@ -17952,7 +17958,8 @@ body[data-type=fcircle] #page {
 
 #greeting.shown {
     opacity: 1;
-    top: 0
+    top: 0;
+    border: var(--style-border);
 }
 
 .categoryGroup {

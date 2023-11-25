@@ -7,12 +7,12 @@
     z-index: 2000;
     position: fixed;
     margin: auto;
-    top: 10px;
+    top: 0px;
     left: 0;
     right: 0;
-    height: 8px;
+    height: 4px;
     border-radius: 8px;
-    width: 4rem;
+    width: 100%;
     background: #eaecf2;
     border: 1px #e3e8f7;
     overflow: hidden;
@@ -34,7 +34,7 @@
     -ms-transform: translate3d(0, 0, 0);
     -o-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    max-width: 200px;
+    max-width: 100%;
     position: absolute;
     z-index: 2000;
     display: block;
@@ -61,5 +61,18 @@
     }
     100% {
       background-position: 0% 50%;
+    }
+  }
+
+  @keyframes gradientcard {
+    0% {
+        background-position: 0 7%;
+    }
+    
+    50% {
+        background-position: 100% 94%;
+    }
+    100% {
+        background-position: 0 7%;
     }
   }
