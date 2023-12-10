@@ -4,7 +4,7 @@ var bieyinan_musicFirst = false;
 var bieyinan_musicPlaying = false;
 // 是否开启快捷键
 var bieyinan_keyboard = localStorage.getItem("keyboardToggle") ? localStorage.getItem("keyboardToggle") : false;
-var bieyinan_FPS = localStorage.getItem("FPSToggle");
+var bieyinan_FPS = localStorage.getItem("FPSToggle") ? localStorage.getItem("FPSToggle") : false;
 var $web_container = document.getElementById("web_container");
 var $web_box = document.getElementById("web_box");
 var $bodyWrap = document.getElementById("body-wrap");
@@ -1274,6 +1274,8 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       // 没有获取到文章顶图元素，也就是不在文章页，设置bar meta样式
       root.style.setProperty("--bieyinan-bar-background", "var(--bieyinan-meta-theme-color)");
+      root.style.setProperty("--bieyinan-main", "var(--bieyinan-theme)");
+      root.style.setProperty("--bieyinan-theme-op-deep", "rgb(97, 213, 255)");
     }
     bieyinan.initThemeColor();
   };

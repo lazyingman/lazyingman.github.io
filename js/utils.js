@@ -1,6 +1,7 @@
 let lastSayHello = "";
 var bieyinan_musicPlaying = false;
 var bieyinan_musicFirst = false;
+var bieyinan_FPS = false;
 
 const bieyinan = {
   debounce: function (func, wait, immediate) {
@@ -1260,17 +1261,19 @@ const bieyinan = {
   FPSToggle: function () {
     const isKeyboardOn = bieyinan_FPS;
     const FPSgroup = document.querySelector("#fps-group");
-    const consoleFPS = document.querySelector("#consoleFPS");
+    const consoleFPS = document.querySelectorAll("#consoleFPS");
     if (isKeyboardOn) {
       FPSgroup.classList.remove("show");
-      consoleFPS.classList.remove("on");
+      consoleFPS[0].classList.remove("on");
+      consoleFPS[2].classList.remove("on");
       bieyinan_FPS = false;
-      GLOBAL_CONFIG.Snackbar !== undefined && bieyinan.snackbarShow("已关闭FPS");
+      GLOBAL_CONFIG.Snackbar !== undefined && bieyinan.snackbarShow("已为你关闭FPS");
     } else {
       FPSgroup.classList.add("show");
-      consoleFPS.classList.add("on");
+      consoleFPS[0].classList.add("on");
+      consoleFPS[2].classList.add("on");
       bieyinan_FPS = true;
-      GLOBAL_CONFIG.Snackbar !== undefined && bieyinan.snackbarShow("已开启FPS");
+      GLOBAL_CONFIG.Snackbar !== undefined && bieyinan.snackbarShow("已为你开启FPS");
     }
 
     localStorage.setItem("FPSToggle", isKeyboardOn ? "false" : "true");

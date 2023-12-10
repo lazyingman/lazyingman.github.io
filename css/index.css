@@ -2941,7 +2941,6 @@ pre[class*=language-] .token.italic {
 #body-wrap.error .aside-list .aside-list-item img {
     width: 100%;
     object-fit: cover;
-    border-radius: 12px;
 }
 
 #body-wrap.error .aside-list .aside-list-item .thumbnail {
@@ -2950,6 +2949,7 @@ pre[class*=language-] .token.italic {
     height: 200px;
     background: var(--bieyinan-card-bg);
     display: flex;
+    border-radius: 12px;
 }
 
 #body-wrap.error .aside-list .aside-list-item .content .title {
@@ -5339,7 +5339,7 @@ body:has(#console.show) #nav-music {
     width: fit-content;
     color: var(--bieyinan-fontcolor) !important;
     font-size: 1.4em !important;
-    padding: .2em .5em;
+    padding: .1em .5em;
     background: var(--bieyinan-card-bg);
     margin: .5em .5em;
     border-radius: 12px;
@@ -6091,7 +6091,8 @@ body[data-type=bieyinan] .con-animals {
     left: 2%;
     max-width: 195px;
     top: -47px;
-    z-index: 1;
+    z-index: 2;
+    cursor:url("https://bu.dusays.com/2023/11/17/655721cf33644.png"), auto!important;
 }
 
 @media screen and (max-width:1200px) {
@@ -7514,50 +7515,12 @@ a.deal_link:hover {
     }
 }
 
-@keyframes bynloading{
-    17% {
-        background-image: url("https://lazyingman.s3.bitiful.net/animal/loading-dog-1.png");
-    }
-    34% {
-        background-image: url("https://lazyingman.s3.bitiful.net/animal/loading-dog-2.png");
-    }
-    51% {
-        background-image: url("https://lazyingman.s3.bitiful.net/animal/loading-dog-3.png");
-    }
-    68% {
-        background-image: url("https://lazyingman.s3.bitiful.net/animal/loading-dog-4.png");
-    }
-    85% {
-        background-image: url("https://lazyingman.s3.bitiful.net/animal/loading-dog-5.png");
-    }
-    100% {
-        background-image: url("https://lazyingman.s3.bitiful.net/animal/loading-dog-6.png");
-    }
-}
-
 #loading-box .loading-img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     margin: auto;
     border: 4px solid #f0f0f2;
-    -webkit-animation-duration: 2s;
-    -moz-animation-duration: 2s;
-    -o-animation-duration: 2s;
-    -ms-animation-duration: 2s;
-    animation-duration: .8s;
-    -webkit-animation-name: bynloading;
-    -moz-animation-name: bynloading;
-    -o-animation-name: bynloading;
-    -ms-animation-name: bynloading;
-    animation-name: bynloading;
-    -webkit-animation-iteration-count: infinite;
-    -moz-animation-iteration-count: infinite;
-    -o-animation-iteration-count: infinite;
-    -ms-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    background: url("https://lazyingman.s3.bitiful.net/animal/loading-dog-1.png") no-repeat;
-    background-size: cover;
 }
 
 #loading-box .loading-image-dot {
@@ -13020,7 +12983,7 @@ span.p.gray {
     margin: 0px 1rem;
     height: 18rem;
     max-width: 800px;
-    border-radius: 5px;
+    border-radius: 12px;
     background: var(--heo-card-bg);
     box-shadow: var(--card-box-shadow);
     transition: all 0.3s ease 0s;
@@ -13034,9 +12997,8 @@ span.p.gray {
     flex: 1 1 0%;
     height: 100%;
     width: 600px;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    background-color: rgb(48, 122, 246);
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
     background-position: center center;
     background-size: cover;
 }
