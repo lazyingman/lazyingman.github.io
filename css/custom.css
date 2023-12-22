@@ -109,7 +109,6 @@ span.recent-post-top-text {
 @media screen and (max-width: 768px) {
   .recent-top-post-group {
     border-radius: 0;
-    background: var(--bieyinan-background)
   }
 
   .recent-post-top-text {
@@ -296,7 +295,6 @@ div#banners {
     display: flex;
     width: 100%;
     height: 76%;
-    background: var(--bieyinan-bootcolor);
     margin-bottom: 0.5rem;
     border: var(--style-border);
     border-radius: 12px;
@@ -871,7 +869,7 @@ body[data-type=music] #fps-group {
   width: 100%;
   justify-content: center;
   align-items: center;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 .video-nav .nav-innerbox .nav-png {
@@ -891,7 +889,7 @@ body[data-type=music] #fps-group {
   right: 40px;
   min-width: 65%;
   top: 0;
-  font-family: MohrRounded Heavy,FZLanTYK_Black,Microsoft YaHei,sans-serif;
+  font-family: MohrRounded Heavy, FZLanTYK_Black, Microsoft YaHei, sans-serif;
 }
 
 .video-nav .nav-innerbox .nav-png .input-box .search {
@@ -910,14 +908,14 @@ body[data-type=music] #fps-group {
   border: 0;
   font-size: 20px;
   color: #3f4141;
-  font-family: Nunito-Bold,HYZhengYuan-65W,Microsoft YaHei,sans-serif;
+  font-family: Nunito-Bold, HYZhengYuan-65W, Microsoft YaHei, sans-serif;
   background-color: hsla(0, 0%, 100%, 0);
   z-index: 1;
 }
 
 .video-nav .nav-innerbox .nav-png .input-box select option {
   background: var(--bieyinan-maskbgdeep);
-  font-family: Nunito-Bold,HYZhengYuan-65W,Microsoft YaHei,sans-serif;
+  font-family: Nunito-Bold, HYZhengYuan-65W, Microsoft YaHei, sans-serif;
 }
 
 .video-nav .nav-innerbox .nav-png .input-box input {
@@ -932,12 +930,12 @@ body[data-type=music] #fps-group {
   height: 12%;
   background-color: hsla(0, 0%, 100%, 0);
   font-weight: 100;
-  font-family: Nunito-Bold,HYZhengYuan-65W,Microsoft YaHei,sans-serif;
+  font-family: Nunito-Bold, HYZhengYuan-65W, Microsoft YaHei, sans-serif;
 }
 
 .video-nav .nav-innerbox .nav-png .input-box input::placeholder {
   color: rgba(66, 63, 63, 0.3);
-  font-family: Nunito-Bold,HYZhengYuan-65W,Microsoft YaHei,sans-serif;
+  font-family: Nunito-Bold, HYZhengYuan-65W, Microsoft YaHei, sans-serif;
 }
 
 .video-nav .nav-innerbox .barrage {
@@ -948,7 +946,7 @@ body[data-type=music] #fps-group {
   width: 100%;
   font-size: 14px;
   color: var(--font-color);
-  font-family: Nunito-Bold,HYZhengYuan-65W,Microsoft YaHei,sans-serif;
+  font-family: Nunito-Bold, HYZhengYuan-65W, Microsoft YaHei, sans-serif;
 }
 
 .video-nav .nav-innerbox .player {
@@ -1235,20 +1233,20 @@ body[data-type=music] #fps-group {
   width: 100%;
 }
 
-.videoLogo .videoLogoItem a img{
+.videoLogo .videoLogoItem a img {
   margin: 0 auto;
 }
 
 [data-type=video] code {
   padding: .2rem .4rem;
-    border-radius: 4px;
-    margin: 0 4px;
-    line-height: 2;
-    box-shadow: var(--bieyinan-shadow-border);
-    background: var(--bieyinan-pink);
-    color: #fff;
-    font-size: var(--global-font-size);
-    font-family: consolas, Menlo, "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif !important;
+  border-radius: 4px;
+  margin: 0 4px;
+  line-height: 2;
+  box-shadow: var(--bieyinan-shadow-border);
+  background: var(--bieyinan-pink);
+  color: #fff;
+  font-size: var(--global-font-size);
+  font-family: consolas, Menlo, "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif !important;
 }
 
 @media screen and (max-width:1230px) {
@@ -1299,19 +1297,20 @@ body[data-type=music] #fps-group {
   animation: about-stars 10s linear infinite;
 }
 
-@keyframes about-stars{
-0% {
+@keyframes about-stars {
+  0% {
     transform: translateX(100%);
-}
-100% {
+  }
+
+  100% {
     transform: translateX(-100%);
-}
+  }
 }
 
 .star-about {
   width: 5rem;
   height: 2px;
-  background: linear-gradient(90deg,hsla(0,0%,100%,.3),hsla(0,0%,100%,0));
+  background: linear-gradient(90deg, hsla(0, 0%, 100%, .3), hsla(0, 0%, 100%, 0));
   display: flex;
   align-items: center;
 }
@@ -1323,7 +1322,7 @@ body[data-type=music] #fps-group {
 .star-about {
   width: 5rem;
   height: 2px;
-  background: linear-gradient(90deg,hsla(0,0%,100%,.3),hsla(0,0%,100%,0));
+  background: linear-gradient(90deg, hsla(0, 0%, 100%, .3), hsla(0, 0%, 100%, 0));
   display: flex;
   align-items: center;
 }
@@ -1335,7 +1334,7 @@ body[data-type=music] #fps-group {
 .star-about {
   width: 5rem;
   height: 2px;
-  background: linear-gradient(90deg,hsla(0,0%,100%,.3),hsla(0,0%,100%,0));
+  background: linear-gradient(90deg, hsla(0, 0%, 100%, .3), hsla(0, 0%, 100%, 0));
   display: flex;
   align-items: center;
 }
@@ -1346,4 +1345,109 @@ body[data-type=music] #fps-group {
   width: 2px;
   background: #fff;
   border-radius: 50%;
+}
+
+
+/* changebg */
+
+/* 由于全屏会出bug，所以直接给他隐藏 */
+
+.winbox {
+  border-radius: calc(.4rem - 1px);
+  box-shadow: var(--bieyinan-shadow-border);
+  overflow: hidden;
+}
+
+.wb-header {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.wb-full {
+  display: none;
+}
+
+.wb-min {
+  background-position: center;
+}
+
+.wb-body {
+  font-family: MohrRounded Black, HYZhengYuan-65W, Microsoft YaHei, sans-serif;
+}
+
+.wb-body h2 {
+  padding-left: 10px!important;
+  z-index: -1;
+  line-height: 4rem;
+}
+
+[data-theme='dark'] .wb-body,
+[data-theme='dark'] #changeBgBox {
+  background: #333 !important;
+}
+
+.bgbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.bgbox a {
+  border-radius: calc(.4rem - 1px);
+}
+
+.pimgbox,
+.imgbox,
+.box {
+  width: 166px;
+  margin: 10px;
+  background-size: cover
+}
+
+.pimgbox,
+.imgbox {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.pimgbox {
+  height: 240px;
+}
+
+.imgbox {
+  height: 95px;
+}
+
+.box {
+  height: 100px;
+}
+
+.wb-body #article-container button:hover {
+  background: var(--btn-hover-color)!important;
+}
+
+@media screen and (max-width: 1200px) {
+  .wb-body #article-container button {
+    width: 30%!important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pimgbox,
+  .imgbox,
+  .box {
+      height: 73px;
+      width: 135px;
+  }
+  .pimgbox {
+      height: 205px;
+  }  
+  .wb-min {
+      display: none;
+  }
+  #changeBgBox .wb-body::-webkit-scrollbar {
+      display: none;
+  }
+  .wb-body #article-container button {
+    width: 100%!important;
+  }
 }
