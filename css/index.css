@@ -15546,7 +15546,7 @@ body:has(#sidebar-menus.open) #he-plugin-simple {
     transition: .3s
 }
 
-div.s-sticker {
+#he-plugin-simple .s-sticker {
     background-color: transparent !important
 }
 
