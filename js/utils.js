@@ -595,7 +595,7 @@ const bieyinan = {
             waterfall("#waterfall"),
             document.getElementById("waterfall").classList.add("show")
         }
-        ), 500)
+        ), 800)
   },
   sayhi: function () {
     const $sayhiEl = document.getElementById("author-info__sayhi");
