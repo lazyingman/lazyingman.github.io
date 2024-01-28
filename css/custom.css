@@ -250,7 +250,7 @@ a.categoryButton i {
   .recent-post-top .categoryGroup {
     min-width: 130px !important;
     margin-bottom: 0.5rem;
-    margin-left: 1rem;
+    margin-left: .75rem;
     max-height: 164px;
     overflow: hidden;
     position: relative;
@@ -295,6 +295,7 @@ div#banners {
     display: flex;
     width: 100%;
     height: 76%;
+    background: var(--bieyinan-card-bg);
     margin-bottom: 0.5rem;
     border: var(--style-border);
     border-radius: 12px;

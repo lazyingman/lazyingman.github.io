@@ -2060,7 +2060,6 @@ input::placeholder {
     z-index: -999;
     width: 100%;
     height: 100%;
-    background: var(--bieyinan-bootcolor);
     background-attachment: local;
     background-position: center;
     background-size: cover;
@@ -6438,7 +6437,7 @@ body[data-type=bieyinan] .con-animals {
     background: -moz-linear-gradient(115deg, var(--bieyinan-main), var(--bieyinan-main-op-deep), var(--bieyinan-main), var(--bieyinan-main-op-deep));
     background: -o-linear-gradient(115deg, var(--bieyinan-main), var(--bieyinan-main-op-deep), var(--bieyinan-main), var(--bieyinan-main-op-deep));
     background: -ms-linear-gradient(115deg, var(--bieyinan-main), var(--bieyinan-main-op-deep), var(--bieyinan-main), var(--bieyinan-main-op-deep));
-    background: var(--bieyinan-gradient);
+    background: var(--bieyinan-gradient2);
     background-size: 1200% 1200%;
     position: absolute;
     width: 100%;
@@ -13936,7 +13935,7 @@ body[data-type=about] #web_bg {
 }
 
 .icon-pos-mid {
-    background: url(https://img02.anzhiy.cn/adminuploads/1/2022/09/25/632fb9cecfc8c.png)
+    background: url(https://bu.dusays.com/2024/01/22/65ae2dbe8da1e.jpg)
 }
 
 .author-content-item.game-yuanshen::after {
@@ -15334,11 +15333,25 @@ html.hide-aside .layout>div:first-child {
     padding: 15px 20px;
     cursor: pointer;
     border: var(--style-border);
-    background: var(--bieyinan-bootcolor);
 }
 
 #aside-content .card-widget#card-wechat p a strong:hover {
     color: #0092ff;
+}
+
+@media screen and (max-width:768px) {
+    #aside-content .card-widget#card-wechat {
+        display: none;
+    }
+
+    .footer-bar-right .container {
+        display: none!important;
+    }
+
+    .footer-bar-right {
+        margin-left: calc(4%)!important;
+        padding-left: 0!important;
+    }
 }
 
 #friendlink_checkboxs input {
@@ -16017,7 +16030,7 @@ body:has(.post-bg) #he-plugin-simple .s-sticker div {
     body:has(#sidebar-menus.open) #he-plugin-simple {
         transform: translate3d(-100%, 0, 0);
         left: auto !important;
-        right: -83px;
+        right: -104px;
     }
 }
 
@@ -19945,16 +19958,10 @@ center#name-container {
     -ms-transition: .3s;
     transition: .3s;
     letter-spacing: normal;
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 2rem;
-    font-family: cursive;
+    font-family: 'iconfont';
     padding: 0 5px;
-}
-
-@media screen and (max-width:930px) {
-    #blog_name #site-name .title {
-        font-family: Nunito-Bold, HYZhengYuan-65W, Microsoft YaHei, sans-serif;
-    }
 }
 
 .post #blog_name #site-name .title {
@@ -21082,7 +21089,8 @@ body[data-type=room] #page .page-title {
     box-sizing: border-box;
     user-select: none;
     transform-style: preserve-3d;
-    -webkit-tap-highlight-color: transparent
+    -webkit-tap-highlight-color: transparent;
+    font-family: Nunito-Bold, HYZhengYuan-65W, Microsoft YaHei, sans-serif;
 }
 
 #room_page {
@@ -22204,7 +22212,7 @@ body[data-type=room] #page .page-title {
     width: 100%;
     height: 100%;
     box-shadow: .125vw .125vw 1vw rgba(81, 137, 251, .5), -.125vw .125vw 1vw rgba(81, 137, 251, .5), .125vw -.125vw 1vw rgba(81, 137, 251, .5), -.125vw -.125vw 1vw rgba(81, 137, 251, .5);
-    background-image: url(https://img02.anzhiy.cn/adminuploads/1/2022/10/20/6351038493d46.gif);
+    background-image: url(https://bu.dusays.com/2024/01/22/65ae2dbe94b63.gif);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -22816,7 +22824,7 @@ body[data-type=room] #page .page-title {
 }
 
 .cuadro-l__front {
-    background-image: url(https://img02.anzhiy.cn/adminuploads/1/2022/10/20/63510384967db.jpg);
+    background-image: url(https://bu.dusays.com/2024/01/22/65ae2dbe9a699.jpg);
     background-color: #d51e24;
     border: 1vw solid #d51e24
 }
@@ -22837,7 +22845,7 @@ body[data-type=room] #page .page-title {
 }
 
 .cuadro-r__front {
-    background-image: url(https://img02.anzhiy.cn/adminuploads/1/2022/10/20/6351038496f25.jpg);
+    background-image: url(https://bu.dusays.com/2024/01/22/65ae2dbe8da1e.jpg);
     background-color: #0f1110;
     border: .5vw solid #0f1110
 }

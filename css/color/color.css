@@ -125,6 +125,7 @@
   --bieyinan-violet-rgb: 112.520718,44.062154,249.437846;
   --bieyinan-pink-rgb: 214,51,132;
   --bieyinan-gradient: linear-gradient(136deg, rgb(68, 132, 206), rgb(26, 215, 192), rgb(255, 155, 17), rgb(155, 89, 182), rgb(255, 127, 127), rgb(236, 240, 241)) 0% 0% / 1200% 1200%;
+  --bieyinan-gradient2: linear-gradient(136deg, #7098da,#6eb6ff,#455d7a,#233142,#e0fcff) 0% 0% / 1200% 1200%;
 }
 
 [data-theme=dark] {
