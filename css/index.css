@@ -2046,9 +2046,11 @@ body {
     background-color: transparent
 }
 
-* {
-    scrollbar-width: thin;
-    scrollbar-color: var(--scrollbar-color) transparent
+@-moz-document url-prefix() {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--scrollbar-color) transparent
+    }
 }
 
 input::placeholder {
