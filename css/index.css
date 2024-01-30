@@ -16032,7 +16032,7 @@ body:has(.post-bg) #he-plugin-simple .s-sticker div {
     body:has(#sidebar-menus.open) #he-plugin-simple {
         transform: translate3d(-100%, 0, 0);
         left: auto !important;
-        right: -104px;
+        right: -6.5rem;
     }
 }
 
@@ -17088,7 +17088,7 @@ body:has(#console.show) #nav-music .aplayer .aplayer-lrc .aplayer-lrc-contents {
     body:has(#console.show) #nav-music {
         position: fixed;
         display: block !important;
-        left: 5.2%;
+        left: 7.5%;
         top: 3.9rem !important;
         height: 70%;
         width: 85%
