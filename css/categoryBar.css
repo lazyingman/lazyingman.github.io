@@ -53,10 +53,9 @@
 }
 
 .category-bar-item a {
-    padding: 0.1rem 0.7rem;
-    padding-bottom: 0.2rem !important;
+    padding: .1rem .5rem .2rem;
     margin-right: 6px;
-    font-weight: bold;
+    font-weight: 700;
     border-radius: 8px;
     display: flex;
     align-items: center;
