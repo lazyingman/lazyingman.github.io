@@ -1,22 +1,15 @@
-let lastSayHello = "";
-var bieyinan_musicPlaying = false;
-var bieyinan_musicFirst = false;
-var bieyinan_FPS = false;
-
 const bieyinan = {
-  debounce: function (func, wait, immediate) {
+  debounce: (func, wait = 0, immediate = false) => {
     let timeout;
-    return function () {
-      const context = this;
-      const args = arguments;
-      const later = function () {
+    return (...args) => {
+      const later = () => {
         timeout = null;
-        if (!immediate) func.apply(context, args);
+        if (!immediate) func(...args);
       };
       const callNow = immediate && !timeout;
       clearTimeout(timeout);
       timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
+      if (callNow) func(...args);
     };
   },
 
@@ -495,7 +488,7 @@ const bieyinan = {
         loop: true,
         autoplay: {
           disableOnInteraction: true,
-          delay: 4000,
+          delay: 5000,
         },
         mousewheel: true,
       });

@@ -7023,7 +7023,12 @@ a.deal_link:hover {
 
 #page-header {
     position: relative;
-    width: 100%
+    width: 100%;
+    -webkit-transition: all .5s ease 0s;
+    -moz-transition: all .5s ease 0s;
+    -o-transition: all .5s ease 0s;
+    -ms-transition: all .5s ease 0s;
+    transition: all .5s ease 0s
 }
 
 #page-header.full_page #site-info {

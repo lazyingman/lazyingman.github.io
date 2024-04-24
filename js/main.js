@@ -9,7 +9,6 @@ var $web_container = document.getElementById("web_container");
 var $web_box = document.getElementById("web_box");
 var $bodyWrap = document.getElementById("body-wrap");
 var $main = document.querySelector("main");
-var dragStartX;
 
 var adjectives = [
   "美丽的",
@@ -156,34 +155,23 @@ var themeColorMeta, pageHeaderEl, navMusicEl, consoleEl;
 
 document.addEventListener("DOMContentLoaded", function () {
   let blogNameWidth, menusWidth, searchWidth;
+  let headerContentWidth, $nav, $rightMenu;
   let mobileSidebarOpen = false;
-  const $sidebarMenus = document.getElementById("sidebar-menus");
-  const $rightside = document.getElementById("rightside");
-  let $nav = document.getElementById("nav");
 
   const adjustMenu = init => {
+    const getAllWidth = ele => {
+      return Array.from(ele).reduce((width, i) => width + i.offsetWidth, 0);
+    };
+
     if (init) {
-      blogNameWidth = document.getElementById("site-name").offsetWidth;
-      const $menusEle = document.querySelectorAll("#menus .menus_item");
-      menusWidth = 0;
-      $menusEle.length &&
-        $menusEle.forEach(i => {
-          menusWidth += i.offsetWidth;
-        });
-      const $searchEle = document.querySelector("#search-button");
-      searchWidth = $searchEle ? $searchEle.offsetWidth : 0;
+      const blogInfoWidth = getAllWidth(document.querySelector("#blog_name > a").children);
+      const menusWidth = getAllWidth(document.getElementById("menus").children);
+      headerContentWidth = blogInfoWidth + menusWidth;
       $nav = document.getElementById("nav");
     }
 
-    let hideMenuIndex = "";
-    if (window.innerWidth <= 768) hideMenuIndex = true;
-    else hideMenuIndex = blogNameWidth + menusWidth + searchWidth > $nav.offsetWidth - 120;
-
-    if (hideMenuIndex) {
-      $nav.classList.add("hide-menu");
-    } else {
-      $nav.classList.remove("hide-menu");
-    }
+    const hideMenuIndex = window.innerWidth <= 768 || headerContentWidth > $nav.offsetWidth - 120;
+    $nav.classList.toggle("hide-menu", hideMenuIndex);
   };
 
   // 初始化header
@@ -196,14 +184,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const sidebarFn = {
     open: () => {
       bieyinan.sidebarPaddingR();
-      document.body.style.overflow = "hidden";
       bieyinan.animateIn(document.getElementById("menu-mask"), "to_show 0.5s");
       document.getElementById("sidebar-menus").classList.add("open");
       mobileSidebarOpen = true;
     },
     close: () => {
       const $body = document.body;
-      $body.style.overflow = "";
       $body.style.paddingRight = "";
       bieyinan.animateOut(document.getElementById("menu-mask"), "to_hide 0.5s");
       document.getElementById("sidebar-menus").classList.remove("open");
@@ -215,11 +201,17 @@ document.addEventListener("DOMContentLoaded", function () {
    * 首頁top_img底下的箭頭
    */
   const scrollDownInIndex = () => {
+    const handleScrollToDest = () => {
+      const bbTimeList = document.getElementById("bbTimeList");
+      if (bbTimeList) {
+        bieyinan.scrollToDest(bbTimeList.offsetTop - 62, 300);
+      } else {
+        bieyinan.scrollToDest(document.getElementById("home_top").offsetTop - 60, 300);
+      }
+    };
+
     const $scrollDownEle = document.getElementById("scroll-down");
-    $scrollDownEle &&
-      $scrollDownEle.addEventListener("click", function () {
-        bieyinan.scrollToDest(document.getElementById("content-inner").offsetTop, 300);
-      });
+    $scrollDownEle && anzhiyu.addEventListenerPjax($scrollDownEle, "click", handleScrollToDest);
   };
 
   /**
@@ -543,7 +535,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // 缓存常用dom元素
     const musicDom = document.getElementById("nav-music"),
       footerDom = document.getElementById("footer"),
-      waterfallDom = document.getElementById("waterfall"),
       $percentBtn = document.getElementById("percent");
       $navTotop = document.getElementById("nav-totop"),
       $bodyWrap = document.getElementById("body-wrap");
@@ -684,7 +675,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!($article && (isToc || isAnchor))) return;
 
-    // 删除了scrollPercent,
     let $tocLink, $cardToc, autoScrollToc, isExpand;
 
     if (isToc) {
@@ -1224,7 +1214,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   //封面纯色
-  const coverColor = function () {
+  const coverColor = async () => {
     const root = document.querySelector(":root");
     var path = document.getElementById("post-top-bg")?.src;
     
