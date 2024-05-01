@@ -1376,7 +1376,7 @@ body[data-type=music] #fps-group {
 }
 
 .wb-body h2 {
-  padding-left: 10px!important;
+  padding-left: 10px !important;
   z-index: -1;
   line-height: 4rem;
 }
@@ -1423,33 +1423,127 @@ body[data-type=music] #fps-group {
 }
 
 .wb-body #article-container button:hover {
-  background: var(--btn-hover-color)!important;
+  background: var(--btn-hover-color) !important;
 }
 
 @media screen and (max-width: 1200px) {
   .wb-body #article-container button {
-    width: 30%!important;
+    width: 30% !important;
   }
 }
 
 @media screen and (max-width: 768px) {
+
   .pimgbox,
   .imgbox,
   .box {
-      height: 73px;
-      width: 135px;
+    height: 73px;
+    width: 135px;
   }
+
   .pimgbox {
-      height: 205px;
-  }  
+    height: 205px;
+  }
+
   .wb-min {
-      display: none;
+    display: none;
   }
+
   #changeBgBox .wb-body::-webkit-scrollbar {
-      display: none;
+    display: none;
   }
+
   .wb-body #article-container button {
-    width: 100%!important;
+    width: 100% !important;
   }
 }
 
+/* articleGPT */
+.article-gpt {
+  background-color: var(--bieyinan-secondbg);
+  border-radius: 12px;
+  border: var(--style-border);
+  padding: 12px 16px;
+}
+
+.article-gpt img {
+  position: absolute;
+  top: 8px;
+  left: 34px;
+  height: 80px;
+}
+
+.article-gpt .title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px;
+}
+
+.article-gpt .title .more {
+  display: flex;
+}
+
+.article-gpt .title .more .name {
+  font-weight: 700;
+  margin-left: 55px;
+}
+
+.article-gpt .title .more .bi {
+  margin-left: .3rem;
+  opacity: .5;
+}
+
+.article-gpt .title .logo {
+  font-size: 12px;
+  background-color: var(--bieyinan-black-op);
+  line-height: 1;
+  padding: 8px 6px 0 6px;
+  border-radius: 8px;
+  margin: 4px;
+  color: var(--bieyinan-white);
+  cursor: url("https://bu.dusays.com/2023/11/17/655721cf33644.png"), auto !important;
+}
+
+.article-gpt .title .logo.animate {
+  animation: point 1s linear infinite;
+}
+
+.article-gpt .content {
+  background: var(--bieyinan-card-bg);
+  margin-top: 12px;
+  padding: 8px 12px;
+  border: var(--style-border);
+  font-size: 15px;
+  line-height: 1.4;
+  min-height: 38.6px;
+  border-radius: 8px;
+}
+
+.article-gpt .content #articlecontent {
+  display: none;
+}
+
+.article-gpt .point {
+  opacity: 0;
+}
+
+.article-gpt .mate {
+  margin-top: 1rem;
+  font-size: 12px;
+}
+
+.article-gpt .mate span {
+  opacity: .6;
+}
+
+@keyframes point {
+  0% { opacity: 1}
+  50% { opacity: .2;}
+  100% {opacity: 1;}
+}
+
+@media screen and (max-width:768px){
+  .article-gpt .title .name {
+    margin-left: 70px;
+  }
+}

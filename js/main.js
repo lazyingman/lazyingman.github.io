@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isHighlightCopy) {
       highlightCopyEle = '<div class="copy-notice"></div><i class="bi bi-clipboard2-fill copy-button"></i>';
     }
-    
+
     const copy = (text, ctx) => {
       if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
         document.execCommand("copy");
@@ -536,7 +536,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const musicDom = document.getElementById("nav-music"),
       footerDom = document.getElementById("footer"),
       $percentBtn = document.getElementById("percent");
-      $navTotop = document.getElementById("nav-totop"),
+    $navTotop = document.getElementById("nav-totop"),
       $bodyWrap = document.getElementById("body-wrap");
 
     // 页面底部Dom是否存在
@@ -1217,7 +1217,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const coverColor = async () => {
     const root = document.querySelector(":root");
     var path = document.getElementById("post-top-bg")?.src;
-    
+
     if (path != undefined) {
       var httpRequest = new XMLHttpRequest(); //第一步：建立所需的对象
       httpRequest.open("GET", `${path}?imageAve`, true); //第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
@@ -1393,12 +1393,12 @@ document.addEventListener("DOMContentLoaded", function () {
           bieyinan_musicPlaying = false;
           navMusicEl.classList.remove("stretch");
         });
-        navMusicEl.querySelector("#nav-music meting-js").aplayer.on("play", function() {
+        navMusicEl.querySelector("#nav-music meting-js").aplayer.on("play", function () {
           navMusicEl.classList.add("playing"),
-          document.getElementById("menu-music-toggle").innerHTML = 
-          '<i class="bi bi-pause-fill"></i><span>暂停音乐</span>',
-          document.querySelector("#consoleMusic").classList.add("on"),
-          bieyinan_musicPlaying = true
+            document.getElementById("menu-music-toggle").innerHTML =
+            '<i class="bi bi-pause-fill"></i><span>暂停音乐</span>',
+            document.querySelector("#consoleMusic").classList.add("on"),
+            bieyinan_musicPlaying = true
         })
       }
     }, 16);
@@ -1442,6 +1442,78 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 3000);
   }
 
+  var clicklogo = true;
+  function clickGpt(){
+    if(clicklogo) {
+      articleGPT(`我是别亦难开发的摘要生成助理 BYN GPT，是一个基于作者手搓的生成式AI，你无法与我直接沟通，所有文本皆源于本地书写的内容。
+      我在这里只负责显示，并仿照 GPT 的形式输出，如果你想跟我一样白嫖为主，你也可以像我这样做，
+      当然，你也可以使用 Tianli 开发的 TianliGPT 来更简单地实现真正的 AI 摘要。`);
+      clicklogo = false;
+    } else {
+      articleGPT();
+      clicklogo = true;
+    }
+    
+  }
+
+  function articleGPT(value) {
+    
+    // 获取 frontmatter 数据
+    // 可使用你的建站工具对应的获取方法或者使用选择器获取
+    if(!document.getElementById("articlecontent")){
+      return;
+    }
+    const frontmatter = value ? value : document.getElementById("articlecontent").innerHTML;
+    document.getElementById("articleGPT").innerHTML = "";
+    // 获取 articleGPT 元素
+    const articleGPT = document.getElementById("articleGPT");
+
+    // 摘要数据索引
+    let showIndex = 0;
+
+    // 输出摘要
+    const typeWriter = (text = null) => {
+      try {
+        const data = text || frontmatter;
+        if (!data) return false;
+        if (showIndex < data.length) {
+          articleGPT.innerHTML += data.charAt(showIndex++);
+          // 生成字符延迟
+          const delay = Math.random() * (150 - 100) + 30;
+          setTimeout(() => {
+            typeWriter(text);
+          }, delay);
+        } else {
+          point.style.cssText=""
+          logo.classList.remove("animate");
+          document.querySelector(".logo").addEventListener("click",clickGpt)
+        }
+      } catch (error) {
+        articleGPT.innerHTML = "摘要生成失败";
+        console.error("摘要生成失败：", error);
+      }
+    };
+
+    // 初始化摘要
+    const initAbstract = () => {
+      setTimeout(
+        () => {
+          typeWriter();
+        },
+        // 此处随机时间可根据需要自行修改
+        Math.random() * (3800 - 2500) + 1500,
+      );
+    };
+    var point = document.querySelector(".article-gpt .point");
+    var logo = document.querySelector(".article-gpt .logo");
+    point.style.cssText="animation: point 1s linear infinite;"
+    logo.classList.add("animate");
+    document.querySelector(".logo").removeEventListener("click",clickGpt);
+
+    // 页面加载完毕后执行
+    if (frontmatter && articleGPT) initAbstract();  
+  }
+
   const unRefreshFn = function () {
     window.addEventListener("resize", () => {
       adjustMenu(false);
@@ -1479,6 +1551,7 @@ document.addEventListener("DOMContentLoaded", function () {
     addHighlightTool();
     GLOBAL_CONFIG.isPhotoFigcaption && addPhotoFigcaption();
     scrollFn();
+    articleGPT();
 
     const $jgEle = document.querySelectorAll("#content-inner .fj-gallery");
     $jgEle.length && runJustifiedGallery($jgEle);
