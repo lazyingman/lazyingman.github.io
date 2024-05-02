@@ -1486,7 +1486,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           point.style.cssText=""
           logo.classList.remove("animate");
-          document.querySelector(".logo").addEventListener("click",clickGpt)
+          if(document.querySelector(".logo")) document.querySelector(".logo").addEventListener("click",clickGpt);
         }
       } catch (error) {
         articleGPT.innerHTML = "摘要生成失败";
