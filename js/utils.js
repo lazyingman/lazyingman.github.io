@@ -1008,7 +1008,7 @@ const bieyinan = {
     const currentTime = new Date().getTime();
     const cacheData = JSON.parse(localStorage.getItem("musicData")) || { timestamp: 0 };
     let songs = [];
-
+    
     if (changeMusicListFlag) {
       songs = defaultPlayMusicList;
     } else {
@@ -1025,6 +1025,8 @@ const bieyinan = {
         cacheData.songs = songs;
         localStorage.setItem("musicData", JSON.stringify(cacheData));
       }
+      console.log(songs)
+      console.log(defaultPlayMusicList)
     }
 
     // 清除当前播放列表并添加新的歌曲

@@ -1391,7 +1391,6 @@ document.addEventListener("DOMContentLoaded", function () {
           document.getElementById("nav-music-hoverTips").innerHTML = "音乐已暂停";
           document.querySelector("#consoleMusic").classList.remove("on");
           bieyinan_musicPlaying = false;
-          navMusicEl.classList.remove("stretch");
         });
         navMusicEl.querySelector("#nav-music meting-js").aplayer.on("play", function () {
           navMusicEl.classList.add("playing"),
