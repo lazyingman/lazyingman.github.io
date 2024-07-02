@@ -6997,10 +6997,6 @@ body[data-type=bieyinan] .con-animals {
     position: relative;
 }
 
-#footer-wrap a {
-    color: var(--light-grey)
-}
-
 a.deal_link:hover {
     color: var(--heo-white);
     background: var(--heo-main);
@@ -15373,11 +15369,6 @@ html.hide-aside .layout>div:first-child {
 
     .footer-bar-right .container {
         display: none!important;
-    }
-
-    .footer-bar-right {
-        margin-left: calc(4%)!important;
-        padding-left: 0!important;
     }
 }
 

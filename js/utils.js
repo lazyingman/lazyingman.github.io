@@ -1260,13 +1260,13 @@ const bieyinan = {
     if (isKeyboardOn) {
       FPSgroup.classList.remove("show");
       consoleFPS[0].classList.remove("on");
-      consoleFPS[2].classList.remove("on");
+      consoleFPS[1].classList.remove("on");
       bieyinan_FPS = false;
       GLOBAL_CONFIG.Snackbar !== undefined && bieyinan.snackbarShow("已为你关闭FPS");
     } else {
       FPSgroup.classList.add("show");
       consoleFPS[0].classList.add("on");
-      consoleFPS[2].classList.add("on");
+      consoleFPS[1].classList.add("on");
       bieyinan_FPS = true;
       GLOBAL_CONFIG.Snackbar !== undefined && bieyinan.snackbarShow("已为你开启FPS");
     }

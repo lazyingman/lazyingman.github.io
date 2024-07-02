@@ -14,14 +14,11 @@ div#footer_deal {
 }
 
 #footer .copyright {
-    padding: 1.5rem 1rem 1rem 1rem;
-    color: var(--bieyinan-fontcolor);
-    background: var(--bieyinan-secondbg);
     display: flex;
-    overflow: hidden;
-    z-index: 1002;
-    transition: 0.3s;
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 8px;
+    margin: 0 4px;
 }
 
 a.deal_link {
@@ -80,6 +77,7 @@ img.footer_mini_logo:hover {
 #byn-footer .footer-title {
     color: var(--bieyinan-secondtext);
     font-size: 1rem;
+    margin-left: 8px;
 }
 
 #byn-footer .footer-links {
@@ -88,21 +86,23 @@ img.footer_mini_logo:hover {
 }
 
 #byn-footer .footer-item:hover {
-    color: var(--heo-theme);
+    color: var(--bieyinan-lighttext);
+    background: var(--bieyinan-main-op-light);
 }
 
 #byn-footer .footer-item {
     font-size: .9rem;
     line-height: 0.8rem;
+    border-radius: 11px;
     margin: 8px 0;
-    color: var(--heo-fontcolor);
+    color: var(--bieyinan-fontcolor);
     margin-right: auto;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     max-width: 120px;
     cursor: pointer;
-    padding: 2px 0;
+    padding: 8px;
 }
 
 #byn-footer .footer-title-group {
@@ -129,6 +129,7 @@ img.footer_mini_logo:hover {
 #footer-bar {
     padding: 1rem;
     color: var(--bieyinan-fontcolor);
+    border-top: var(--style-border-always);
     margin-top: 1rem;
     background: var(--bieyinan-secondbg);
     display: flex;
@@ -161,9 +162,7 @@ img.footer_mini_logo:hover {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    padding: 1.5rem 1rem 1rem 1rem;
     position: relative;
-    margin-left: calc(5%);
 }
 
 .footer-bar-right svg {
@@ -176,8 +175,8 @@ img.footer_mini_logo:hover {
 
 .footer-bar-right .container {
     position: absolute;
-    top: calc(100% - 81%);
-    left: calc(-10%);
+    top: -4px;
+    left: calc(-15%);
 
 }
 
@@ -201,6 +200,30 @@ img.footer_mini_logo:hover {
 .footer-bar-right .line2 {
     animation: rotatelove 2s infinite -1s linear;   
     --colorA: #37c1ff;
+}
+
+#footer-bar .footer-bar-link {
+    margin: 0 6px;
+    color: var(--bieyinan-fontcolor);
+    font-weight: 700;
+    white-space: nowrap;
+    border-radius: 14px;
+    line-height: 1;
+    padding: 0.5rem;
+    z-index: 1;
+}
+
+#footer-bar .footer-bar-link:hover {
+    color: var(--heo-main);
+    background: var(--heo-main-op);
+}
+
+.footer-bar-right .footer-bar-link i{
+    margin: 0 0.4rem;
+}
+
+#footer-bar .footer-bar-left .copyright .footer-bar-link {
+    margin: 0;
 }
 
 
