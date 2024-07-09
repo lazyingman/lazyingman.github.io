@@ -898,7 +898,7 @@ body[data-type=music] #fps-group {
   bottom: 20.82%;
   width: 31px;
   left: 2.4%;
-  cursor: pointer;
+  cursor: url(https://bu.dusays.com/2023/11/17/655721cf33644.png), auto !important;
 }
 
 .video-nav .nav-innerbox .nav-png .input-box select {
@@ -946,6 +946,7 @@ body[data-type=music] #fps-group {
   max-width: 1080px;
   width: 100%;
   font-size: 14px;
+  font-weight: 600;
   color: var(--font-color);
   font-family: Nunito-Bold, HYZhengYuan-65W, Microsoft YaHei, sans-serif;
 }
