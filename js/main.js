@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (isHighlightCopy) {
-      highlightCopyEle = '<div class="copy-notice"></div><i class="bi bi-clipboard2-fill copy-button"></i>';
+      highlightCopyEle = '<div class="copy-notice"></div><i class="bi bi-back copy-button"></i>';
     }
 
     const copy = (text, ctx) => {

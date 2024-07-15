@@ -2547,7 +2547,8 @@ pre[class*=language-] .token.italic {
 }
 
 #article-container .highlight-tools .expand+.code-lang {
-    left: 1.7em
+    left: 1.7em;
+    margin-left: 6px;
 }
 
 #article-container .highlight-tools .expand.closed {
@@ -2612,7 +2613,7 @@ pre[class*=language-] .token.italic {
 
 #article-container figure.highlight table {
     display: block;
-    overflow: auto;
+    overflow: scroll;
     border: none;
 }
 
@@ -2638,21 +2639,6 @@ pre[class*=language-] .token.italic {
 #article-container figure.highlight {
     margin: 0 0 24px;
     border-radius: 7px;
-    -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .4);
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .4);
-    -webkit-transform: translateZ(0)
-}
-
-#article-container figure.highlight .highlight-tools:after {
-    position: absolute;
-    left: 14px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #fc625d;
-    -webkit-box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-    content: ' '
 }
 
 #article-container figure.highlight .highlight-tools {
@@ -2661,21 +2647,17 @@ pre[class*=language-] .token.italic {
     color: var(--bieyinan-fontcolor);
 }
 
-#article-container figure.highlight .highlight-tools .expand {
-    right: 0
-}
-
 #article-container figure.highlight .highlight-tools .expand.closed {
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     -o-transition: all .3s;
     -ms-transition: all .3s;
     transition: all .3s;
-    -webkit-transform: rotate(90deg) !important;
-    -moz-transform: rotate(90deg) !important;
-    -o-transform: rotate(90deg) !important;
-    -ms-transform: rotate(90deg) !important;
-    transform: rotate(90deg) !important
+    -webkit-transform: rotate(-90deg) !important;
+    -moz-transform: rotate(-90deg) !important;
+    -o-transform: rotate(-90deg) !important;
+    -ms-transform: rotate(-90deg) !important;
+    transform: rotate(-90deg) !important
 }
 
 #article-container figure.highlight .highlight-tools .expand~.copy-notice {
@@ -2683,11 +2665,7 @@ pre[class*=language-] .token.italic {
 }
 
 #article-container figure.highlight .highlight-tools .expand~.copy-button {
-    right: 2.1em
-}
-
-#article-container figure.highlight .highlight-tools .code-lang {
-    left: 75px
+    right: 1.1em
 }
 
 #article-container .code-expand-btn {
@@ -2699,7 +2677,7 @@ pre[class*=language-] .token.italic {
     border-top: var(--style-border-always);
     position: absolute;
     bottom: 0px;
-    z-index: 10;
+    z-index: 9;
     width: 100%;
     text-align: center;
     font-size: 16px;
@@ -2708,6 +2686,28 @@ pre[class*=language-] .token.italic {
     align-items: center;
     justify-content: center;
     height: 32px;
+    border-radius: 0 0 8px 8px;
+}
+
+/* 整个滚动条 */
+#article-container figure.highlight table::-webkit-scrollbar {
+    color: var(--bieyinan-blue);
+    background: var(--bieyinan-secondbg);
+    height: 7px
+}
+
+/* 当同时有垂直滚动条和水平滚动条时交汇的部分 */
+#article-container figure.highlight table::-webkit-scrollbar-corner {
+    background: var(--bieyinan-background);
+}
+
+/* 滚动条上的滚动滑块 */
+#article-container figure.highlight table::-webkit-scrollbar-thumb {
+    background: var(--bieyinan-secondbg);
+}
+
+#article-container figure.highlight table::-webkit-scrollbar-thumb:hover {
+    background: var(--bieyinan-lighttext)
 }
 
 #article-container .code-expand-btn:hover {
@@ -2727,7 +2727,6 @@ pre[class*=language-] .token.italic {
     line-height: 1;
     animation: 1.2s ease 0s infinite normal none running code-expand-key;
 }
-
 
 #article-container .code-expand-btn.expand-done>i {
     -webkit-transform: rotate(180deg);
@@ -4787,10 +4786,6 @@ body[data-type=link] #page .page-title {
 
 #recent-posts>.recent-post-item>.recent-post-info>.article-meta-wrap .sticky {
     color: #ff7242
-}
-
-#recent-posts>.recent-post-item>.recent-post-info>.article-meta-wrap i {
-    margin: 0 4px 0 0
 }
 
 #recent-posts>.recent-post-item>.recent-post-info>.article-meta-wrap .article-meta {
@@ -13654,7 +13649,7 @@ body[data-type=about] #web_bg {
 
 .author-content-item .card-content .banner-button-group {
     position: absolute;
-    bottom: 1.5rem;
+    bottom: 1rem;
     right: 2rem
 }
 
@@ -13663,7 +13658,7 @@ body[data-type=about] #web_bg {
     width: 124px;
     border-radius: 20px;
     justify-content: center;
-    background: var(--bieyinan-black-op);
+    background: var(--bieyinan-white-op);
     color: var(--bieyinan-white);
     display: flex;
     align-items: center;
@@ -20051,7 +20046,7 @@ center#name-container {
     display: box;
     display: flex;
     color: var(--bieyinan-lighttext);
-    font-size: .5rem;
+    font-size: .6rem;
     margin-right: 8px;
     top: 20px;
     left: 32px;
@@ -20167,7 +20162,8 @@ center#name-container {
 #pagination a.extend.next .pagination_tips_next {
     margin-left: -32px;
     transition: .3s;
-    opacity: 0
+    opacity: 0;
+    margin-bottom: 3px;
 }
 
 #pagination a.extend.next:hover .pagination_tips_next {
@@ -20179,7 +20175,8 @@ center#name-container {
 #pagination a.extend.prev .pagination_tips_prev {
     margin-right: -32px;
     transition: .3s;
-    opacity: 0
+    opacity: 0;
+    margin-bottom: 3px;
 }
 
 #pagination a.extend.prev:hover .pagination_tips_prev {
