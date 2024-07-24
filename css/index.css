@@ -3627,14 +3627,9 @@ body[data-type=link] #page .page-title {
 
 #article-container img {
     display: block;
-    margin: 0 auto 20px;
-    max-width: 100%;
-    -webkit-transition: .3s;
-    -moz-transition: .3s;
-    -o-transition: .3s;
-    -ms-transition: .3s;
-    transition: .3s;
-    border-radius: 8px;
+    margin: 0 auto .8rem;
+    max-width: 90%;
+    max-height: 450px;
 }
 
 #article-container .bieyinan-flink-list .flink-list-item .flink-item-info {
@@ -3974,9 +3969,9 @@ body[data-type=link] #page .page-title {
 }
 
 #article-container img {
+    border-radius: 12px;
     margin-bottom: .5rem;
     object-fit: cover;
-    max-height: 900px
 }
 
 .flexcard-flink-list {
@@ -4933,28 +4928,6 @@ body[data-type=link] #page .page-title {
     display: -ms-flexbox;
     display: box;
     display: flex;
-}
-
-#recent-posts>.recent-post-item .article-meta__categories__box .article-meta__categories {
-    display: inline-block;
-    padding: 1px 6px;
-    background: var(--bieyinan-black-op);
-    border-radius: 8px;
-    margin-left: 4px;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--bieyinan-white);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    -webkit-transform: translateZ(0);
-    -moz-transform: translateZ(0);
-    -o-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    transform: translateZ(0);
-}
-
-#recent-posts>.recent-post-item .article-meta__categories__box .article-meta__categories:hover {
-    background: var(--bieyinan-main)
 }
 
 #recent-posts>.recent-post-item .unvisited-post {
@@ -8235,7 +8208,7 @@ a.deal_link:hover {
 #article-container img {
     display: block;
     margin: 0 auto 20px;
-    max-width: 100%;
+    max-width: 90%;
     -webkit-transition: .3s;
     -moz-transition: .3s;
     -o-transition: .3s;
@@ -10868,7 +10841,7 @@ details.folding-tag summary {
     margin: -16px;
     border-radius: 4px;
     color: rgba(68, 68, 68, .7);
-    font-size: .875rem !important;
+    font-size: .9rem !important;
     font-weight: 700;
     position: relative;
     line-height: normal
@@ -13438,6 +13411,10 @@ body[data-type=about] #web_bg {
     font-family: MohrRounded Black, HYZhengYuan-65W, Microsoft YaHei, sans-serif;
 }
 
+#about-page .author-box~p.small {
+    font-weight: 600;
+}
+
 .author-content {
     display: flex;
     flex-wrap: wrap;
@@ -13563,7 +13540,7 @@ body[data-type=about] #web_bg {
 #about-page .about-statistic {
     min-height: 380px;
     width: 39%;
-    background: url(https://bu.dusays.com/2023/05/01/644f4b037b930.jpg) no-repeat top;
+    background: url(https://lazyingman.s3.bitiful.net/cover/article/tj.jfif?no-wait=on) no-repeat top;
     background-size: cover;
     color: var(--bieyinan-white);
     overflow: hidden
@@ -13765,10 +13742,8 @@ body[data-type=about] #web_bg {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: var(--bieyinan-maskbg);
+    background: var(--bieyinan-maskbgdeep);
     padding: .5rem 2rem;
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     transform: translateZ(0);
     transition: 1s ease-in-out;
     font-size: 20px
@@ -16254,7 +16229,8 @@ details .content>:nth-child(1) {
     transition: .3s ease-out;
     flex-direction: column;
     align-items: center;
-    pointer-events: none
+    pointer-events: none;
+    -webkit-user-select: none;
 }
 
 #console-music-bg {
@@ -16272,45 +16248,45 @@ details .content>:nth-child(1) {
     justify-content: space-between;
     align-items: center;
     margin: 0 30px;
+    max-width: 2000px;
     transform: translateY(20px);
     transition: .3s;
     opacity: 0;
-    max-width: 80%;
-    max-height: 70%
+    max-width: 1400px;
 }
 
 #console.show .console-card-group {
     transform: translateY(0);
     opacity: 1;
-    transition-delay: .1s
+    transition-delay: .1s;
+    max-height: 82%;
 }
 
 #console .console-card-group-left {
     margin-right: .5rem;
     width: 40%;
-    height: 100%
+    height: 100%;
 }
 
 #console .console-card-group-right {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     height: 100%;
     width: 60%;
     overflow: hidden
 }
 
 #console .console-card {
-    background: var(--card-bg);
+    background: var(--bieyinan-maskbg);
     border-radius: 12px;
     overflow: hidden;
     border: var(--style-border);
     box-shadow: var(--bieyinan-shadow-border);
-    padding: 40px
-}
-
-#console .console-card.tags {
-    /* height: calc(100% - 172px) */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 #console .console-mask {
@@ -16334,8 +16310,8 @@ details .content>:nth-child(1) {
 }
 
 #card-newest-comments .aside-list-item .thumbnail img {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     margin-right: 8px;
     border-radius: 20px
 }
@@ -16345,10 +16321,10 @@ details .content>:nth-child(1) {
     border-radius: 12px;
     border: var(--style-border);
     padding: 12px 16px;
-    width: 49%;
     display: flex;
     flex-direction: column;
-    height: 150px;
+    width: calc(100% / 2 - 4px);
+    height: calc(100% / 3 - 4px);
     transition: .3s
 }
 
@@ -16366,8 +16342,12 @@ details .content>:nth-child(1) {
 
 #console .author-content-item-tips {
     opacity: .8;
-    font-size: .6rem;
-    margin-bottom: .5rem
+    font-size: .7rem;
+    margin-bottom: .4rem
+}
+
+#console .author-content-item-tips.music {
+    margin-top: 5rem;
 }
 
 #console .author-content-item-title {
@@ -16386,12 +16366,12 @@ details .content>:nth-child(1) {
     display: flex;
     flex-direction: column;
     height: 100%;
-    margin-top: .5rem
+    padding: .5rem 0 0 0;
+    border-top: var(--style-border);
 }
 
 #card-newest-comments .aside-list-item:hover {
-    background: var(--bieyinan-theme);
-    color: var(--bieyinan-white)
+    border: 1px solid var(--bieyinan-reverse);
 }
 
 #console .aside-list-item .content .comment {
@@ -16405,26 +16385,24 @@ details .content>:nth-child(1) {
 
 #console .aside-list-item:hover .content .comment,
 #console .aside-list-item:hover .thumbnail {
-    color: var(--bieyinan-white)
+    color: var(--bieyinan-reverse)
 }
 
 #console .aside-list-item .content time {
     font-size: 12px;
     margin-top: auto;
-    color: var(--bieyinan-white)
 }
 
 #console .aside-list {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: .5rem
+    gap: 8px;
+    height: 100%;
 }
 
 #console .button-group {
     display: flex;
-    margin: 1rem auto 0 auto;
+    margin: 1rem auto 0rem auto;
     justify-content: center;
     width: fit-content
 }
@@ -16471,17 +16449,17 @@ details .content>:nth-child(1) {
 }
 
 .console-card.tags .card-tag-cloud {
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     display: flex;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
 .console-card.tags .card-tag-cloud a {
     color: var(--bieyinan-fontcolor) !important;
-    margin: 6px 4px;
     padding: 2px 8px;
     border-radius: 8px;
-    background: var(--bieyinan-secondbg);
+    background: var(--bieyinan-card-bg);
     border: var(--style-border);
     font-size: 14px !important;
     font-weight: 700
@@ -16510,19 +16488,25 @@ details .content>:nth-child(1) {
     align-items: center;
     justify-content: center;
     max-width: 1400px;
+    z-index: 1;
 }
 
-#console .close-btn:hover {
-    color: var(--bieyinan-hovertext)
+#console .close-btn i:hover {
+    color: var(--bieyinan-hovertext);
 }
 
 #console.show .close-btn i {
     transform: rotate(0deg);
 }
 
+#console.show .close-btn i:hover {
+    background: var(--bieyinan-main-op);
+    border-radius: 32px;
+}
+
 #console .close-btn i {
     font-size: 32px;
-    margin-right: 1.5rem;
+    margin-right: 1.1rem;
     margin-left: auto;
     transition: 0.3s;
     line-height: 1;
@@ -16801,6 +16785,11 @@ body:has(#console.show) #nav-music .aplayer .aplayer-lrc .aplayer-lrc-contents {
     opacity: 1;
     display: block;
     position: absolute
+}
+
+.reward-show .button-group {
+    opacity: 0;
+    display: none;
 }
 
 .console-card-group-reward .reward-all {
@@ -17207,8 +17196,12 @@ body:has(#console.show) #nav-music .aplayer .aplayer-lrc .aplayer-lrc-contents {
 }
 
 @media screen and (max-height: 800px) {
-    #console .console-card-group {
+    #console .console-card.history {
         display: none
+    }
+
+    #console .console-card.tags {
+        height: 100%;
     }
 
     #consoleMusic {
@@ -24069,6 +24062,14 @@ span.tags-punctuation .icon-biaoqian {
     border: var(--style-border-hover)
 }
 
+#article-container a:not([data-fancybox=gallery]):not(.headerlink):not(.cf-friends-link):not(.btn-bieyinan):not(.no-text-decoration):hover {
+    color: var(--bieyinan-white);
+    background: var(--bieyinan-main);
+    box-shadow: var(--bieyinan-shadow-lightblack);
+    border-radius: .25em;
+    text-decoration: none;
+}
+
 #article-container .tag-Link .tag-link-tips {
     border-bottom: var(--style-border);
     padding-bottom: 4px;
@@ -24092,7 +24093,20 @@ span.tags-punctuation .icon-biaoqian {
     width: 60px;
     min-width: 60px;
     height: 60px;
-    background-size: cover
+    background-size: cover;
+    border-radius: var(--bieyinan-border-radius);
+    background-color: var(--bieyinan-card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#article-container .tag-Link .tag-link-bottom .tag-link-left i {
+    margin: 0;
+    padding: 0;
+    margin: auto;
+    font-size: 20px;
+    color: var(--bieyinan-fontcolor);
 }
 
 #article-container .tag-Link .tag-link-bottom .tag-link-right {

@@ -17,7 +17,6 @@ function categoriesBarActive(){
     // 获取当前的分类
     if (patbool) {
       var valuegroup = urlinfo.split("/");
-      console.log(valuegroup[2]);
       // 获取当前分类
       var nowCategorie = valuegroup[2];
       if (document.querySelector('#category-bar')){

@@ -986,7 +986,7 @@ const bieyinan = {
         songs = cacheData.songs;
       } else {
         // 否则重新从服务器获取数据
-        const response = await fetch("/json/music.json");
+        const response = await fetch("/json/music2.json");
         songs = await response.json();
         cacheData.timestamp = currentTime;
         cacheData.songs = songs;
@@ -1001,38 +1001,43 @@ const bieyinan = {
     // 切换标志位
     changeMusicListFlag = !changeMusicListFlag;
   },
-  // 切换歌单2
-  changeMusicList2: async function () {
+  // 切换主页歌单
+  changeMusicList2: async function (index) {
     const bieMusicPage = document.getElementById("nav-music");
     const metingAplayer = bieMusicPage.querySelector("meting-js").aplayer;
     const currentTime = new Date().getTime();
     const cacheData = JSON.parse(localStorage.getItem("musicData")) || { timestamp: 0 };
-    let songs = [];
-    
-    if (changeMusicListFlag) {
-      songs = defaultPlayMusicList;
-    } else {
-      // 保存当前默认播放列表，以使下次可以切换回来
-      defaultPlayMusicList = metingAplayer.list.audios;
-      // 如果缓存的数据没有过期，直接使用
-      if (currentTime - cacheData.timestamp < 24 * 60 * 60 * 1000) {
-        songs = cacheData.songs;
-      } else {
-        // 否则重新从服务器获取数据
-        const response = await fetch("/json/music.json");
-        songs = await response.json();
-        cacheData.timestamp = currentTime;
-        cacheData.songs = songs;
-        localStorage.setItem("musicData", JSON.stringify(cacheData));
-      }
-      console.log(songs)
-      console.log(defaultPlayMusicList)
-    }
+    var song = [];
 
     // 清除当前播放列表并添加新的歌曲
+    if(index == 0){
+      const response =  await fetch("https://mtapibt.lazyingman.cn/?server=netease&type=playlist&id=8106091931");
+      song =  await response.json();
+    }
+    if(index == 1){
+      const response = await fetch("/json/music.json");
+      song =  await response.json();
+    }
+    if(index == 2){
+        if (currentTime - cacheData.timestamp < 24 * 60 * 60 * 1000) {
+          song = cacheData.songs;
+        } else {
+          // 否则重新从服务器获取数据
+          const response = await fetch("/json/music2.json");
+          song = await response.json();
+          cacheData.timestamp = currentTime;
+          cacheData.songs = song;
+          localStorage.setItem("musicData", JSON.stringify(cacheData));
+      }
+    }
+    if(index == 3){
+      const response = await fetch("/json/dz.json");
+      song =  await response.json();
+    }
+    navMusicEl.classList.add("stretch");
     metingAplayer.list.clear();
-    metingAplayer.list.add(songs);
-
+    metingAplayer.list.add(song);
+    metingAplayer.play();
     // 切换标志位
     changeMusicListFlag = !changeMusicListFlag;
   },

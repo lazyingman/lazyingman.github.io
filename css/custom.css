@@ -1538,13 +1538,128 @@ body[data-type=music] #fps-group {
 }
 
 @keyframes point {
-  0% { opacity: 1}
-  50% { opacity: .2;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 1
+  }
+
+  50% {
+    opacity: .2;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:768px) {
   .article-gpt .title .name {
     margin-left: 70px;
   }
+}
+
+/* 控制台音乐 */
+.card-content .n-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0px, 1fr));
+  gap: 26px 20px;
+}
+
+.card-content .cm.item {
+  width: 100%;
+  height: 100%;
+}
+
+.card-content .cm.item .cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--bieyinan-card-bg);
+  margin-top: 12px;
+  border: var(--style-border);
+  transition: all .3s;
+  position: relative;
+}
+
+.card-content .cm.item .cover .coverImg {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: filter .3s;
+  z-index: 1;
+  display: inline-flex;
+}
+
+.card-content .cm.item .cover:hover .coverImg {
+  filter: brightness(.8);
+}
+
+.card-content .cm.item .cover .coverImg img {
+  width: 100%;
+  transition: transform .3s;
+}
+
+.card-content .cm.item .cover:hover .coverImg img {
+  transform: scale(1.1);
+}
+
+.card-content .cm.item .cover .shadow {
+  opacity: 0;
+  position: absolute;
+  top: 12px;
+  height: 100%;
+  width: 100%;
+  filter: blur(16px) opacity(.6);
+  transform: scale(.92, .96);
+  z-index: 0;
+  background-size: cover;
+  aspect-ratio: 1 / 1;
+  transition: opacity .3s;
+}
+
+.card-content .cm.item .cover .shadow img {
+  border-radius: inherit;
+}
+
+.card-content .cm.item .cover:hover .shadow {
+  opacity: 1;
+}
+
+.card-content .cm.item .cover .play {
+  opacity: 0;
+  position: absolute;
+  color: #fff;
+  padding: .5vw;
+  background-color: #00000010;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  transform: scale(.8);
+  transition: all .3s;
+  z-index: 1;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-content .cm.item .cover:hover .play {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card-content .cm.item .title {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  align-items: center;
+}
+
+.card-content .cm.item .title .name {
+  font-size: 15px;
+  -webkit-line-clamp: 2;
+  transition: all .3s;
 }
