@@ -5141,7 +5141,7 @@ body:has(#console.show) #nav-music {
     body #anMusic-page #anMusicBtnGetSong,
     body #anMusic-page #anMusicRefreshBtn,
     body #anMusic-page #anMusicSwitching {
-        right: 7vw
+        right: 5vw
     }
 
     body #anMusic-page #anMusicSwitching {
@@ -5167,14 +5167,14 @@ body:has(#console.show) #nav-music {
     display: -ms-flexbox;
     display: box;
     display: flex;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     bottom: 100px;
     padding: 5px;
     background: var(--bieyinan-white-op);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-radius: 50%;
+    border-radius: 8px;
     color: #fff;
     text-align: center;
     -webkit-box-pack: center;
@@ -5193,31 +5193,41 @@ body:has(#console.show) #nav-music {
     z-index: 2
 }
 
-#anMusic-page #anMusicBtnGetSong {
-    right: 11vw
+body #anMusic-page #anMusicBtnGetSong,
+body #anMusic-page #anMusicRefreshBtn,
+body #anMusic-page #anMusicSwitching {
+    right: 5vw
 }
 
-#anMusic-page #anMusicRefreshBtn {
-    right: 7vw
+body #anMusic-page #anMusicBtnGetSong:hover,
+body #anMusic-page #anMusicRefreshBtn:hover,
+body #anMusic-page #anMusicSwitching:hover {
+    background: var(--btn-hover-color);
 }
 
-#anMusic-page #anMusicSwitching {
-    right: 15vw
+body #anMusic-page #anMusicSwitching {
+    bottom: 100px
+}
+
+body #anMusic-page #anMusicRefreshBtn {
+    bottom: 150px
+}
+
+body #anMusic-page #anMusicBtnGetSong {
+    bottom: 200px
 }
 
 @media screen and (max-width: 768px) {
     #anMusic-page div#anMusicBtnGetSong {
-        right: 80px;
-        bottom: 150px
+        display: none;
     }
 
     #anMusic-page div#anMusicRefreshBtn {
-        right: 20px;
-        bottom: 150px
+        display: none;
     }
 
     #anMusic-page div#anMusicSwitching {
-        right: 140px;
+        right: 20px;
         bottom: 150px
     }
 }
@@ -5253,7 +5263,7 @@ body:has(#console.show) #nav-music {
     float: none;
     width: 180px;
     height: 180px;
-    border-radius: 12px;
+    border-radius: 8px;
     margin: auto;
     left: 0;
     right: 0;
@@ -5264,6 +5274,17 @@ body:has(#console.show) #nav-music {
     transition: background-image .5s ease-in-out;
     background-size: cover;
     background-color: transparent !important
+}
+
+#anMusic-page meting-js .aplayer .aplayer-body .aplayer-pic::after {
+    content: "";
+    position: absolute;
+    background: url(https://btf.lazyingman.cn/musicCover/musicbg.png) 0 0 no-repeat;
+    width: 201px;
+    height: 180px;
+    bottom: 5px;
+    left: 3px;
+
 }
 
 #anMusic-page meting-js .aplayer .aplayer-body .aplayer-info {
@@ -5279,7 +5300,7 @@ body:has(#console.show) #nav-music {
 
 #anMusic-page meting-js .aplayer .aplayer-body .aplayer-info .aplayer-music .aplayer-author,
 #anMusic-page meting-js .aplayer .aplayer-body .aplayer-info .aplayer-music .aplayer-title {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #fff
 }
@@ -5291,13 +5312,27 @@ body:has(#console.show) #nav-music {
 }
 
 #anMusic-page meting-js .aplayer .aplayer-body .aplayer-info .aplayer-lrc p {
-    color: #fff
+    font-size: 20px;
+    line-height: 20px !important;
+    height: 20px !important;
+    margin: 20px 0 !important;
+    color: #fff;
+    filter:blur(2px);
+    opacity:0.3;
+    transition: all 0.9 cubic-bezier(.56,.17,.22,.76);
+    text-shadow: 0 4px 0 rgba(255, 255, 255, 0);
+}
+
+#anMusic-page meting-js .aplayer .aplayer-body .aplayer-info .aplayer-lrc:hover p {
+    filter:blur(0px);
 }
 
 #anMusic-page meting-js .aplayer .aplayer-body .aplayer-info .aplayer-lrc p.aplayer-lrc-current {
-    min-height: 27px;
-    font-size: 16px;
-    margin: 10px !important;
+    min-height: 20px;
+    filter:blur(0px);
+    opacity: 1;
+    transition: all .3s cubic-bezier(.56,.17,.22,.76), text-shadow 8s 4s ease-in;
+    text-shadow: 0 4px 4px rgba(255, 255, 255, .58);
 }
 
 #anMusic-page meting-js .aplayer .aplayer-body .aplayer-info .aplayer-lrc::after,
@@ -5436,7 +5471,7 @@ body:has(#console.show) #nav-music {
 #anMusic-page meting-js .aplayer ol>li.aplayer-list-light {
     background: rgba(255, 255, 255, .2);
     border-radius: 6px;
-    padding: 20px 15px
+    padding: 10px 15px
 }
 
 #anMusic-page meting-js .aplayer ol>li.aplayer-list-light span.aplayer-list-title {
@@ -15171,16 +15206,16 @@ html::-webkit-scrollbar {
     padding: 0 .2em;
     text-decoration: none;
     position: relative;
-    padding:0 2px 5px 2px;
+    padding: 0 2px 5px 2px;
 }
 
 #article-container a:not([data-fancybox=gallery]):not(.headerlink):not(.cf-friends-link):not(.tag-Link):not(.btn-bieyinan):not(.no-text-decoration)::before {
     content: "";
     position: absolute;
     bottom: 2px;
-    left:0;
-    right:0;
-    height:1px;
+    left: 0;
+    right: 0;
+    height: 1px;
     opacity: .8;
     background-color: var(--bieyinan-lighttext);
     border-radius: 4px;
@@ -15338,7 +15373,7 @@ html.hide-aside .layout>div:first-child {
     }
 
     .footer-bar-right .container {
-        display: none!important;
+        display: none !important;
     }
 }
 
@@ -16762,8 +16797,8 @@ body:has(#console.show) #nav-music .aplayer .aplayer-info .aplayer-controller .a
 
 body:has(#console.show) #nav-music .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb {
     margin-top: -2px;
-    width: 15px;
-    height: 15px
+    width: 10px;
+    height: 10px
 }
 
 body:has(#console.show) #nav-music .aplayer .aplayer-lrc .aplayer-lrc-contents {
@@ -16784,7 +16819,8 @@ body:has(#console.show) #nav-music .aplayer .aplayer-lrc .aplayer-lrc-contents {
 .reward-show .console-card-group-reward {
     opacity: 1;
     display: block;
-    position: absolute
+    position: absolute;
+    z-index: 1;
 }
 
 .reward-show .button-group {
@@ -16830,8 +16866,8 @@ body:has(#console.show) #nav-music .aplayer .aplayer-lrc .aplayer-lrc-contents {
         left: 0;
         background: var(--sidebar-bg);
         height: auto;
-        border-radius: 15px 15px 0 0;
-        padding: 15px 0
+        border-radius: 7px 7px 0 0;
+        padding: 10px 0 5px 0;
     }
 
     body:has(#console.show) .aplayer-list.aplayer-list-hide {
@@ -16923,9 +16959,7 @@ body:has(#console.show) #nav-music .aplayer .aplayer-lrc .aplayer-lrc-contents {
     body:has(#console.show) #console-music-bg {
         display: block;
         filter: blur(33px);
-        display: block;
-        background: #000;
-        opacity: .58;
+        background: #6c757d;
         width: 100%;
         height: 100%;
         position: absolute;
@@ -16934,11 +16968,11 @@ body:has(#console.show) #nav-music .aplayer .aplayer-lrc .aplayer-lrc-contents {
     }
 
     [data-theme=dark] body:has(#console.show) #console-music-bg {
-        background: var(--bieyinan-white)
+        background: #5c636a;
     }
 
     body:has(#console.show) #console-music-bg::after {
-        box-shadow: inset 0 0 10px 116px #000;
+        box-shadow: inset 0 0 10px 116px #6c757d;
         position: absolute;
         content: "";
         width: 100%;
@@ -16948,7 +16982,7 @@ body:has(#console.show) #nav-music .aplayer .aplayer-lrc .aplayer-lrc-contents {
     }
 
     [data-theme=dark] body:has(#console.show) #console-music-bg::after {
-        box-shadow: inset 0 0 10px 116px var(--bieyinan-white)
+        box-shadow: inset 0 0 10px 116px #5c636a;
     }
 
     body:has(#console.show) #nav-music .aplayer.aplayer-withlrc .aplayer-pic {
@@ -16989,29 +17023,28 @@ body:has(#console.show) #nav-music .aplayer .aplayer-lrc .aplayer-lrc-contents {
     }
 
     body:has(#console.show) #nav-music .aplayer .aplayer-info .aplayer-music {
-        padding: 25px 0 0;
+        padding: 45px 0 0;
         position: absolute;
         left: 0
     }
 
     body:has(#console.show) #nav-music .aplayer.aplayer-withlrc .aplayer-lrc {
-        height: 25px;
+        height: 45px;
         text-align: left
     }
 
     body:has(#console.show) #nav-music .aplayer .aplayer-lrc p.aplayer-lrc-current {
         color: var(--bieyinan-white);
-        font-size: 18px;
-        line-height: 25px !important;
-        float: left;
-        white-space: nowrap;
+        font-size: 16px;
+        line-height: 20px !important;
+        white-space: normal;
         min-width: 100%;
-        margin: 0
+        margin: 0px 0 9px 0 !important;
     }
 
     body:has(#console.show) #nav-music .aplayer .aplayer-lrc p {
         color: var(--bieyinan-white);
-        font-size: 16px;
+        font-size: 14px;
         margin: 0
     }
 
@@ -17030,7 +17063,7 @@ body:has(#console.show) #nav-music .aplayer .aplayer-lrc .aplayer-lrc-contents {
     }
 
     body:has(#console.show) #nav-music .aplayer .aplayer-info .aplayer-controller {
-        top: 58px
+        top: 80px
     }
 
     body:has(#console.show) #nav-music .aplayer.aplayer-withlist .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon.aplayer-icon-menu,
@@ -17054,17 +17087,18 @@ body:has(#console.show) #nav-music .aplayer .aplayer-lrc .aplayer-lrc-contents {
         top: 150px;
         left: 50%;
         transform: translateX(-50%);
-        width: 75px
+        width: 75px;
+        display: none;
     }
 
     body:has(#console.show) #nav-music .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar {
-        height: 10px;
+        height: 6px;
         border-radius: 10px
     }
 
     body:has(#console.show) #nav-music .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-loaded {
         display: block;
-        height: 10px;
+        height: 6px;
         border-radius: 10px
     }
 
@@ -24746,7 +24780,7 @@ span.tags-punctuation .icon-biaoqian {
     }
 }
 
-.OwO .OwO-body .OwO-items{
+.OwO .OwO-body .OwO-items {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -25291,7 +25325,7 @@ body[data-type=muyu] #article-container h2 {
 }
 
 /* twikoo */
-.OwO.OwO-open .OwO-body{
+.OwO.OwO-open .OwO-body {
     display: block;
     animation: .3s ease .1s 1 normal both running donate_effcet;
 }
@@ -25307,7 +25341,7 @@ body[data-type=muyu] #article-container h2 {
         opacity: 0;
         transform: translateY(-20px);
     }
-    
+
     100% {
         opacity: 1;
         filter: none;

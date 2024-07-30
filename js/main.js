@@ -1142,12 +1142,13 @@ document.addEventListener("DOMContentLoaded", function () {
       owo_time = "", // 设置计时器
       m = 3; // 设置放大倍数
     // 创建盒子
-    let div = document.createElement("div");
-    // 设置ID
-    div.id = "owo-big";
-    // 插入盒子
+    let div = document.getElementById('owo-big');
     let body = document.querySelector("body");
-    body.appendChild(div);
+    if (!div) {
+      div = document.createElement('div');
+      div.id = 'owo-big';
+      body.appendChild(div);
+    }
 
     // 监听 post-comment 元素的子元素添加事件
     const observer = new MutationObserver(mutations => {

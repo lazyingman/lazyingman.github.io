@@ -706,7 +706,7 @@ const bieyinan = {
     }
     return arr[0];
   },
-
+  
   // 检测显示模式
   darkModeStatus: function () {
     let theme = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
@@ -826,7 +826,6 @@ const bieyinan = {
   changeMusicBg: function (isChangeBg = true) {
     const anMusicBg = document.getElementById("an_music_bg");
     if (isChangeBg) {
-      // player listswitch 会进入此处
       const musiccover = document.querySelector("#anMusic-page .aplayer-pic");
       anMusicBg.style.backgroundImage = musiccover.style.backgroundImage;
     } else {
@@ -850,6 +849,14 @@ const bieyinan = {
           }
         }
       }, 100);
+    }
+  },
+  lrcUpdate() {
+    const aplayerLrcContents = document.querySelector('.aplayer-lrc-contents');
+    const currentLrc = aplayerLrcContents.querySelector('p.aplayer-lrc-current');
+    if (currentLrc) {
+        const currentIndex = Array.from(aplayerLrcContents.children).indexOf(currentLrc);
+        aplayerLrcContents.style.transform = `translateY(${-currentIndex * 40}px)`;
     }
   },
   // 获取自定义播放列表
@@ -895,6 +902,9 @@ const bieyinan = {
     metingAplayer.on("loadeddata", function () {
       bieyinan.changeMusicBg();
     });
+    metingAplayer.on("timeupdate",function(){
+      bieyinan.lrcUpdate();
+    })
 
     aplayerIconMenu.addEventListener("click", function () {
       document.getElementById("menu-mask").style.display = "block";
@@ -1008,7 +1018,6 @@ const bieyinan = {
     const currentTime = new Date().getTime();
     const cacheData = JSON.parse(localStorage.getItem("musicData")) || { timestamp: 0 };
     var song = [];
-
     // 清除当前播放列表并添加新的歌曲
     if(index == 0){
       const response =  await fetch("https://mtapibt.lazyingman.cn/?server=netease&type=playlist&id=8106091931");
