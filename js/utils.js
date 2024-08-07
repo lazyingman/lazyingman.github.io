@@ -592,19 +592,22 @@ const bieyinan = {
   },
   sayhi: function () {
     const $sayhiEl = document.getElementById("author-info__sayhi");
+    if(nick!="小伙伴"){
+      nick = JSON.parse(localStorage.getItem("twikoo")).nick;
+    } 
     const getTimeState = function () {
       var e = new Date().getHours(),
         t = "";
       return (
         0 <= e && e <= 5
-          ? (t = "睡个好觉，保证精力充沛")
+          ? (t = "要早点休息哦，"+nick)
           : 5 < e && e <= 10
-            ? (t = "一日之计在于晨")
+            ? (t = "好久不见，"+nick)
             : 10 < e && e <= 14
-              ? (t = "吃饱了才有力气干活")
+              ? (t = "欢迎再次回来，"+nick)
               : 14 < e && e <= 18
-                ? (t = "集中精力，攻克难关")
-                : 18 < e && e <= 24 && (t = "不要太劳累了，早睡更健康"),
+                ? (t = "下午好，"+nick)
+                : 18 < e && e <= 24 && (t = "晚上好啊，"+nick),
         t
       );
     };
@@ -1491,4 +1494,4 @@ const bieyinanPopupManager = {
     }, duration);
   },
 };
-
+// console.log("好久不见，"+JSON.parse(localStorage.getItem("twikoo")).nick)

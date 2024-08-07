@@ -5,6 +5,7 @@ var bieyinan_musicPlaying = false;
 // 是否开启快捷键
 var bieyinan_keyboard = localStorage.getItem("keyboardToggle") ? localStorage.getItem("keyboardToggle") : false;
 var bieyinan_FPS = localStorage.getItem("FPSToggle") ? localStorage.getItem("FPSToggle") : false;
+var nick= localStorage.getItem("twikoo")?localStorage.getItem("twikoo"):"小伙伴";
 var $web_container = document.getElementById("web_container");
 var $web_box = document.getElementById("web_box");
 var $bodyWrap = document.getElementById("body-wrap");
@@ -149,6 +150,8 @@ var selectRandomSong = [];
 var musicVolume = 0.8;
 // 是否切换了周杰伦音乐列表
 var changeMusicListFlag = false;
+//主页切换歌单
+var changeMusicList = 0;
 // 当前默认播放列表
 var defaultPlayMusicList = [];
 var themeColorMeta, pageHeaderEl, navMusicEl, consoleEl;
@@ -1572,34 +1575,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mouseleaveHomeCard();
     coverColor();
     listenToPageInputPress();
-
-    // needRefresh
-    // nav中间的标题变化
-    document.getElementById("page-name").innerText = document.title.split(` | ${GLOBAL_CONFIG_SITE.configTitle}`)[0];
-    bieyinan.initIndexEssay();
-    bieyinan.changeTimeInEssay();
-    bieyinan.removeBodyPaceClass();
-    bieyinan.qrcodeCreate();
-    bieyinan.changeTimeInAlbumDetail();
-    bieyinan.reflashEssayWaterFall();
-    bieyinan.sayhi();
-    bieyinan.stopImgRightDrag();
-    bieyinan.addNavBackgroundInit();
-    bieyinan.setValueToBodyType();
-    bieyinan.catalogActive();
-    bieyinan.tagsPageActive();
-    bieyinan.categoriesBarActive();
-    bieyinan.topCategoriesBarScroll();
-    bieyinan.switchRightClickMenuHotReview();
-    bieyinan.addEventListenerConsoleMusicList(false);
-    bieyinan.initPaginationObserver();
-
-    setTimeout(() => {
-      setInputFocusListener();
-      if (typeof addFriendLinksInFooter === "function") {
-        addFriendLinksInFooter();
-      }
-    }, 200);
+   
   };
 
   refreshFn();

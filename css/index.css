@@ -17451,6 +17451,10 @@ body[data-type=essay] #web_bg {
     cursor: pointer !important
 }
 
+#bber .bber-bottom .bber-reply i:hover {
+    color: var(--bieyinan-theme);
+}
+
 #bber .timeline ul li.bber-item:hover {
     border: var(--style-border-hover)
 }
@@ -19905,7 +19909,7 @@ center#name-container {
     font-size: var(--global-font-size);
     white-space: nowrap;
     margin: auto;
-    padding: 0 4em;
+    padding: 0 4em 2px 4em;
     top: calc((60px - var(--height))/ 2);
     right: 0;
     left: 0;
