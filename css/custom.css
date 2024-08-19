@@ -879,8 +879,8 @@ body[data-type=music] #fps-group {
   background-size: 100%;
   max-width: 1080px;
   width: 100%;
-  background: -webkit-image-set(url(https://bu.dusays.com/2023/09/02/64f338c3657a0.png) 1x, url(https://bu.dusays.com/2023/09/02/64f338c3657a0.png) 2x) 50% no-repeat;
-  background: image-set(url(https://bu.dusays.com/2023/09/02/64f338c3657a0.png) 1x, url(https://bu.dusays.com/2023/09/02/64f338c3657a0.png) 2x) 50% no-repeat;
+  background: -webkit-image-set(url(https://support.partyanimals.cn/img/home_saerch+nemo.bbd9a4f7.png) 1x, url(https://bu.dusays.com/2023/09/02/64f338c3657a0.png) 2x) 50% no-repeat;
+  background: image-set(url(https://support.partyanimals.cn/img/home_saerch+nemo.bbd9a4f7.png) 1x, url(https://bu.dusays.com/2023/09/02/64f338c3657a0.png) 2x) 50% no-repeat;
 }
 
 .video-nav .nav-innerbox .nav-png .text-msg {

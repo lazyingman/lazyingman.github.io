@@ -592,7 +592,7 @@ const bieyinan = {
   },
   sayhi: function () {
     const $sayhiEl = document.getElementById("author-info__sayhi");
-    if(nick!="小伙伴"){
+    if(nick!="小伙伴" && nick!=""){
       nick = JSON.parse(localStorage.getItem("twikoo")).nick;
     } 
     const getTimeState = function () {
@@ -714,11 +714,11 @@ const bieyinan = {
   darkModeStatus: function () {
     let theme = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
     if (theme == "light") {
-      $(".menu-darkmode-text").text("深色模式");
+      document.getElementsByClassName("menu-darkmode-text").innerText = "深色模式";
       if(document.querySelector("#selfie"))
       document.querySelector("#selfie").src="https://bu.dusays.com/2023/06/23/64959b78666b9.jpg"
     } else {
-      $(".menu-darkmode-text").text("浅色模式");
+      document.getElementsByClassName("menu-darkmode-text").innerText = "浅色模式";
       if(document.querySelector("#selfie"))
       document.querySelector("#selfie").src="https://bu.dusays.com/2023/08/07/64d109ee3e865.webp"
     }
