@@ -104,33 +104,6 @@
     
     
     <entry>
-      <title>使用JS来获取文章封面主题色</title>
-      <link href="/posts/27a9cc74.html"/>
-      <url>/posts/27a9cc74.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="前提">前提</h2><p>之前在研究APlayer的时候发现了一个插件，<a href="https://aplayer.js.org/#/home?id=self-adapting-theme-according-to-cover">根据封面自适应主题</a>，一开始完全看的不是很懂，直接复制官网的过来也用不了，后面发现他写的有问题，他最后一句<code>setTheme(index)</code>，js的找错真的头痛，百度白天也没找出答案，后面才发现需要选中它的索引<code>setTheme(index.index)</code>这样才有用。</p><p>后面在看这个js的时候发现它可以根据图片的颜色来获取主色调，博客本来是有自动获取获取封面主色调的函数的，但是需要图片存放在有数据万象功能的存储桶里，但是需要亿点点的money，我本着能白嫖绝不付费的想法，想了一下，是不是可以把这个插件整合到博客中去，结果是可以的，但是会拖慢一点响应的速度好像，<psw>免费的还要什么自行车</psw>。</p><p>下面是官网的函数</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">const colorThief = new ColorThief();</span><br><span class="line">const image = new Image();</span><br><span class="line">const xhr = new XMLHttpRequest();</span><br><span class="line">const setTheme = (index) =&gt; &#123;</span><br><span class="line">    if (!ap.list.audios[index].theme) &#123;</span><br><span class="line">        xhr.onload = function()&#123;</span><br><span class="line">            let coverUrl = URL.createObjectURL(this.response);</span><br><span class="line">            image.onload = function()&#123;</span><br><span class="line">                let color = colorThief.getColor(image);</span><br><span class="line">                ap.theme(`rgb($&#123;color[0]&#125;, $&#123;color[1]&#125;, $&#123;color[2]&#125;)`, index);</span><br><span class="line">                URL.revokeObjectURL(coverUrl)</span><br><span class="line">            &#125;;</span><br><span class="line">            image.src = coverUrl;</span><br><span class="line">        &#125;</span><br><span class="line">        xhr.open(&#x27;GET&#x27;, ap.list.audios[index].cover, true);</span><br><span class="line">        xhr.responseType = &#x27;blob&#x27;;</span><br><span class="line">        xhr.send();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">setTheme(ap.list.index);</span><br><span class="line">ap.on(&#x27;listswitch&#x27;, (index) =&gt; &#123;</span><br><span class="line">    setTheme(index);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h2 id="引入js">引入js</h2><p>找到 <code>_config.butterfly.yml</code>文件，在inject的bottom引入js</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">inject:</span><br><span class="line"></span><br><span class="line">   bottom:</span><br><span class="line">    - &lt;script data-pjax async type=&quot;text/javascript&quot; src=&quot;https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/color-thief/2.3.2/color-thief.umd.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure><p>下面这段js需要放入到你使用数据万象主题颜色的函数中了，我的是放在catch当中</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;post-top-bg&quot;</span>)?.<span class="property">src</span>;<span class="comment">//获取图片的src</span></span><br><span class="line"><span class="keyword">const</span> colorThief = <span class="keyword">new</span> <span class="title class_">ColorThief</span>();</span><br><span class="line"><span class="keyword">const</span> image = <span class="keyword">new</span> <span class="title class_">Image</span>();</span><br><span class="line">image.<span class="property">src</span> = path + <span class="string">&quot;?imageAve&quot;</span>;</span><br><span class="line">image.<span class="title function_">setAttribute</span>(<span class="string">&#x27;crossOrigin&#x27;</span>, <span class="string">&#x27;anonymous&#x27;</span>)<span class="comment">//设置图片跨源</span></span><br><span class="line">image.<span class="property">onload</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> color = colorThief.<span class="title function_">getColor</span>(image);<span class="comment">//返回红色、绿色和蓝色值的三个整数的数组</span></span><br><span class="line"><span class="comment">//   root.style.setProperty(&quot;--bieyinan-bar-background&quot;, `rgb($&#123;color[0]&#125;, $&#123;color[1]&#125;, $&#123;color[2]&#125;)`);</span></span><br><span class="line"><span class="comment">//   root.style.setProperty(&quot;--bieyinan-main&quot;, `rgb($&#123;color[0]&#125;, $&#123;color[1]&#125;, $&#123;color[2]&#125;)`);</span></span><br><span class="line"><span class="comment">//   root.style.setProperty(&quot;--bieyinan-theme-op-deep&quot;, `rgb($&#123;color[0]&#125;, $&#123;color[1]&#125;, $&#123;color[2]&#125;,0.6)`);//可以修改自己所需要的变量</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>不得不说，这个插件还是很好用的，现在也支持了webp格式的图片。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 学习笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 教程 </tag>
-            
-            <tag> Color </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>如何给你的网站添加FPS监测</title>
       <link href="/posts/2c9c7fcb.html"/>
       <url>/posts/2c9c7fcb.html</url>
