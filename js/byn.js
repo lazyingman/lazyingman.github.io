@@ -1,1 +1,218 @@
-!async function(){await async function(){if(document.getElementById("userAgentIp"))try{var e=await fetch("https://api.qjqq.cn/api/Local"),t=await e.json(),a=t.ip,o=t.data.country,n=t.data.prov,r=t.data.city,s=t.data.isp;document.getElementById("userAgentIp").innerHTML=a,document.getElementById("userAgentCountry").innerHTML=o,document.getElementById("userAgentProv").innerHTML=n,document.getElementById("userAgentCity").innerHTML=r,document.getElementById("userAgentISP").innerHTML=s;var i=navigator.userAgent;document.getElementById("userAgentDevice").innerHTML=i}catch(e){console.error("获取信息失败")}}(),"true"==localStorage.getItem("FPSToggle")?(bieyinan_FPS=!0,document.querySelector("#fps-group").classList.add("show"),document.querySelector("#consoleFPS").classList.add("on")):(bieyinan_FPS=!1,document.querySelector("#fps-group").classList.remove("show"),document.querySelector("#consoleFPS").classList.remove("on"));var e,t,a,o,n,r;r=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(e){window.setTimeout(e,1e3/60)},e=0,t=Date.now(),o=function(){a=Date.now()-t,e+=1,a>=1e3&&(t+=a,n(e),e=0),r(o)},n=function(e){document.querySelector("#fps").innerHTML=e},o();class s{startX=0;startY=0;moveInsX=0;moveInsY=0;isMousedown=!1;targetEl=null;targetElTx=0;targetElTy=0;initTargetElTop=0;initTargetElLeft=0;limitMoveBorder=!1;moveMode="transform";callback=null;h5=!1;rootDom=document;constructor(e={},t=()=>{}){this._initConfig(e),this._initEvent(),this._initTragetElInfo(),this.callback=t}_initConfig(e){this.targetEl=e.targetEl||document.body,this.limitMoveBorder=!!e.limitMoveBorder,this.moveMode=e.moveMode||"transform",this.h5=!!e.h5,this.rootDom=e.rootDom||this.rootDom}_initTragetElInfo(){if(this.targetEl){const{top:e,left:t}=this.targetEl.getBoundingClientRect();this.initTargetElTop=e,this.initTargetElLeft=t,this.targetEl.style["will-change"]="transform"===this.moveMode?"transform":"left, top"}}_getStyleTransformProp(e="",t="scale"){let a=(e=e.replaceAll(", ",",").trim()).split(" "),o="";return a.forEach((e=>{e.includes(t)&&(o=e)})),o}_calcTargetTranlate=()=>{if(this.targetEl){let e=this._getStyleTransformProp(this.targetEl.style.transform,"translate3d");if(e.includes("translate3d")){let t=/\((.*)\)/g.exec(e);t&&(e=t[1].replaceAll(", ",","));let a=e.replace("(","").replace(")","").split(",");this.targetElTx=+a[0].replace("px","")||0}}};_setTransformProp(e="",t="",a=""){let o=new RegExp(`${t}((.*))`,"g");if(e.includes(t)){let n=e.replaceAll(", ",",").trim().split(" ");e=n.map((e=>e.replaceAll(o,`${t}(${a})`))).join(" ")}else e=`${t}(${a}) `+e;return e}_translateMoveEl(){if(this.targetEl){let e=this.targetElTx+this.moveInsX,t=this.targetElTy+this.moveInsY;const a=()=>{const{width:a,height:o}=this.targetEl.getBoundingClientRect();e+a+this.initTargetElLeft>window.innerWidth&&(e=window.innerWidth-a-this.initTargetElLeft),e<-this.initTargetElLeft&&(e=-this.initTargetElLeft),t+o+this.initTargetElTop>window.innerHeight&&(t=window.innerHeight-o-this.initTargetElTop),t<-this.initTargetElTop&&(t=-this.initTargetElTop)};this.limitMoveBorder&&a();let o=this.targetEl.style.transform;o=o?this._setTransformProp(o,"translate3d",`${e}px, ${t}px, 0px`):`translate3d(${e}px, ${t}px, 0px)`,this.targetEl.style.transform=o}}_topLeftMoveTargetEl=()=>{let e=this.moveInsX+this.initTargetElLeft;const t=()=>{const{width:t,height:a}=this.targetEl.getBoundingClientRect();top<0&&(top=0),top>window.innerHeight-a&&(top=window.innerHeight-a),e<0&&(e=0),e>1370-t&&(e=1370-t)};this.limitMoveBorder&&t(),this.targetEl.style.left=e+"px",this.targetEl.style.top=top+"px"};_mousemoveHandler=e=>{const t=this.h5?e.changedTouches[0].pageX:e.pageX,a=this.h5?e.changedTouches[0].pageY:e.pageY;if(this.isMousedown){t<this.startX&&(this.moveInsX=t-this.startX),t>this.startX&&(this.moveInsX=t-this.startX),a<this.startY&&(this.moveInsY=this.startY),a>this.startY&&(this.moveInsY=this.startY),"position"===this.moveMode?this._topLeftMoveTargetEl():this._translateMoveEl();let e=Math.round(Math.pow(this.moveInsX*this.moveInsX+this.moveInsY*this.moveInsY,.5));this.callback(this.moveInsX,this.moveInsY,e)}};_mousedownHandler=e=>{const t=this.h5?e.changedTouches[0].pageX:e.pageX;this.h5?e.changedTouches[0].pageY:e.pageY;this.startX=t,this.moveInsX=0,this.moveInsY=0,this.isMousedown=!0,this._calcTargetTranlate(),"position"===this.moveMode&&this._initTragetElInfo()};_mouseupHandler=e=>{this.isMousedown=!1,this.startX=0,this.startY=0};_initEvent(){const e=this.h5?"touchmove":"mousemove",t=this.h5?"touchstart":"mousedown",a=this.h5?"touchend":"mouseup";this.rootDom.addEventListener(e,this._mousemoveHandler),this.targetEl&&this.targetEl.addEventListener(t,this._mousedownHandler),this.rootDom.addEventListener(a,this._mouseupHandler)}destroy(){const e=this.h5?"touchmove":"mousemove",t=this.h5?"touchstart":"mousedown",a=this.h5?"touchend":"mouseup";this.targetEl&&this.targetEl.removeEventListener(e,this._mousedownHandler),this.rootDom.removeEventListener(t,this._mousemoveHandler),this.rootDom.removeEventListener(a,this._mouseupHandler)}}const i=document.getElementById("con-animals");var l=window.location.pathname;const c=/\/page\/.*?\//.test(l);if("/"===l||c){new s({targetEl:i,moveMode:"position",limitMoveBorder:!0})}}();var winbox="";function createWinbox(){let e=document.createElement("div");document.body.appendChild(e),winbox=WinBox({id:"changeBgBox",index:999,title:"切换背景",x:"center",y:"center",minwidth:"300px",height:"60%",background:"var(--bieyinan-main)",onmaximize:()=>{e.innerHTML="<style>body::-webkit-scrollbar {display: none;}div#changeBgBox {width: 100% !important;}</style>"},onrestore:()=>{e.innerHTML=""}}),winResize(),window.addEventListener("resize",winResize),winbox.body.innerHTML='\n    <div id="article-container" style="padding:10px;">\n    \n    <button onclick="localStorage.removeItem(\'blogbg\');location.reload();" style="    background: var(--bieyinan-main);float: right;width: 20%;padding: 10px 0;border-radius: 6px;color: white;margin-top: 1.5rem;line-height: 1px;"><i class="fa-solid fa-arrows-rotate"></i> 恢复默认背景</button>\n\n    <h2 id="纯色"><a href="#纯色" class="headerlink" title="纯色"></a>纯色</h2>\n    <div class="bgbox">\n    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #ffffff;border: 1px solid rgb(239, 244, 248);" onclick="changeBg(\'#ffffff\')"></a> \n    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #f0fcff" onclick="changeBg(\'#f0fcff\')"></a> \n    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #e3f9fd" onclick="changeBg(\'#e3f9fd\')"></a> \n    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #70f3ff" onclick="changeBg(\'#70f3ff\')"></a> \n    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #a4e2c6" onclick="changeBg(\'#a4e2c6\')"></a> \n    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #a1afc9" onclick="changeBg(\'#a1afc9\')"></a> \n    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #4c8dae" onclick="changeBg(\'#4c8dae\')"></a> \n    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #edd1d8" onclick="changeBg(\'#edd1d8\')"></a> \n    </div>\n\n    <h2 id="渐变色"><a href="#渐变色" class="headerlink" title="渐变色"></a>渐变色</h2>\n    <div class="bgbox">\n    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)" onclick="changeBg(\'linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff)" onclick="changeBg(\'linear-gradient(to right, #2980b9, #6dd5fa, #ffffff)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to right, #b2fefa, #0ed2f7)" onclick="changeBg(\'linear-gradient(to right, #b2fefa, #0ed2f7)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to right, #00c9ff, #92fe9d)" onclick="changeBg(\'linear-gradient(to right, #00c9ff, #92fe9d)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to right, #74ebd5, #acb6e5)" onclick="changeBg(\'linear-gradient(to right, #74ebd5, #acb6e5)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to right, #ffafbd, #ffc3a0)" onclick="changeBg(\'linear-gradient(to right, #ffafbd, #ffc3a0)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4)" onclick="changeBg(\'linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(90deg,rgba(247,149,51,.1),rgba(243,112,85,.1) 15%,rgba(239,78,123,.1) 30%,rgba(161,102,171,.1) 44%,rgba(80,115,184,.1) 58%,rgba(16,152,173,.1) 72%,rgba(7,179,155,.1) 86%,rgba(109,186,130,.1))" onclick="changeBg(\'linear-gradient(90deg,rgba(247,149,51,.1),rgba(243,112,85,.1) 15%,rgba(239,78,123,.1) 30%,rgba(161,102,171,.1) 44%,rgba(80,115,184,.1) 58%,rgba(16,152,173,.1) 72%,rgba(7,179,155,.1) 86%,rgba(109,186,130,.1))\')"></a>\n    </div>\n\n    <h2 id="图片（电脑）"><a href="#图片（电脑）" class="headerlink" title="图片（电脑）"></a>图片（电脑）</h2>\n    <div class="bgbox">\n    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2023/12/21/658430a1d0eb7.webp)" class="imgbox" onclick="changeBg(\'url(https://bu.dusays.com/2023/12/21/658430a1d0eb7.webp)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2023/12/21/658430a20721b.webp)" class="imgbox" onclick="changeBg(\'url(https://bu.dusays.com/2023/12/21/658430a20721b.webp)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2023/12/21/658430a20d1e0.webp)" class="imgbox" onclick="changeBg(\'url(https://bu.dusays.com/2023/12/21/658430a20d1e0.webp)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2023/12/21/658430a254133.webp)" class="imgbox" onclick="changeBg(\'url(https://bu.dusays.com/2023/12/21/658430a254133.webp)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2023/12/21/658430a32d3c5.jpg)" class="imgbox" onclick="changeBg(\'url(https://bu.dusays.com/2023/12/21/658430a32d3c5.jpg)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2023/12/21/658430a59bf18.jpg)" class="imgbox" onclick="changeBg(\'url(https://bu.dusays.com/2023/12/21/658430a59bf18.jpg)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2023/12/21/658430a73a8ba.jpg)" class="imgbox" onclick="changeBg(\'url(https://bu.dusays.com/2023/12/21/658430a73a8ba.jpg)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2023/12/21/658430a7bde11.jpg)" class="imgbox" onclick="changeBg(\'url(https://bu.dusays.com/2023/12/21/658430a7bde11.jpg)\')"></a>\n    </div>\n\n    <h2 id="图片（手机）"><a href="#图片（手机）" class="headerlink" title="图片（手机）"></a>图片（手机）</h2>\n    <div class="bgbox">\n    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2023/12/21/6584342db4abf.jpg)" class="pimgbox" onclick="changeBg(\'url(https://bu.dusays.com/2023/12/21/6584342db4abf.jpg)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2023/12/21/6584342e4fef9.jpg)" class="pimgbox" onclick="changeBg(\'url(https://bu.dusays.com/2023/12/21/6584342e4fef9.jpg)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2023/12/21/65843430e0808.jpg)" class="pimgbox" onclick="changeBg(\'url(https://bu.dusays.com/2023/12/21/65843430e0808.jpg)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2023/12/21/658434312734d.jpg)" class="pimgbox" onclick="changeBg(\'url(https://bu.dusays.com/2023/12/21/658434312734d.jpg)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2023/12/21/658434331a33c.jpg)" class="pimgbox" onclick="changeBg(\'url(https://bu.dusays.com/2023/12/21/658434331a33c.jpg)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2023/12/21/658434341a738.jpg)" class="pimgbox" onclick="changeBg(\'url(https://bu.dusays.com/2023/12/21/658434341a738.jpg)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2023/12/21/658443c919a64.webp)" class="pimgbox" onclick="changeBg(\'url(https://bu.dusays.com/2023/12/21/658443c919a64.webp)\')"></a>\n    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2023/12/21/658443ca09eae.jpg)" class="pimgbox" onclick="changeBg(\'url(https://bu.dusays.com/2023/12/21/658443ca09eae.jpg)\')"></a>\n    </div>\n'}function winResize(){let e=document.querySelector("#changeBgBox");if(e&&!e.classList.contains("min")&&!e.classList.contains("max")){var t=document.documentElement.clientWidth;t<=768?winbox.resize(.95*t+"px","90%").move("center","center"):winbox.resize(.6*t+"px","70%").move("center","center")}}function toggleWinbox(){document.querySelector("#changeBgBox")?winbox.toggleClass("hide"):createWinbox()}function saveData(e,t){localStorage.setItem(e,JSON.stringify({time:Date.now(),data:t}))}function loadData(e,t){let a=JSON.parse(localStorage.getItem(e));if(a){let e=Date.now()-a.time;if(e<60*t*1e3&&e>-1)return a.data}return 0}try{let e=loadData("blogbg",1440);e?changeBg(e,1):localStorage.removeItem("blogbg")}catch(e){localStorage.removeItem("blogbg")}function changeBg(e,t){let a=document.getElementById("web_bg");"#"==e.charAt(0)?(a.style.backgroundColor=e,a.style.backgroundImage="none"):a.style.backgroundImage=e,t||saveData("blogbg",e),winbox.close()}
+(function () {
+  /** @brief 按需查询访问者 IP；请求独立执行，离开页面时取消。 */
+  async function getIpInfo() {
+    window.AbortIpInfo?.();
+    const Names = ['Ip', 'Country', 'Prov', 'City', 'ISP'];
+    const Nodes = Names.map(Name => document.getElementById('userAgent' + Name));
+    const Device = document.getElementById('userAgentDevice');
+    if (Device) Device.textContent = navigator.userAgent;
+    if (!Nodes[0]) return;
+    const Controller = new AbortController();
+    let Cancelled = false;
+    const Cancel = () => { Cancelled = true; Controller.abort(); };
+    window.AbortIpInfo = Cancel;
+    document.addEventListener('pjax:send', Cancel, { once: true });
+    window.addEventListener('pagehide', Cancel, { once: true });
+    const Timer = setTimeout(() => Controller.abort(), 8000);
+    const Display = Values => Nodes.forEach((Node, Index) => {
+      if (Node?.isConnected) Node.textContent = Values[Index] || '暂无数据';
+    });
+    Display(Names.map(() => '正在获取…'));
+    try {
+      const Response = await fetch('https://ipwho.is/', { signal: Controller.signal });
+      if (!Response.ok) throw new Error('HTTP ' + Response.status);
+      const Data = await Response.json();
+      if (Data.success !== true || typeof Data.ip !== 'string' || !Data.ip) {
+        throw new Error('IP 接口返回无效数据');
+      }
+      if (!Cancelled) Display([Data.ip, Data.country, Data.region, Data.city, Data.connection?.isp]);
+    } catch (Error) {
+      if (!Cancelled) {
+        Display(Names.map(() => '暂时无法获取'));
+        console.warn('IP 信息获取失败：', Error.message);
+      }
+    } finally {
+      clearTimeout(Timer);
+      document.removeEventListener('pjax:send', Cancel);
+      window.removeEventListener('pagehide', Cancel);
+      if (window.AbortIpInfo === Cancel) delete window.AbortIpInfo;
+    }
+  }
+
+  /** @brief 创建唯一 FPS 计数器；关闭、隐藏或 PJAX 切换期间停止采样。 */
+  function InitFPS() {
+    if (!window.BieyinanFPS) {
+      let Frame = null, Last = null, Count = 0, Node = null, Navigating = false;
+      const Stop = () => {
+        if (Frame !== null) cancelAnimationFrame(Frame);
+        Frame = null;
+        Last = null;
+        Count = 0;
+        Node = null;
+      };
+      const Tick = Time => {
+        Frame = null;
+        if (!bieyinan_FPS || document.hidden || Navigating || !Node?.isConnected) {
+          Stop();
+          return;
+        }
+        if (Last === null) Last = Time;
+        else {
+          Count++;
+          const Elapsed = Time - Last;
+          if (Elapsed >= 1000) {
+            Node.textContent = String(Math.round(Count * 1000 / Elapsed));
+            Last = Time;
+            Count = 0;
+          }
+        }
+        Frame = requestAnimationFrame(Tick);
+      };
+      const Refresh = () => {
+        const Current = document.getElementById('fps');
+        if (!bieyinan_FPS || document.hidden || Navigating || !Current) {
+          Stop();
+          return;
+        }
+        if (Frame !== null && Current === Node) return;
+        Stop();
+        Node = Current;
+        Node.textContent = '—';
+        Frame = requestAnimationFrame(Tick);
+      };
+      window.BieyinanFPS = { Refresh, Stop };
+      document.addEventListener('visibilitychange', Refresh);
+      document.addEventListener('pjax:send', () => { Navigating = true; Stop(); });
+      document.addEventListener('pjax:complete', () => { Navigating = false; bieyinan.SyncFPS(); });
+      window.addEventListener('pagehide', Stop);
+      window.addEventListener('pageshow', () => { Navigating = false; bieyinan.SyncFPS(); });
+    }
+    bieyinan.SyncFPS();
+  }
+
+  void getIpInfo();
+  InitFPS();
+
+  /**
+   * @brief 绑定首页图片水平拖动，防止重复绑定并在 PJAX 离开时清理。
+   * @param {HTMLElement|null} Target 图片元素。
+   */
+  function InitImageDrag(Target) {
+    if (!Target || Target.HorizontalDragBound) return;
+    const Parent = Target.offsetParent || Target.parentElement;
+    if (!Parent) return;
+    Target.HorizontalDragBound = true;
+    const Controller = new AbortController();
+    const Options = { signal: Controller.signal };
+    let PointerId = null, StartX = 0, StartOffset = 0;
+    let Offset = 0, Minimum = 0, Maximum = 0, Frame = 0;
+    const StorageKey = 'con-animals-position';
+    let Position = null;
+    try {
+      const Saved = localStorage.getItem(StorageKey);
+      const Value = Saved === null || Saved.trim() === '' ? NaN : Number(Saved);
+      if (Number.isFinite(Value) && Value >= 0 && Value <= 1) Position = Value;
+    } catch (_) { /* 存储被禁用时仍允许正常拖动。 */ }
+
+    // 移动过程中仅写 transform，一帧只提交一次，不读取布局。
+    const Render = () => {
+      Frame = 0;
+      if (Target.isConnected) Target.style.transform = 'translate3d(' + Offset + 'px, 0, 0)';
+    };
+    const Move = Event => {
+      if (Event.pointerId !== PointerId) return;
+      Offset = Math.max(Minimum, Math.min(Maximum, StartOffset + Event.clientX - StartX));
+      if (!Frame) Frame = requestAnimationFrame(Render);
+    };
+    const Finish = () => {
+      const PreviousId = PointerId;
+      PointerId = null;
+      // 仅结束拖动时写存储，保存可移动范围内的比例，适应不同窗口宽度。
+      if (PreviousId !== null && Maximum > Minimum && Target.offsetParent) {
+        Position = (Offset - Minimum) / (Maximum - Minimum);
+        try {
+          localStorage.setItem(StorageKey, String(Position));
+        } catch (_) { /* 存储不可用时保留本次页面中的位置。 */ }
+      }
+      cancelAnimationFrame(Frame);
+      Render();
+      Target.style.willChange = '';
+      if (PreviousId !== null && Target.hasPointerCapture(PreviousId)) {
+        Target.releasePointerCapture(PreviousId);
+      }
+    };
+    // offsetLeft 与 offsetParent.clientWidth 使用相同坐标系。
+    const Measure = () => {
+      if (!Target.offsetParent) return;
+      Minimum = -Target.offsetLeft;
+      Maximum = Math.max(Minimum, Parent.clientWidth - Target.offsetWidth - Target.offsetLeft);
+      if (Position !== null) Offset = Minimum + Position * (Maximum - Minimum);
+      Offset = Math.max(Minimum, Math.min(Maximum, Offset));
+    };
+    Target.addEventListener('pointerdown', Event => {
+      if (!Event.isPrimary || Event.button !== 0 || PointerId !== null) return;
+      Measure();
+      PointerId = Event.pointerId;
+      StartX = Event.clientX;
+      StartOffset = Offset;
+      Target.setPointerCapture(PointerId);
+      Target.style.willChange = 'transform';
+      Event.preventDefault();
+    }, Options);
+    Target.addEventListener('pointermove', Move, Options);
+    Target.addEventListener('pointerup', Event => {
+      if (Event.pointerId !== PointerId) return;
+      Move(Event); // 提交松手位置，避免最后一帧位移丢失。
+      Finish();
+    }, Options);
+    for (const Type of ['pointercancel', 'lostpointercapture']) {
+      Target.addEventListener(Type, Event => {
+        if (Event.pointerId === PointerId) Finish();
+      }, Options);
+    }
+    Target.addEventListener('dragstart', Event => Event.preventDefault(), Options);
+    window.addEventListener('blur', Finish, Options);
+    window.addEventListener('pagehide', Finish, Options);
+    Measure();
+    Render();
+    // 容器缩放或图片加载完成后更新边界，不在 pointermove 中测量。
+    const Observer = new ResizeObserver(() => {
+      Finish();
+      Measure();
+      Render();
+    });
+    Observer.observe(Parent);
+    Observer.observe(Target);
+    document.addEventListener('pjax:send', () => {
+      Finish();
+      Observer.disconnect();
+      Controller.abort();
+      Target.HorizontalDragBound = false;
+      Target.style.transform = '';
+    }, { ...Options, once: true });
+  }
+
+  if (window.location.pathname === '/' || /^\/page\/[^/]+\/?$/.test(window.location.pathname)) {
+    InitImageDrag(document.getElementById('con-animals'));
+  }
+
+})();
+
+
+// setInterval(function () {
+//     check();
+// }, 2000);
+// var check = function () {
+//     function doCheck(a) {
+//         if (('' + a / a)['length'] !== 1 || a % 20 === 0) {
+//             (function () { }['constructor']('debugger')());
+//         } else {
+//             (function () { }['constructor']('debugger')());
+//         }
+//         doCheck(++a);
+//     }
+//     try {
+//         doCheck(0);
+//     } catch (err) { }
+// };
+// check();

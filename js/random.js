@@ -1,1 +1,851 @@
-var posts=["posts/697cb99d.html","posts/4a17b156.html","posts/fcbdffd2.html","posts/e2a091a6.html","posts/da523892.html","posts/20230502a.html"];function toRandomPost(){pjax.loadUrl("/"+posts[Math.floor(Math.random()*posts.length)])}var friend_link_list=[{name:"安知鱼",link:"https://anheyu.com/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/09/15/63232b7d91d22.jpg",descr:"生活明朗，万物可爱",siteshot:"https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/anheyu.com.jpg"},{name:"Akilarの糖果屋",link:"https://akilar.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/09/02/6311fc9de6507.webp",descr:"期待您的光临！",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/09/02/6311fc39c5966.webp"},{name:"张洪Heo",link:"https://blog.zhheo.com/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/09/02/6311fc38f1465.webp",descr:"分享设计与科技生活",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/09/02/6311fc3959f82.webp"},{name:"Leonus",link:"https://blog.leonus.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/09/16/6324505c9890a.jpeg",descr:"进一寸有进一寸的欢喜。",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/09/16/6324505c98fae.jpg"},{name:"山岳库博",link:"https://kmar.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/10/06/633e9c4c2786f.png",descr:"开发学习启发性二刺螈",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/10/06/633e9c4c3460b.jpg"},{name:"Tianli",link:"https://tianli-blog.club",avatar:"https://img02.anheyu.com/adminuploads/1/2022/11/11/636db0d451fd0.webp",descr:"惟其不可能，所以才相信。",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/11/07/6368520c9e4e7.webp"},{name:"Ariasaka",link:"https://yisous.xyz",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/11/6395bcc946fc9.png",descr:"人有悲欢离合 月有阴晴圆缺",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/12/11/6395bcc1502e5.png"},{name:"张时贰",link:"https://zhsher.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/11/12/636ef2c1632a5.webp",descr:"环转码，爱敲代码的小张！",siteshot:"https://img02.anheyu.com/adminuploads/1/2023/02/03/63dc8d606e61a.webp"},{name:"杜老师说",link:"https://dusays.com",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/21/63a2acb9c07d0.png!linkavatar",descr:"师者，传道，授业，解惑！",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/12/21/63a2acb9c07d0.webp"},{name:"Fomalhaut🥝",link:"https://www.fomal.cc/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/09/02/6311ff42df52e.webp!linkavatar",descr:"Welcome to Fomalhaut🥝のTiny Home",siteshot:"https://img02.anheyu.com/thumbnails/303c9346ba832c2ea658a9048391ea47.png",recommend:!0},{name:"JayHrn",link:"https://blog.jayhrn.com",avatar:"https://img02.anheyu.com/adminuploads/1/2023/06/05/647daed23513c.png!linkavatar",descr:"念念不忘，必有回响",siteshot:"https://img02.anheyu.com/thumbnails/416689c272ace752eaf6d484097ea054.png"},{name:"Mycpen",link:"https://blog.cpen.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/03/638b0c930633c.png!linkavatar",descr:"这是一个有趣的博客",siteshot:"https://img02.anheyu.com/thumbnails/67c9c14c543cdb7b547d0bb5acf664cd.png"},{name:"Ethan.Tzy",link:"https://fe32.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/09/17/6325338e1ad8a.jpg!linkavatar",descr:"古今之成大事者，不惟有超世之才，亦必有坚忍不拔之志",screenshot:"https://img02.anheyu.com/adminuploads/1/2022/09/17/6325338e287ab.jpg"},{name:"mumumu1",link:"https://mumushu1.github.io/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/09/23/632d1e69da485.jpg!linkavatar",descr:"在最高点乘着叶片往前飞",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/09/23/632d1e69ef640.jpg"},{name:"LanYun",link:"https://lanyundev.com/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/10/04/633b93d34c802.jpg!linkavatar",descr:"Share Technology.",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/10/04/633b93d6a79a9.jpg"},{name:"一生雾梦の博客",link:"https://yswm-m.github.io",avatar:"https://img02.anheyu.com/adminuploads/1/2022/10/05/633d9b6d5fdc8.jpg!linkavatar",descr:"若一心追逐北极星,所经路线便能成为地图",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/10/05/633d9b6d603d2.jpg"},{name:"西瓜撞地球",link:"https://bio-w.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/10/06/633ea0c37d7c8.jpg!linkavatar",descr:"我在人间贩卖彩虹",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/10/06/633ea0c38727a.jpg"},{name:"兼一书虫",link:"https://hycbook.com/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/10/10/6343ab47aed9d.jpg!linkavatar",descr:"知足且上进，温柔而坚定，生活中的温暖总会与你不期而遇。",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/10/10/6343ab49cf0c4.jpg"},{name:"九九九感冒绫",link:"https://www.miku-39.love/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/10/10/6343ab3ea1cd3.jpg!linkavatar",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/10/10/6343ab48d89df.jpg",descr:"这是我的梦想,我会慢慢的完成它"},{name:"Jermyn",link:"https://www.jermyn.cn",avatar:"https://img02.anheyu.com/adminuploads/1/2022/10/15/634a2200ba851.jpg!linkavatar",descr:"To be, or not to be, that is the Question.",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/10/15/634a21f0a2635.png"},{name:"ichika",link:"https://ichika.cc",avatar:"https://img02.anheyu.com/adminuploads/1/2022/10/15/634a2208a0879.jpg!linkavatar",descr:"Hello,gamer!",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/10/15/634a21f97f982.png"},{name:"虎了吧唧",link:"https://hulebaji.github.io",avatar:"https://img02.anheyu.com/adminuploads/1/2022/10/17/634cc3a8d61f1.png!linkavatar",descr:"研墨成浆，提笔思量",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/10/17/634cc3aad97fe.jpg"},{name:"king",link:"http://king-cc.cn",avatar:"https://img02.anheyu.com/adminuploads/1/2022/10/18/634df4dd45fc9.jpg!linkavatar",descr:"一个有趣的博客",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/10/18/634df4de45202.jpg"},{name:"心流",link:"https://blog.aqcoder.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/10/18/634df5b5282f2.webp!linkavatar",descr:"分享知识，认识世界",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/10/18/634df5b6b35ec.jpg"},{name:"orangecat",link:"http://www.orangecatdpman.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/10/18/634df677cca6e.png!linkavatar",descr:"路虽远，行则将至",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/10/18/634df6791931c.png"},{name:"Echo",link:"https://www.liveout.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/10/21/6351e69b70281.png!linkavatar",descr:"韶华不为少年留 恨悠悠 几时休",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/10/21/6351e69b6a3c2.jpg"},{name:"nagisa",link:"https://caoyusong.site",avatar:"https://img02.anheyu.com/adminuploads/1/2022/10/21/63526bf987de2.webp!linkavatar",descr:"不以物喜,不以己悲",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/10/21/63526bfa3cf1a.webp"},{name:"Fern",descr:"一个正在重塑知识的技术人",avatar:"https://img02.anheyu.com/adminuploads/1/2022/10/28/635b485bc4273.webp!linkavatar",link:"http://www.hi-hufei.com",siteshotz:"https://img02.anheyu.com/adminuploads/1/2022/10/28/635b485bc9fdd.webp",recommend:!0},{name:"Marcus的小窝",link:"https://blog.marcus233.top",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/03/638ab63c10a9e.png!linkavatar",descr:"一只有梦想的羊驼",siteshot:"https://img02.anheyu.com/thumbnails/38fd48bebfd351c16aa3509989d26773.png"},{name:"小城故事",link:"https://www.webxc.ml",avatar:"https://img02.anheyu.com/adminuploads/1/2022/11/05/6366050b66817.webp!linkavatar",descr:"欢迎光临小城故事",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/11/05/6366050c21461.webp"},{name:"鹿啵包の小窝",link:"https://pochacco.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/04/23/644529c4558e3.png!linkavatar",descr:"落日橘子海，揽尽世间温柔",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/11/05/63660700b43b0.webp"},{name:"卿以君歌",link:"https://www.kimtoli.com",avatar:"https://img02.anheyu.com/adminuploads/1/2022/11/05/6366073950d69.webp!linkavatar",descr:"永远年轻，永远热泪盈眶",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/11/05/636607115f0ef.webp"},{name:"False",link:"http://blogcn.ml/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/11/07/636851179957d.webp!linkavatar",descr:"生活就是一个游乐场，它会让你开心，也会让你焦虑，也会让你悲痛…"},{name:"puff",link:"https://www.zoulicheng.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/11/16/6374ce9591310.webp!linkavatar",descr:"我想呼风唤雨"},{name:"怕冷爱上雪",link:"https://blog.4t.pw/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/11/19/63785fa4cfc86.webp!linkavatar",descr:"千里之行，始于足下。"},{name:"Sam",link:"https://www.welucky.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/11/20/637990a293baf.webp!linkavatar",descr:"念念不忘，必有回响。"},{name:"HiPeach",link:"https://opeach.cn",avatar:"https://img02.anheyu.com/adminuploads/1/2022/11/20/637990a28fa47.png!linkavatar",descr:"妙不可言"},{name:"醉喵の小屋",link:"https://www.zuimiao33.cn",avatar:"https://img02.anheyu.com/adminuploads/1/2022/11/20/6379b8c9a973f.webp!linkavatar",descr:"为什么不去码头整点薯条呢"},{name:"gloria’s notion",link:"https://blog.ohayo.live/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/11/23/637e13d8c57c9.webp!linkavatar",descr:"notion&&note"},{name:"Rootlex",link:"https://blog.nalex.top",avatar:"https://img02.anheyu.com/adminuploads/1/2022/11/23/637e13d8c4ae4.webp!linkavatar",descr:"寒蝉黎明之时，便是重生之日",recommend:!0},{name:"Heyiki",link:"https://www.heyiki.top",avatar:"https://img02.anheyu.com/adminuploads/1/2022/11/24/637eec3251e1c.webp!linkavatar",descr:"梦在旅途，永不止步。"},{name:"Ice",link:"https://blog.081113.xyz/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/03/638b1fb988e1e.webp!linkavatar",descr:"海内存知己，天涯若比邻"},{name:"Rainx",link:"https://rainxblog.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/03/638b1fe055f45.webp!linkavatar",descr:"幸与不幸都有尽头."},{name:"Trtyr",link:"https://trtyr.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/03/638b1f9c7a4fc.webp!linkavatar",descr:"A New Story Born"},{name:"小豪",link:"https://202271.xyz/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/06/638e91f01da0c.png!linkavatar",descr:"小豪的个人博客"},{name:"青衣",link:"https://www.qingyi1220.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/06/638e929f3e6ac.webp!linkavatar",descr:"世界既不黑也不白，而是一道精致的灰"},{name:"HAO",link:"https://haobk.top",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/06/638e938303cd0.png!linkavatar",descr:"热爱编程"},{name:"洛屿",link:"https://www.drluo.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/11/63956a6e94510.webp!linkavatar",descr:"嗨，靓仔，今天也要有个好心情哦！"},{name:"Jer",link:"https://blog.jersite.gq/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/11/6395bd782207b.webp!linkavatar",descr:"人生没有彩排，只有现场直播，所以做最好的自己。"},{name:"luckyWangXi",link:"https://wangxi.online/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/18/639ea67d82b2b.webp!linkavatar",descr:"无限进步！！",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/12/18/639ea6e315b04.png"},{name:"一蓑烟雨",link:"https://easyf12.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/18/639ea6d1ed21a.webp!linkavatar",descr:"竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。"},{name:"wsb",link:"https://wsbblog.cn",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/21/63a2bf8e25ffb.png!linkavatar",descr:"己所不欲，勿施于人"},{name:"竹山一叶",link:"https://zsyyblog.com",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/23/63a54e9b90149.webp!linkavatar",descr:"来了就不想走的小家",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/12/23/63a54e962ae67.webp"},{name:"JustBecause",link:"https://justbecausee.cn",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/24/63a69bea181ae.webp!linkavatar",descr:"别下会看场合的雨",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/12/24/63a69bea24ed0.webp"},{name:"贰猹的小窝",link:"https://noionion.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/27/63aa52f8c4542.webp!linkavatar",descr:"用这生命中的每一秒，给自己一个不后悔的未来"},{name:"CharlesHsu",link:"https://www.crowhsu.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/27/63aa53cb95f9e.webp!linkavatar",descr:"既然相信，那就前行。"},{name:"绯鞠的博客",link:"https://loli.fj.cn",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/27/63aa5660046ca.png!linkavatar",descr:"一只爱折腾的绯鞠"},{name:"MoyuqL",link:"https://blog.moyuql.top",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/27/63aa5649a4cbc.webp!linkavatar",descr:"MoyuqL与你同在~"},{name:"Sunday",link:"https://blog.wyun521.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/02/63b2c1361bcf9.webp!linkavatar",descr:"最美不是下雨天，是和你躲过雨的屋檐"},{name:"New_fei",link:"https://blog.newfei.top",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/02/63b2c1bf06f85.webp!linkavatar",descr:"啊吧啊吧！"},{name:"摘星怪",link:"https://www.hlsiyy.love/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/02/63b2c427eeb08.webp!linkavatar",descr:"学习与记录的小博主"},{name:"Muieay",link:"https://blog.muieay.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/02/63b2c51855f23.webp!linkavatar",descr:"或许成为遗憾才会让人念念不忘吧"},{name:"ReCclay",link:"https://www.recclay.cc/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/14/63c21540b014c.png!linkavatar",descr:"芯片硅农，别忘无恙🧐"},{name:"Anjhon",link:"https://www.anjhon.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/14/63c216ff99a7d.webp!linkavatar",descr:"但知行好事，莫要问前程"},{name:"Shine",link:"https://shineyull.github.io/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/14/63c21f007e710.png!linkavatar",descr:"Let’s go! Target: The Vast Stars!"},{name:"Terorの客栈",link:"https://blog.trfox.ml",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/14/63c220257431e.png!linkavatar",descr:"方寸之间，深不见底"},{name:"Tan",link:"https://www.tanybo.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/14/63c2250c8b2fe.webp!linkavatar",descr:"太阳当空照，花儿对我笑。"},{name:"SLOVER",link:"https://678777.xyz",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/14/63c2262621e4e.png!linkavatar",descr:"诱导已亮，前方净空，祝君武运昌隆"},{name:"MYAN",link:"https://zhouenpei0523.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/14/63c226bcf22a2.webp!linkavatar",descr:"过去已去,未来已来"},{name:"轨道兔",link:"https://jinyu.host/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/14/63c2286913f5c.webp!linkavatar",descr:"为我自己，为友与仇，人与兽，爱者与不爱者。"},{name:"Neil's Notes",link:"https://www.neily.top",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/28/63d4c4b070acd.webp!linkavatar",descr:"咕咕咕！"},{name:"Haoyu",link:"https://g-haoyu.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/28/63d4c4b07ab76.png!linkavatar",descr:"恭喜，你发现了宝藏"},{name:"XK",link:"https://www.xukaiyyds.cn",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/28/63d4cbedf3303.png!linkavatar",descr:"一个干净整洁的个人博客"},{name:"咬一口激动的鱼",link:"https://jiyu134.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/28/63d4cbee0c799.webp!linkavatar",descr:"风带来了种子，时间使之发芽"},{name:"维度前端",link:"https://www.df100.ltd/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/28/63d4cdaeab017.jpg!linkavatar",descr:"我将飞向星空，时刻期待与你邂逅"},{name:"南方嘉木",link:"https://gavin-chen.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/28/63d4cdaeaadae.webp!linkavatar",descr:"不畏将来，不念过往。"},{name:"Prong",link:"https://prong.ltd",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/28/63d4cdaeac44f.webp!linkavatar",descr:"尖头叉子在霍格沃茨的休息室~"},{name:"Hc",link:"https://blog.ivil.top",avatar:"https://img02.anheyu.com/adminuploads/1/2023/02/03/63dc90c5896ed.jpg!linkavatar",descr:"相遇即是上上签"},{name:"钟意博客",link:"https://blog.thatcoder.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/28/63d4cdaeab017.jpg!linkavatar",descr:"感谢你的阅读."},{name:"小嗷犬",link:"https://blog.marquis.eu.org/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/02/03/63dc90bd46c50.png!linkavatar",descr:"为天地立心，为生民立命，为往圣继绝学，为万世开太平"},{name:"codefish",link:"https://offerkillers.gitee.io",avatar:"https://img02.anheyu.com/adminuploads/1/2023/02/03/63dca3126b5f2.webp!linkavatar",descr:"一个爱好半小时的前端混子"},{name:"墨尘",link:"https://mnochen.top",avatar:"https://img02.anheyu.com/adminuploads/1/2023/03/26/641ffa683622e.webp!linkavatar",descr:"一只没有梦想咸鱼"},{name:"Mxne",link:"https://blog.mxne.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/02/03/63dca3126b8c8.png!linkavatar",descr:"学如逆水行舟，不进则退。"},{name:"道宣的窝",link:"https://daoxuan.cc/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/02/13/63ea2dc47351a.webp!linkavatar",descr:"欢迎来到道宣的温暖小窝"},{name:"Sunday",link:"https://blog.wyun521.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/02/13/63ea2dc473736.webp!linkavatar",descr:"代码改变世界"},{name:"ゆちゃん",link:"https://idealistyu.github.io/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/02/13/63ea2e9391ad4.webp!linkavatar",descr:"ゆちゃんのブログ"},{name:"雷雷屋头",link:"https://ll.sc.cn",avatar:"https://img02.anheyu.com/adminuploads/1/2023/02/13/63ea2e9391811.webp!linkavatar",descr:"爱生活，爱工作，爱折腾。",siteshot:"https://ll.sc.cn/img/siteshot.webp"},{name:"极客郎",avatar:"https://img02.anheyu.com/adminuploads/1/2023/02/13/63ea3178e30dd.png!linkavatar",link:"https://ximfem.asia/",descr:"将科技玩到极致！"},{name:"爱吃肉的猫",link:"https://meuicat.com/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/02/15/63ecbb97ac708.png!linkavatar",descr:"有肉有猫有生活."},{name:"Billwing Blog",link:"https://billwing.fun",avatar:"https://img02.anheyu.com/adminuploads/1/2023/02/15/63ecba6196a60.webp!linkavatar",descr:"每个人都有无限的潜能"},{name:"TactfulBean",link:"https://tactfulbean.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/02/15/63ecbb97ac5de.webp!linkavatar",descr:"一颗咸鱼豆子的博客"},{name:"金鳞星溅",link:"https://jinlinxingjian.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/02/15/63ecc5daf1ddc.webp!linkavatar",descr:"Hello world 交个朋友吧"},{name:"湘铭",link:"https://xiangming.site/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/02/27/63fc51858414b.webp!linkavatar",descr:"湘铭的秘密基地啊！"},{name:"小飞博客",link:"https://www.xffjs.com",avatar:"https://img02.anheyu.com/adminuploads/1/2023/02/27/63fc51858413d.webp!linkavatar",descr:"生活明朗,万物可爱,人间值得,未来可期。"},{name:"白雾茫茫",link:"https://www.xmwpro.com/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/02/27/63fc54a47ef0f.webp!linkavatar",descr:"记录学习、生活和有趣的事"},{name:"你会发光叭",link:"https://linjiangyu.com",avatar:"https://img02.anheyu.com/adminuploads/1/2023/03/26/641ff527e3606.webp!linkavatar",descr:"一旦你成为自己的太阳,便无需再凭借谁的光"},{name:"李程ic",link:"https://www.licic.net/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/23/646c12e96c03e.png!linkavatar",descr:"中华人民共和国万岁！"},{name:"满心Hrn",link:"https://blog.lovelu.top",avatar:"https://img02.anheyu.com/adminuploads/1/2023/03/26/641ff636e1f2c.webp!linkavatar",descr:"追求让人充实，分享让人快乐"},{name:"幻想乡の红魔馆",link:"https://ming-e.space",avatar:"https://img02.anheyu.com/adminuploads/1/2023/03/26/641ff743c8bb0.webp!linkavatar",descr:"车万人万岁"},{name:"Bgemini",link:"https://xieyong.cc",avatar:"https://img02.anheyu.com/adminuploads/1/2023/03/26/641ff807bc0c7.webp!linkavatar",descr:"光荣在于平淡，艰难在于漫长"},{name:"博客录",link:"https://boke.lu",avatar:"https://img02.anheyu.com/adminuploads/1/2023/03/26/641ff86bcc912.png!linkavatar",descr:"博客收录展示平台"},{name:"Peace",link:"https://tiaq.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/03/26/641ff8e538339.webp!linkavatar",descr:"藏匿在大海中的小屋"},{name:"SuperXCR",link:"https://liqur.xyz",avatar:"https://img02.anheyu.com/adminuploads/1/2023/03/26/641ff964298d7.webp!linkavatar",descr:"学习着、并快乐着"},{name:"墨点白",link:"https://nanwish.love",avatar:"https://img02.anheyu.com/adminuploads/1/2023/03/26/641ff9cccf2e3.jpg!linkavatar",descr:"学习着、并快乐着"},{name:"大海看看",link:"https://www.dhkk.cn",avatar:"https://img02.anheyu.com/adminuploads/1/2023/03/26/641ffa1f3248c.png!linkavatar",descr:"记录生活留住美好时刻 ，分享个人学习笔记"},{name:"wuluo-久洛南伊🥕🍇",link:"https://www.wuluojiu.xyz/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/03/26/641ffacaefc42.webp!linkavatar",descr:"Future is now 🍭🍭🍭"},{name:"GanSer",link:"https://gan1ser.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/02/27/63fc533ca822d.webp!linkavatar",descr:"紫箫吟断，素笺恨切，夜寒鸿起"},{name:"青城小居",link:"https://zhaoyuansong.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/23/646c10ee6c9b2.webp!linkavatar",descr:"清风也染人间忧"},{name:"Pupper",link:"https://pupper.cn",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/04/64535eba5d72e.webp!linkavatar",descr:"记录学习、生活中的点点滴滴~"},{name:"海阔蓝",link:"https://blog.hklan.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/04/645361f49df1e.webp!linkavatar",descr:"终于找到你啦~分享你想要的经验"},{name:"小漁头",link:"https://blog.dai2yutou.space/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/04/645362d62ec9f.webp!linkavatar",descr:"来日方长发，何惧车遥马慢😎"},{name:"顾梦",link:"https://www.jishuqin.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/04/64536390eca33.webp!linkavatar",descr:"不想满心遗憾，那就全力以赴。"},{name:"包子哟",link:"https://blog.bugjava.cn",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/04/645363cd11758.png!linkavatar",descr:"一个练习Bug时长两年半的程序员建立的小站"},{name:"王同学",link:"http://www.wxz666.icu/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/04/64536ad99fe2d.webp!linkavatar",descr:"须知少时凌云志，曾许人间第一流"},{name:"东京日志",link:"http://www.hellokvm.com",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/04/64536b772293a.png!linkavatar",descr:"在IDC工作多年,分享和总结一些服务器维护经验以及手机和电脑教程"},{name:"杨不羁",link:"http://www.blog.yzq.ink",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/04/64536c4e8fced.webp!linkavatar",descr:"流水落花春去也，天上人间"},{name:"HimiCos",link:"https://blog.himicos.cc",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/04/64536e2e0108f.webp!linkavatar",descr:"生活不能没有音乐～"},{name:"浅笑安然",link:"https://siax.cn",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/04/64536ebfee596.png!linkavatar",descr:"总之岁月漫长, 然而值得等待。"},{name:"繁華如夢",link:"https://holyghostf.github.io/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/04/64536f0b08a86.webp!linkavatar",descr:"苍茫大地一剑尽挽破，何处繁华笙歌落。"},{name:"小潘",link:"https://pansida.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/04/64536f7a61344.webp!linkavatar",descr:"拥抱阳光，活力满满"},{name:"shark-Gao",link:"https://manamn.space/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/04/64536fe13c8fa.webp!linkavatar",descr:"Future is now 🍭🍭🍭"},{name:"召尘秘境",link:"https://www.olive-r.cn",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/04/6453707aa128c.webp!linkavatar",descr:"开放，包容，共享，团结"},{name:"半方池水半方田",link:"https://uuanqin.top",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/04/645371241664d.png!linkavatar",descr:"技术分享与生活分享"},{name:"Celia",link:"https://7boe.top",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/13/645f7a92a3cbb.png!linkavatar",descr:"欲买桂花同载酒，终不似少年游"},{name:"醉浪",link:"https://blog.zuilang.tk/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/23/646c0cf38646b.webp!linkavatar",descr:"一只喜欢七彩球的枯叶蝶"},{name:"LoungeXi",link:"https://loungexi.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/23/646c0d6501f18.webp!linkavatar",descr:"且将新火试新茶"},{name:"萌新闻",link:"http://www.imxw.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/23/646c0dd50a179.png!linkavatar",descr:"每天60秒新闻简报分享"},{name:"Zhu",link:"https://azhu.site/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/23/646c0e40950b7.webp!linkavatar",descr:"一个差点儿就能成为90后的80后，计算机、股票业余爱好者。"},{name:"小植の小破站",link:"https://xiaoztx.top",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/23/646c0f205b9d4.webp!linkavatar",descr:"生生不息，好运不止"},{name:"小明",link:"https://xiaomingwy.com/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/23/646c122a9196b.webp!linkavatar",descr:"日有所思夜有所梦。"},{name:"系统观察屋",link:"https://www.xitongguanchawu.com/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/23/646c1290902ac.png!linkavatar",descr:"教程资源样样精通"},{name:"困困鱼",link:"https://0206.ink/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/05/23/646c13caca15e.webp!linkavatar",descr:"喜欢捣鼓的博主"},{name:"Ganzhe",link:"https://ganzhe2028.github.io",avatar:"https://img02.anheyu.com/adminuploads/1/2023/06/05/647d9832b5ec2.webp!linkavatar",descr:"顺其自然，持之以恒"},{name:"Kevinwu",link:"https://www.kevinwu.cc/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/06/05/647dafc95b3bd.webp!linkavatar",descr:"喜欢，就去追。"},{name:"Plasmon222",link:"https://loveak.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/06/05/647dae63aee47.webp!linkavatar",descr:"一念既出，万山无阻"},{name:"青桔气球",link:"https://blog.qjqq.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/06/05/647daf8997f45.webp!linkavatar",descr:"分享网络安全与科技生活"},{name:"胡桃木实验室",link:"https://www.htmacg.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/06/05/647db064b074f.png!linkavatar",descr:"胡桃木的笔记分享小站"},{name:"王貔貅",link:"https://blog.wpixiu.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/06/05/647db0b237ebd.webp!linkavatar",descr:"日就月将,学有缉熙于光明"},{name:"零叁壹",link:"https://blog.oiii.top",avatar:"https://img02.anheyu.com/adminuploads/1/2023/06/05/647db122b0da3.webp!linkavatar",descr:"一个生活记录小站"},{name:"你好可爱",link:"https://wjldarling.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/06/05/647db1bc85ced.webp!linkavatar",descr:"山水一程，三生有幸✨"},{name:"懒觉猫先生",link:"https://blog.luoaicheng.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/06/05/647db222b0fdd.jpeg!linkavatar",descr:"睡觉睡觉，睡觉睡觉，喵喵"},{name:"Vinson",link:"https://sakura520.co/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/09/02/6311ff0644d0e.webp!linkavatar",descr:"梦想是一个天真的词，实现梦想是一个残酷的词",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/09/02/6311ff0719a8e.webp"},{name:"程序员云天",link:"https://nwjshm.cn/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/09/02/631200151f547.webp!linkavatar",descr:"记录程序员从大牛之路"},{name:"btwoa",link:"https://blog.btwoa.com",avatar:"https://img02.anheyu.com/adminuploads/1/2022/09/17/6325d829e355c.jpg!linkavatar",descr:"我仍相信人间滚烫",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/09/17/6325d829e4d64.png"},{name:"梦念逍遥",link:"https://blog.lwtxiaoyao.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/09/20/63294be7b841e.jpg!linkavatar",descr:"无梦之境",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/09/20/63294be7a7d0d.jpg"},{name:"随风起",link:"https://blog.bywind.xyz/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/09/23/632d1e69d9fd8.jpg!linkavatar",descr:"爱意随风起，风止意难平",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/09/23/632d1e69da344.jpg"},{name:"七鳄の学习格",link:"https://blog.gmcj0816.top/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/09/25/633016add88ac.jpg!linkavatar",descr:"如果世界多了精彩，每一位都是创造者，大家都是你的观众",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/09/25/633016addb7c6.jpg"},{name:"来动力家族喝杯酒",link:"https://pikachen-pick.github.io/",avatar:"https://img02.anheyu.com/adminuploads/1/2022/09/28/6333981c8d045.jpg!linkavatar",descr:"逸一时，误一世，依旧已久罢已零"},{name:"方糖",link:"https://www.iftft.com",avatar:"https://img02.anheyu.com/adminuploads/1/2022/11/05/63667aafb06ea.png!linkavatar",descr:"方糖（FangTang）世界",siteshot:"https://img02.anheyu.com/adminuploads/1/2022/11/05/636679e6beae7.webp"},{name:"华仔927",link:"https://blog.xiaohua927.top",avatar:"https://img02.anheyu.com/adminuploads/1/2022/11/24/637eee0d52f69.webp!linkavatar",descr:"行而不辍，未来可期！"},{name:"胖二十",link:"https://pangershi.com",avatar:"https://img02.anheyu.com/adminuploads/1/2022/12/27/63aa551e5f29b.png!linkavatar",descr:"不秃头，无格子衫，擅长复制粘贴的正经程序猿"},{name:"kwobron",link:"https://www.acozycotage.net/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/02/63b2c369a7b29.webp!linkavatar",descr:"寄言燕雀莫相唣，自有云霄万里高 🍭🍭🍭"},{name:"匹诺草的小宇宙",link:"https://blog.pinochio.cf",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/02/63b2c256bc384.webp!linkavatar",descr:"匹诺草啊啊啊"},{name:"栖迟於一丘",link:"https://www.ccyh.xyz/",avatar:"https://img02.anheyu.com/adminuploads/1/2023/01/28/63d4c81d90e60.png!linkavatar",descr:"技术分享，生活随笔"}],refreshNum=1;function addFriendLinksInFooter(){var a=document.getElementById("footer-random-friends-btn");if(a){a.style.opacity="0.2",a.style.transitionDuration="0.3s",a.style.transform="rotate("+360*refreshNum+++"deg)";for(var t=[],n=0;friend_link_list.length&&n<3;){var e=Math.floor(Math.random()*friend_link_list.length),i=(e=friend_link_list.splice(e,1)[0]).name,s=e.link;e=e.avatar;t.push({name:i,link:s,avatar:e}),n++}var m=t.map((function(a){var t=a.name;return"<a class='footer-item' href='"+a.link+"' target='_blank' rel='noopener nofollow'>"+t+"</a>"})).join("");m+="<a class='footer-item' href='/link/'>更多</a>",document.getElementById("friend-links-in-footer").innerHTML=m,setTimeout((function(){a.style.opacity="1"}),300)}}
+var posts = ["posts/697cb99d.html","posts/4a17b156.html","posts/fcbdffd2.html","posts/e2a091a6.html","posts/da523892.html","posts/20230502a.html"];
+function toRandomPost() {
+    pjax.loadUrl('/' + posts[Math.floor(Math.random() * posts.length)]);
+}
+var friend_link_list = [{
+    name: "安知鱼",
+    link: "https://anheyu.com/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/09/15/63232b7d91d22.jpg",
+    descr: "生活明朗，万物可爱",
+    siteshot: "https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/anheyu.com.jpg"
+}, {
+    name: "Akilarの糖果屋",
+    link: "https://akilar.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/09/02/6311fc9de6507.webp",
+    descr: "期待您的光临！",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/09/02/6311fc39c5966.webp"
+}, {
+    name: "张洪Heo",
+    link: "https://blog.zhheo.com/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/09/02/6311fc38f1465.webp",
+    descr: "分享设计与科技生活",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/09/02/6311fc3959f82.webp"
+}, {
+    name: "Leonus",
+    link: "https://blog.leonus.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/09/16/6324505c9890a.jpeg",
+    descr: "进一寸有进一寸的欢喜。",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/09/16/6324505c98fae.jpg"
+}, {
+    name: "山岳库博",
+    link: "https://kmar.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/10/06/633e9c4c2786f.png",
+    descr: "开发学习启发性二刺螈",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/10/06/633e9c4c3460b.jpg"
+}, {
+    name: "Tianli",
+    link: "https://tianli-blog.club",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/11/11/636db0d451fd0.webp",
+    descr: "惟其不可能，所以才相信。",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/11/07/6368520c9e4e7.webp"
+}, {
+    name: "Ariasaka",
+    link: "https://yisous.xyz",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/11/6395bcc946fc9.png",
+    descr: "人有悲欢离合 月有阴晴圆缺",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/12/11/6395bcc1502e5.png"
+}, {
+    name: "张时贰",
+    link: "https://zhsher.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/11/12/636ef2c1632a5.webp",
+    descr: "环转码，爱敲代码的小张！",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2023/02/03/63dc8d606e61a.webp"
+}, {
+    name: "杜老师说",
+    link: "https://dusays.com",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/21/63a2acb9c07d0.png!linkavatar",
+    descr: "师者，传道，授业，解惑！",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/12/21/63a2acb9c07d0.webp"
+}, {
+    name: "Fomalhaut🥝",
+    link: "https://www.fomal.cc/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/09/02/6311ff42df52e.webp!linkavatar",
+    descr: "Welcome to Fomalhaut🥝のTiny Home",
+    siteshot: "https://img02.anheyu.com/thumbnails/303c9346ba832c2ea658a9048391ea47.png",
+    recommend: !0
+}, {
+    name: "JayHrn",
+    link: "https://blog.jayhrn.com",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/06/05/647daed23513c.png!linkavatar",
+    descr: "念念不忘，必有回响",
+    siteshot: "https://img02.anheyu.com/thumbnails/416689c272ace752eaf6d484097ea054.png"
+}, {
+    name: "Mycpen",
+    link: "https://blog.cpen.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/03/638b0c930633c.png!linkavatar",
+    descr: "这是一个有趣的博客",
+    siteshot: "https://img02.anheyu.com/thumbnails/67c9c14c543cdb7b547d0bb5acf664cd.png"
+}, {
+    name: "Ethan.Tzy",
+    link: "https://fe32.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/09/17/6325338e1ad8a.jpg!linkavatar",
+    descr: "古今之成大事者，不惟有超世之才，亦必有坚忍不拔之志",
+    screenshot: "https://img02.anheyu.com/adminuploads/1/2022/09/17/6325338e287ab.jpg"
+}, {
+    name: "mumumu1",
+    link: "https://mumushu1.github.io/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/09/23/632d1e69da485.jpg!linkavatar",
+    descr: "在最高点乘着叶片往前飞",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/09/23/632d1e69ef640.jpg"
+}, {
+    name: "LanYun",
+    link: "https://lanyundev.com/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/10/04/633b93d34c802.jpg!linkavatar",
+    descr: "Share Technology.",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/10/04/633b93d6a79a9.jpg"
+}, {
+    name: "一生雾梦の博客",
+    link: "https://yswm-m.github.io",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/10/05/633d9b6d5fdc8.jpg!linkavatar",
+    descr: "若一心追逐北极星,所经路线便能成为地图",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/10/05/633d9b6d603d2.jpg"
+}, {
+    name: "西瓜撞地球",
+    link: "https://bio-w.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/10/06/633ea0c37d7c8.jpg!linkavatar",
+    descr: "我在人间贩卖彩虹",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/10/06/633ea0c38727a.jpg"
+}, {
+    name: "兼一书虫",
+    link: "https://hycbook.com/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/10/10/6343ab47aed9d.jpg!linkavatar",
+    descr: "知足且上进，温柔而坚定，生活中的温暖总会与你不期而遇。",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/10/10/6343ab49cf0c4.jpg"
+}, {
+    name: "九九九感冒绫",
+    link: "https://www.miku-39.love/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/10/10/6343ab3ea1cd3.jpg!linkavatar",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/10/10/6343ab48d89df.jpg",
+    descr: "这是我的梦想,我会慢慢的完成它"
+}, {
+    name: "Jermyn",
+    link: "https://www.jermyn.cn",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/10/15/634a2200ba851.jpg!linkavatar",
+    descr: "To be, or not to be, that is the Question.",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/10/15/634a21f0a2635.png"
+}, {
+    name: "ichika",
+    link: "https://ichika.cc",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/10/15/634a2208a0879.jpg!linkavatar",
+    descr: "Hello,gamer!",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/10/15/634a21f97f982.png"
+}, {
+    name: "虎了吧唧",
+    link: "https://hulebaji.github.io",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/10/17/634cc3a8d61f1.png!linkavatar",
+    descr: "研墨成浆，提笔思量",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/10/17/634cc3aad97fe.jpg"
+}, {
+    name: "king",
+    link: "http://king-cc.cn",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/10/18/634df4dd45fc9.jpg!linkavatar",
+    descr: "一个有趣的博客",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/10/18/634df4de45202.jpg"
+}, {
+    name: "心流",
+    link: "https://blog.aqcoder.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/10/18/634df5b5282f2.webp!linkavatar",
+    descr: "分享知识，认识世界",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/10/18/634df5b6b35ec.jpg"
+}, {
+    name: "orangecat",
+    link: "http://www.orangecatdpman.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/10/18/634df677cca6e.png!linkavatar",
+    descr: "路虽远，行则将至",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/10/18/634df6791931c.png"
+}, {
+    name: "Echo",
+    link: "https://www.liveout.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/10/21/6351e69b70281.png!linkavatar",
+    descr: "韶华不为少年留 恨悠悠 几时休",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/10/21/6351e69b6a3c2.jpg"
+}, {
+    name: "nagisa",
+    link: "https://caoyusong.site",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/10/21/63526bf987de2.webp!linkavatar",
+    descr: "不以物喜,不以己悲",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/10/21/63526bfa3cf1a.webp"
+}, {
+    name: "Fern",
+    descr: "一个正在重塑知识的技术人",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/10/28/635b485bc4273.webp!linkavatar",
+    link: "http://www.hi-hufei.com",
+    siteshotz: "https://img02.anheyu.com/adminuploads/1/2022/10/28/635b485bc9fdd.webp",
+    recommend: !0
+}, {
+    name: "Marcus的小窝",
+    link: "https://blog.marcus233.top",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/03/638ab63c10a9e.png!linkavatar",
+    descr: "一只有梦想的羊驼",
+    siteshot: "https://img02.anheyu.com/thumbnails/38fd48bebfd351c16aa3509989d26773.png"
+}, {
+    name: "小城故事",
+    link: "https://www.webxc.ml",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/11/05/6366050b66817.webp!linkavatar",
+    descr: "欢迎光临小城故事",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/11/05/6366050c21461.webp"
+}, {
+    name: "鹿啵包の小窝",
+    link: "https://pochacco.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/04/23/644529c4558e3.png!linkavatar",
+    descr: "落日橘子海，揽尽世间温柔",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/11/05/63660700b43b0.webp"
+}, {
+    name: "卿以君歌",
+    link: "https://www.kimtoli.com",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/11/05/6366073950d69.webp!linkavatar",
+    descr: "永远年轻，永远热泪盈眶",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/11/05/636607115f0ef.webp"
+}, {
+    name: "False",
+    link: "http://blogcn.ml/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/11/07/636851179957d.webp!linkavatar",
+    descr: "生活就是一个游乐场，它会让你开心，也会让你焦虑，也会让你悲痛…"
+}, {
+    name: "puff",
+    link: "https://www.zoulicheng.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/11/16/6374ce9591310.webp!linkavatar",
+    descr: "我想呼风唤雨"
+}, {
+    name: "怕冷爱上雪",
+    link: "https://blog.4t.pw/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/11/19/63785fa4cfc86.webp!linkavatar",
+    descr: "千里之行，始于足下。"
+}, {
+    name: "Sam",
+    link: "https://www.welucky.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/11/20/637990a293baf.webp!linkavatar",
+    descr: "念念不忘，必有回响。"
+}, {
+    name: "HiPeach",
+    link: "https://opeach.cn",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/11/20/637990a28fa47.png!linkavatar",
+    descr: "妙不可言"
+}, {
+    name: "醉喵の小屋",
+    link: "https://www.zuimiao33.cn",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/11/20/6379b8c9a973f.webp!linkavatar",
+    descr: "为什么不去码头整点薯条呢"
+}, {
+    name: "gloria’s notion",
+    link: "https://blog.ohayo.live/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/11/23/637e13d8c57c9.webp!linkavatar",
+    descr: "notion&&note"
+}, {
+    name: "Rootlex",
+    link: "https://blog.nalex.top",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/11/23/637e13d8c4ae4.webp!linkavatar",
+    descr: "寒蝉黎明之时，便是重生之日",
+    recommend: !0
+}, {
+    name: "Heyiki",
+    link: "https://www.heyiki.top",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/11/24/637eec3251e1c.webp!linkavatar",
+    descr: "梦在旅途，永不止步。"
+}, {
+    name: "Ice",
+    link: "https://blog.081113.xyz/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/03/638b1fb988e1e.webp!linkavatar",
+    descr: "海内存知己，天涯若比邻"
+}, {
+    name: "Rainx",
+    link: "https://rainxblog.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/03/638b1fe055f45.webp!linkavatar",
+    descr: "幸与不幸都有尽头."
+}, {
+    name: "Trtyr",
+    link: "https://trtyr.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/03/638b1f9c7a4fc.webp!linkavatar",
+    descr: "A New Story Born"
+}, {
+    name: "小豪",
+    link: "https://202271.xyz/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/06/638e91f01da0c.png!linkavatar",
+    descr: "小豪的个人博客"
+}, {
+    name: "青衣",
+    link: "https://www.qingyi1220.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/06/638e929f3e6ac.webp!linkavatar",
+    descr: "世界既不黑也不白，而是一道精致的灰"
+}, {
+    name: "HAO",
+    link: "https://haobk.top",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/06/638e938303cd0.png!linkavatar",
+    descr: "热爱编程"
+}, {
+    name: "洛屿",
+    link: "https://www.drluo.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/11/63956a6e94510.webp!linkavatar",
+    descr: "嗨，靓仔，今天也要有个好心情哦！"
+}, {
+    name: "Jer",
+    link: "https://blog.jersite.gq/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/11/6395bd782207b.webp!linkavatar",
+    descr: "人生没有彩排，只有现场直播，所以做最好的自己。"
+}, {
+    name: "luckyWangXi",
+    link: "https://wangxi.online/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/18/639ea67d82b2b.webp!linkavatar",
+    descr: "无限进步！！",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/12/18/639ea6e315b04.png"
+}, {
+    name: "一蓑烟雨",
+    link: "https://easyf12.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/18/639ea6d1ed21a.webp!linkavatar",
+    descr: "竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。"
+}, {
+    name: "wsb",
+    link: "https://wsbblog.cn",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/21/63a2bf8e25ffb.png!linkavatar",
+    descr: "己所不欲，勿施于人"
+}, {
+    name: "竹山一叶",
+    link: "https://zsyyblog.com",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/23/63a54e9b90149.webp!linkavatar",
+    descr: "来了就不想走的小家",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/12/23/63a54e962ae67.webp"
+}, {
+    name: "JustBecause",
+    link: "https://justbecausee.cn",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/24/63a69bea181ae.webp!linkavatar",
+    descr: "别下会看场合的雨",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/12/24/63a69bea24ed0.webp"
+}, {
+    name: "贰猹的小窝",
+    link: "https://noionion.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/27/63aa52f8c4542.webp!linkavatar",
+    descr: "用这生命中的每一秒，给自己一个不后悔的未来"
+}, {
+    name: "CharlesHsu",
+    link: "https://www.crowhsu.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/27/63aa53cb95f9e.webp!linkavatar",
+    descr: "既然相信，那就前行。"
+}, {
+    name: "绯鞠的博客",
+    link: "https://loli.fj.cn",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/27/63aa5660046ca.png!linkavatar",
+    descr: "一只爱折腾的绯鞠"
+}, {
+    name: "MoyuqL",
+    link: "https://blog.moyuql.top",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/27/63aa5649a4cbc.webp!linkavatar",
+    descr: "MoyuqL与你同在~"
+}, {
+    name: "Sunday",
+    link: "https://blog.wyun521.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/02/63b2c1361bcf9.webp!linkavatar",
+    descr: "最美不是下雨天，是和你躲过雨的屋檐"
+}, {
+    name: "New_fei",
+    link: "https://blog.newfei.top",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/02/63b2c1bf06f85.webp!linkavatar",
+    descr: "啊吧啊吧！"
+}, {
+    name: "摘星怪",
+    link: "https://www.hlsiyy.love/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/02/63b2c427eeb08.webp!linkavatar",
+    descr: "学习与记录的小博主"
+}, {
+    name: "Muieay",
+    link: "https://blog.muieay.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/02/63b2c51855f23.webp!linkavatar",
+    descr: "或许成为遗憾才会让人念念不忘吧"
+}, {
+    name: "ReCclay",
+    link: "https://www.recclay.cc/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/14/63c21540b014c.png!linkavatar",
+    descr: "芯片硅农，别忘无恙🧐"
+}, {
+    name: "Anjhon",
+    link: "https://www.anjhon.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/14/63c216ff99a7d.webp!linkavatar",
+    descr: "但知行好事，莫要问前程"
+}, {
+    name: "Shine",
+    link: "https://shineyull.github.io/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/14/63c21f007e710.png!linkavatar",
+    descr: "Let’s go! Target: The Vast Stars!"
+}, {
+    name: "Terorの客栈",
+    link: "https://blog.trfox.ml",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/14/63c220257431e.png!linkavatar",
+    descr: "方寸之间，深不见底"
+}, {
+    name: "Tan",
+    link: "https://www.tanybo.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/14/63c2250c8b2fe.webp!linkavatar",
+    descr: "太阳当空照，花儿对我笑。"
+}, {
+    name: "SLOVER",
+    link: "https://678777.xyz",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/14/63c2262621e4e.png!linkavatar",
+    descr: "诱导已亮，前方净空，祝君武运昌隆"
+}, {
+    name: "MYAN",
+    link: "https://zhouenpei0523.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/14/63c226bcf22a2.webp!linkavatar",
+    descr: "过去已去,未来已来"
+}, {
+    name: "轨道兔",
+    link: "https://jinyu.host/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/14/63c2286913f5c.webp!linkavatar",
+    descr: "为我自己，为友与仇，人与兽，爱者与不爱者。"
+}, {
+    name: "Neil's Notes",
+    link: "https://www.neily.top",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/28/63d4c4b070acd.webp!linkavatar",
+    descr: "咕咕咕！"
+}, {
+    name: "Haoyu",
+    link: "https://g-haoyu.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/28/63d4c4b07ab76.png!linkavatar",
+    descr: "恭喜，你发现了宝藏"
+}, {
+    name: "XK",
+    link: "https://www.xukaiyyds.cn",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/28/63d4cbedf3303.png!linkavatar",
+    descr: "一个干净整洁的个人博客"
+}, {
+    name: "咬一口激动的鱼",
+    link: "https://jiyu134.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/28/63d4cbee0c799.webp!linkavatar",
+    descr: "风带来了种子，时间使之发芽"
+}, {
+    name: "维度前端",
+    link: "https://www.df100.ltd/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/28/63d4cdaeab017.jpg!linkavatar",
+    descr: "我将飞向星空，时刻期待与你邂逅"
+}, {
+    name: "南方嘉木",
+    link: "https://gavin-chen.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/28/63d4cdaeaadae.webp!linkavatar",
+    descr: "不畏将来，不念过往。"
+}, {
+    name: "Prong",
+    link: "https://prong.ltd",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/28/63d4cdaeac44f.webp!linkavatar",
+    descr: "尖头叉子在霍格沃茨的休息室~"
+}, {
+    name: "Hc",
+    link: "https://blog.ivil.top",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/02/03/63dc90c5896ed.jpg!linkavatar",
+    descr: "相遇即是上上签"
+}, {
+    name: "钟意博客",
+    link: "https://blog.thatcoder.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/28/63d4cdaeab017.jpg!linkavatar",
+    descr: "感谢你的阅读."
+}, {
+    name: "小嗷犬",
+    link: "https://blog.marquis.eu.org/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/02/03/63dc90bd46c50.png!linkavatar",
+    descr: "为天地立心，为生民立命，为往圣继绝学，为万世开太平"
+}, {
+    name: "codefish",
+    link: "https://offerkillers.gitee.io",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/02/03/63dca3126b5f2.webp!linkavatar",
+    descr: "一个爱好半小时的前端混子"
+}, {
+    name: "墨尘",
+    link: "https://mnochen.top",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/03/26/641ffa683622e.webp!linkavatar",
+    descr: "一只没有梦想咸鱼"
+}, {
+    name: "Mxne",
+    link: "https://blog.mxne.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/02/03/63dca3126b8c8.png!linkavatar",
+    descr: "学如逆水行舟，不进则退。"
+}, {
+    name: "道宣的窝",
+    link: "https://daoxuan.cc/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/02/13/63ea2dc47351a.webp!linkavatar",
+    descr: "欢迎来到道宣的温暖小窝"
+}, {
+    name: "Sunday",
+    link: "https://blog.wyun521.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/02/13/63ea2dc473736.webp!linkavatar",
+    descr: "代码改变世界"
+}, {
+    name: "ゆちゃん",
+    link: "https://idealistyu.github.io/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/02/13/63ea2e9391ad4.webp!linkavatar",
+    descr: "ゆちゃんのブログ"
+}, {
+    name: "雷雷屋头",
+    link: "https://ll.sc.cn",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/02/13/63ea2e9391811.webp!linkavatar",
+    descr: "爱生活，爱工作，爱折腾。",
+    siteshot: "https://ll.sc.cn/img/siteshot.webp"
+}, {
+    name: "极客郎",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/02/13/63ea3178e30dd.png!linkavatar",
+    link: "https://ximfem.asia/",
+    descr: "将科技玩到极致！"
+}, {
+    name: "爱吃肉的猫",
+    link: "https://meuicat.com/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/02/15/63ecbb97ac708.png!linkavatar",
+    descr: "有肉有猫有生活."
+}, {
+    name: "Billwing Blog",
+    link: "https://billwing.fun",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/02/15/63ecba6196a60.webp!linkavatar",
+    descr: "每个人都有无限的潜能"
+}, {
+    name: "TactfulBean",
+    link: "https://tactfulbean.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/02/15/63ecbb97ac5de.webp!linkavatar",
+    descr: "一颗咸鱼豆子的博客"
+}, {
+    name: "金鳞星溅",
+    link: "https://jinlinxingjian.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/02/15/63ecc5daf1ddc.webp!linkavatar",
+    descr: "Hello world 交个朋友吧"
+}, {
+    name: "湘铭",
+    link: "https://xiangming.site/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/02/27/63fc51858414b.webp!linkavatar",
+    descr: "湘铭的秘密基地啊！"
+}, {
+    name: "小飞博客",
+    link: "https://www.xffjs.com",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/02/27/63fc51858413d.webp!linkavatar",
+    descr: "生活明朗,万物可爱,人间值得,未来可期。"
+}, {
+    name: "白雾茫茫",
+    link: "https://www.xmwpro.com/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/02/27/63fc54a47ef0f.webp!linkavatar",
+    descr: "记录学习、生活和有趣的事"
+}, {
+    name: "你会发光叭",
+    link: "https://linjiangyu.com",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/03/26/641ff527e3606.webp!linkavatar",
+    descr: "一旦你成为自己的太阳,便无需再凭借谁的光"
+}, {
+    name: "李程ic",
+    link: "https://www.licic.net/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/23/646c12e96c03e.png!linkavatar",
+    descr: "中华人民共和国万岁！"
+}, {
+    name: "满心Hrn",
+    link: "https://blog.lovelu.top",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/03/26/641ff636e1f2c.webp!linkavatar",
+    descr: "追求让人充实，分享让人快乐"
+}, {
+    name: "幻想乡の红魔馆",
+    link: "https://ming-e.space",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/03/26/641ff743c8bb0.webp!linkavatar",
+    descr: "车万人万岁"
+}, {
+    name: "Bgemini",
+    link: "https://xieyong.cc",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/03/26/641ff807bc0c7.webp!linkavatar",
+    descr: "光荣在于平淡，艰难在于漫长"
+}, {
+    name: "博客录",
+    link: "https://boke.lu",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/03/26/641ff86bcc912.png!linkavatar",
+    descr: "博客收录展示平台"
+}, {
+    name: "Peace",
+    link: "https://tiaq.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/03/26/641ff8e538339.webp!linkavatar",
+    descr: "藏匿在大海中的小屋"
+}, {
+    name: "SuperXCR",
+    link: "https://liqur.xyz",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/03/26/641ff964298d7.webp!linkavatar",
+    descr: "学习着、并快乐着"
+}, {
+    name: "墨点白",
+    link: "https://nanwish.love",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/03/26/641ff9cccf2e3.jpg!linkavatar",
+    descr: "学习着、并快乐着"
+}, {
+    name: "大海看看",
+    link: "https://www.dhkk.cn",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/03/26/641ffa1f3248c.png!linkavatar",
+    descr: "记录生活留住美好时刻 ，分享个人学习笔记"
+}, {
+    name: "wuluo-久洛南伊🥕🍇",
+    link: "https://www.wuluojiu.xyz/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/03/26/641ffacaefc42.webp!linkavatar",
+    descr: "Future is now 🍭🍭🍭"
+}, {
+    name: "GanSer",
+    link: "https://gan1ser.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/02/27/63fc533ca822d.webp!linkavatar",
+    descr: "紫箫吟断，素笺恨切，夜寒鸿起"
+}, {
+    name: "青城小居",
+    link: "https://zhaoyuansong.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/23/646c10ee6c9b2.webp!linkavatar",
+    descr: "清风也染人间忧"
+}, {
+    name: "Pupper",
+    link: "https://pupper.cn",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/04/64535eba5d72e.webp!linkavatar",
+    descr: "记录学习、生活中的点点滴滴~"
+}, {
+    name: "海阔蓝",
+    link: "https://blog.hklan.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/04/645361f49df1e.webp!linkavatar",
+    descr: "终于找到你啦~分享你想要的经验"
+}, {
+    name: "小漁头",
+    link: "https://blog.dai2yutou.space/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/04/645362d62ec9f.webp!linkavatar",
+    descr: "来日方长发，何惧车遥马慢😎"
+}, {
+    name: "顾梦",
+    link: "https://www.jishuqin.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/04/64536390eca33.webp!linkavatar",
+    descr: "不想满心遗憾，那就全力以赴。"
+}, {
+    name: "包子哟",
+    link: "https://blog.bugjava.cn",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/04/645363cd11758.png!linkavatar",
+    descr: "一个练习Bug时长两年半的程序员建立的小站"
+}, {
+    name: "王同学",
+    link: "http://www.wxz666.icu/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/04/64536ad99fe2d.webp!linkavatar",
+    descr: "须知少时凌云志，曾许人间第一流"
+}, {
+    name: "东京日志",
+    link: "http://www.hellokvm.com",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/04/64536b772293a.png!linkavatar",
+    descr: "在IDC工作多年,分享和总结一些服务器维护经验以及手机和电脑教程"
+}, {
+    name: "杨不羁",
+    link: "http://www.blog.yzq.ink",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/04/64536c4e8fced.webp!linkavatar",
+    descr: "流水落花春去也，天上人间"
+}, {
+    name: "HimiCos",
+    link: "https://blog.himicos.cc",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/04/64536e2e0108f.webp!linkavatar",
+    descr: "生活不能没有音乐～"
+}, {
+    name: "浅笑安然",
+    link: "https://siax.cn",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/04/64536ebfee596.png!linkavatar",
+    descr: "总之岁月漫长, 然而值得等待。"
+}, {
+    name: "繁華如夢",
+    link: "https://holyghostf.github.io/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/04/64536f0b08a86.webp!linkavatar",
+    descr: "苍茫大地一剑尽挽破，何处繁华笙歌落。"
+}, {
+    name: "小潘",
+    link: "https://pansida.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/04/64536f7a61344.webp!linkavatar",
+    descr: "拥抱阳光，活力满满"
+}, {
+    name: "shark-Gao",
+    link: "https://manamn.space/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/04/64536fe13c8fa.webp!linkavatar",
+    descr: "Future is now 🍭🍭🍭"
+}, {
+    name: "召尘秘境",
+    link: "https://www.olive-r.cn",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/04/6453707aa128c.webp!linkavatar",
+    descr: "开放，包容，共享，团结"
+}, {
+    name: "半方池水半方田",
+    link: "https://uuanqin.top",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/04/645371241664d.png!linkavatar",
+    descr: "技术分享与生活分享"
+}, {
+    name: "Celia",
+    link: "https://7boe.top",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/13/645f7a92a3cbb.png!linkavatar",
+    descr: "欲买桂花同载酒，终不似少年游"
+}, {
+    name: "醉浪",
+    link: "https://blog.zuilang.tk/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/23/646c0cf38646b.webp!linkavatar",
+    descr: "一只喜欢七彩球的枯叶蝶"
+}, {
+    name: "LoungeXi",
+    link: "https://loungexi.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/23/646c0d6501f18.webp!linkavatar",
+    descr: "且将新火试新茶"
+}, {
+    name: "萌新闻",
+    link: "http://www.imxw.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/23/646c0dd50a179.png!linkavatar",
+    descr: "每天60秒新闻简报分享"
+}, {
+    name: "Zhu",
+    link: "https://azhu.site/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/23/646c0e40950b7.webp!linkavatar",
+    descr: "一个差点儿就能成为90后的80后，计算机、股票业余爱好者。"
+}, {
+    name: "小植の小破站",
+    link: "https://xiaoztx.top",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/23/646c0f205b9d4.webp!linkavatar",
+    descr: "生生不息，好运不止"
+}, {
+    name: "小明",
+    link: "https://xiaomingwy.com/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/23/646c122a9196b.webp!linkavatar",
+    descr: "日有所思夜有所梦。"
+}, {
+    name: "系统观察屋",
+    link: "https://www.xitongguanchawu.com/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/23/646c1290902ac.png!linkavatar",
+    descr: "教程资源样样精通"
+}, {
+    name: "困困鱼",
+    link: "https://0206.ink/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/05/23/646c13caca15e.webp!linkavatar",
+    descr: "喜欢捣鼓的博主"
+}, {
+    name: "Ganzhe",
+    link: "https://ganzhe2028.github.io",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/06/05/647d9832b5ec2.webp!linkavatar",
+    descr: "顺其自然，持之以恒"
+}, {
+    name: "Kevinwu",
+    link: "https://www.kevinwu.cc/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/06/05/647dafc95b3bd.webp!linkavatar",
+    descr: "喜欢，就去追。"
+}, {
+    name: "Plasmon222",
+    link: "https://loveak.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/06/05/647dae63aee47.webp!linkavatar",
+    descr: "一念既出，万山无阻"
+}, {
+    name: "青桔气球",
+    link: "https://blog.qjqq.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/06/05/647daf8997f45.webp!linkavatar",
+    descr: "分享网络安全与科技生活"
+}, {
+    name: "胡桃木实验室",
+    link: "https://www.htmacg.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/06/05/647db064b074f.png!linkavatar",
+    descr: "胡桃木的笔记分享小站"
+}, {
+    name: "王貔貅",
+    link: "https://blog.wpixiu.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/06/05/647db0b237ebd.webp!linkavatar",
+    descr: "日就月将,学有缉熙于光明"
+}, {
+    name: "零叁壹",
+    link: "https://blog.oiii.top",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/06/05/647db122b0da3.webp!linkavatar",
+    descr: "一个生活记录小站"
+}, {
+    name: "你好可爱",
+    link: "https://wjldarling.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/06/05/647db1bc85ced.webp!linkavatar",
+    descr: "山水一程，三生有幸✨"
+}, {
+    name: "懒觉猫先生",
+    link: "https://blog.luoaicheng.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/06/05/647db222b0fdd.jpeg!linkavatar",
+    descr: "睡觉睡觉，睡觉睡觉，喵喵"
+}, {
+    name: "Vinson",
+    link: "https://sakura520.co/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/09/02/6311ff0644d0e.webp!linkavatar",
+    descr: "梦想是一个天真的词，实现梦想是一个残酷的词",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/09/02/6311ff0719a8e.webp"
+}, {
+    name: "程序员云天",
+    link: "https://nwjshm.cn/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/09/02/631200151f547.webp!linkavatar",
+    descr: "记录程序员从大牛之路"
+}, {
+    name: "btwoa",
+    link: "https://blog.btwoa.com",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/09/17/6325d829e355c.jpg!linkavatar",
+    descr: "我仍相信人间滚烫",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/09/17/6325d829e4d64.png"
+}, {
+    name: "梦念逍遥",
+    link: "https://blog.lwtxiaoyao.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/09/20/63294be7b841e.jpg!linkavatar",
+    descr: "无梦之境",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/09/20/63294be7a7d0d.jpg"
+}, {
+    name: "随风起",
+    link: "https://blog.bywind.xyz/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/09/23/632d1e69d9fd8.jpg!linkavatar",
+    descr: "爱意随风起，风止意难平",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/09/23/632d1e69da344.jpg"
+}, {
+    name: "七鳄の学习格",
+    link: "https://blog.gmcj0816.top/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/09/25/633016add88ac.jpg!linkavatar",
+    descr: "如果世界多了精彩，每一位都是创造者，大家都是你的观众",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/09/25/633016addb7c6.jpg"
+}, {
+    name: "来动力家族喝杯酒",
+    link: "https://pikachen-pick.github.io/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/09/28/6333981c8d045.jpg!linkavatar",
+    descr: "逸一时，误一世，依旧已久罢已零"
+}, {
+    name: "方糖",
+    link: "https://www.iftft.com",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/11/05/63667aafb06ea.png!linkavatar",
+    descr: "方糖（FangTang）世界",
+    siteshot: "https://img02.anheyu.com/adminuploads/1/2022/11/05/636679e6beae7.webp"
+}, {
+    name: "华仔927",
+    link: "https://blog.xiaohua927.top",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/11/24/637eee0d52f69.webp!linkavatar",
+    descr: "行而不辍，未来可期！"
+}, {
+    name: "胖二十",
+    link: "https://pangershi.com",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2022/12/27/63aa551e5f29b.png!linkavatar",
+    descr: "不秃头，无格子衫，擅长复制粘贴的正经程序猿"
+}, {
+    name: "kwobron",
+    link: "https://www.acozycotage.net/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/02/63b2c369a7b29.webp!linkavatar",
+    descr: "寄言燕雀莫相唣，自有云霄万里高 🍭🍭🍭"
+}, {
+    name: "匹诺草的小宇宙",
+    link: "https://blog.pinochio.cf",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/02/63b2c256bc384.webp!linkavatar",
+    descr: "匹诺草啊啊啊"
+}, {
+    name: "栖迟於一丘",
+    link: "https://www.ccyh.xyz/",
+    avatar: "https://img02.anheyu.com/adminuploads/1/2023/01/28/63d4c81d90e60.png!linkavatar",
+    descr: "技术分享，生活随笔"
+}]
+  , refreshNum = 1;
+function addFriendLinksInFooter() {
+    var a = document.getElementById("footer-random-friends-btn");
+    if (a) {
+        a.style.opacity = "0.2",
+        a.style.transitionDuration = "0.3s",
+        a.style.transform = "rotate(" + 360 * refreshNum++ + "deg)";
+        for (var t = [], n = 0; friend_link_list.length && n < 3; ) {
+            var e = Math.floor(Math.random() * friend_link_list.length)
+              , e = friend_link_list.splice(e, 1)[0]
+              , s = e.name
+              , i = e.link
+              , e = e.avatar;
+            t.push({
+                name: s,
+                link: i,
+                avatar: e
+            }),
+            n++
+        }
+        var m = t.map(function(a) {
+            var t = a.name;
+            return "<a class='footer-item' href='" + a.link + "' target='_blank' rel='noopener nofollow'>" + t + "</a>"
+        }).join("");
+        m += "<a class='footer-item' href='/link/'>更多</a>",
+        document.getElementById("friend-links-in-footer").innerHTML = m,
+        setTimeout(function() {
+            a.style.opacity = "1"
+        }, 300)
+    }
+}
