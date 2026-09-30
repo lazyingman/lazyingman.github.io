@@ -168,95 +168,6 @@ span.recent-post-top-text {
   padding: 0 !important
 }
 
-.categoryItem {
-  overflow: hidden;
-  transform: scale(1);
-  transition: all 0.8s cubic-bezier(0.65, 0.15, 0.37, 1.19);
-  height: 48%;
-  border-radius: 12px;
-}
-
-a.categoryButton {
-  height: 100%;
-  width: 100%;
-  background: var(--bieyinan-card-bg);
-  border-radius: 12px;
-  display: inline-block;
-  text-align: left;
-  line-height: 4em;
-  font-weight: bold;
-  font-size: 0.9rem;
-  color: var(--bieyinan-white);
-  transition: all 0.8s cubic-bezier(0.39, 0.575, 0.565, 1);
-  transform: scale(1);
-  overflow: hidden;
-  font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei;
-}
-
-a.categoryButton i {
-  transform: scale(1.0) rotate(15deg);
-}
-
-@media screen and (min-width: 1300px) {
-  a.categoryButton:active {
-    transform: scale(0.97);
-  }
-}
-
-@media screen and (max-width: 768px) {
-  a.categoryButton {
-    border-radius: 8px;
-  }
-
-  .categoryItem {
-    border-radius: 0px;
-    height: 47%;
-    box-shadow: none !important;
-  }
-}
-
-a.categoryButton:after {
-  top: 50px;
-  width: 1rem;
-  left: 21px;
-  height: 2px;
-  background: var(--bieyinan-white);
-  content: "";
-  border-radius: 1px;
-  position: absolute;
-}
-
-.categoryButtonText {
-  padding-left: 21px;
-}
-
-a.categoryButton i {
-  font-size: 5rem;
-  opacity: 0.2;
-  position: absolute;
-  right: 0%;
-  top: 20%;
-  transition: 0.3s;
-  width: 100px;
-  text-align: center;
-  filter: blur(2px);
-}
-
-@media screen and (max-width: 768px) {
-  a.categoryButton i {
-    display: none;
-  }
-
-  .recent-post-top .categoryGroup {
-    min-width: 130px !important;
-    margin-bottom: 0.5rem;
-    margin-left: .75rem;
-    max-height: 164px;
-    overflow: hidden;
-    position: relative;
-  }
-}
-
 .topGroup {
   display: flex;
 }
@@ -294,9 +205,8 @@ div#banners {
   div#banners {
     display: flex;
     width: 100%;
-    height: 76%;
+    height: 100%;
     background: var(--bieyinan-card-bg);
-    margin-bottom: 0.5rem;
     border: var(--style-border);
     border-radius: 12px;
     overflow: hidden;
@@ -355,6 +265,40 @@ div#banners {
     font-size: 1rem;
   }
 
+  #banners {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #banners::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+    z-index: 2;
+    pointer-events: none;
+
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.85)
+    );
+
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+
+  /* 暗色模式 */
+  [data-theme="dark"] #banners::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(24, 24, 24, 0.25),
+      rgba(24, 24, 24, 0.85)
+    );
+  }
+
   .banners-title {
     top: 2rem;
     left: 1.5rem;
@@ -362,7 +306,6 @@ div#banners {
     display: flex;
     flex-direction: column;
   }
-
 
   .banners-title-big {
     font-size: 36px;
@@ -379,22 +322,6 @@ div#banners {
     margin-bottom: 0.5rem;
   }
 
-  #banner-hover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: var(--bieyinan-theme);
-    color: var(--bieyinan-white);
-    padding-left: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    opacity: 0;
-    transition: cubic-bezier(0.71, 0.15, 0.16, 1.15) 0.6s;
-  }
-
   .bannerText {
     font-size: 4rem;
     line-height: 4rem;
@@ -404,19 +331,6 @@ div#banners {
   .banner-righticon {
     font-size: 4rem;
     opacity: 0.6;
-  }
-
-  #banners:hover #banner-hover {
-    opacity: 1;
-    padding-left: 2rem;
-    background: #4259efc9;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    -webkit-backface-visibility: hidden;
-    -webkit-transform-style: preserve-3d;
-    transition: 0.3s;
-    background-size: 200%;
-    cursor: pointer;
   }
 }
 
@@ -428,7 +342,8 @@ div#banners {
 
 .tags-group-all {
   display: flex;
-  transform: rotate(-30deg)
+  /* 行轴朝右下投影，与参考轮播的运动方向一致。 */
+  transform: rotateX(20deg) rotateZ(-20deg) skewX(10deg) translateZ(0px);
 }
 
 .tags-group-all.nowrapMove {
@@ -467,6 +382,71 @@ div#banners {
   box-shadow: var(--bieyinan-shadow-blackdeep)
 }
 
+/* 首页图标：加深偏移底层形成侧面，正面保持原有位置和尺寸。 */
+.tags-group-all .tags-group-icon {
+  --icon-shadow-strength: .5;
+  cursor: pointer;
+  position: relative;
+  isolation: isolate;
+  box-shadow: none;
+  translate: 0 0;
+  transition: translate .25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tags-group-all .tags-group-icon:hover {
+    --icon-shadow-strength: 1;
+    z-index: 1;
+    translate: 6px -12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tags-group-all .tags-group-wrapper {
+    animation: none;
+  }
+
+  .tags-group-all .tags-group-icon {
+    transition: none;
+  }
+}
+
+.tags-group-all .tags-group-icon::before,
+.tags-group-all .tags-group-icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  background: inherit;
+  pointer-events: none;
+}
+
+.tags-group-all .tags-group-icon::before {
+  z-index: -2;
+  transition: box-shadow .25s ease;
+  transform: translate(-4px, 4px) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+  box-shadow:
+    inset 0 0 0 120px rgba(0, 0, 0, .14),
+    -70px 70px 65px color-mix(in srgb, var(--icon-shadow, #1c3f31) calc(12% * var(--icon-shadow-strength)), transparent),
+    -30px 30px 30px color-mix(in srgb, var(--icon-shadow, #1c3f31) calc(20% * var(--icon-shadow-strength)), transparent),
+    -15px 15px 15px color-mix(in srgb, var(--icon-shadow, #1c3f31) calc(15% * var(--icon-shadow-strength)), transparent),
+    -10px 10px 8px color-mix(in srgb, var(--icon-shadow, #1c3f31) calc(10% * var(--icon-shadow-strength)), transparent),
+    -4px 4px 4px color-mix(in srgb, var(--icon-shadow, #1c3f31) calc(6% * var(--icon-shadow-strength)), transparent),
+    -2px 2px 2px color-mix(in srgb, var(--icon-shadow, #1c3f31) calc(4% * var(--icon-shadow-strength)), transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tags-group-all .tags-group-icon::before {
+    transition: none;
+  }
+}
+
+.tags-group-all .tags-group-icon::after {
+  z-index: -1;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2),
+    -1px 1px 2px rgba(0, 0, 0, .12);
+}
+
 .nowrapMove .tags-group-icon {
   border-radius: 50%
 }
@@ -482,93 +462,8 @@ div#banners {
   object-fit: cover
 }
 
-.categoryItem:hover i {
-  opacity: .8;
-  transition: .8s;
-  transition-delay: .15s;
-  transform: scale(1.03) rotate(0);
-  font-size: 2.5rem;
-  filter: blur(0)
-}
-
-@media screen and (min-width: 1200px) {
-  .categoryItem:hover i {
-    transform: scale(1.03) rotate(0)
-  }
-}
-
 .cate-button-text {
   box-shadow: var(--bieyinan-shadow-black)
-}
-
-.recent-post-top .categoryGroup {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-width: 200px
-}
-
-.categoryGroup .categoryItem:nth-child(3) {
-  display: none
-}
-
-@media screen and (min-width: 1200px) {
-  .recent-post-top .categoryGroup {
-    flex-direction: row;
-    height: 24%
-  }
-
-  .categoryItem {
-    width: calc(100% / 3 - .33rem);
-    height: 100%;
-    margin-right: .5rem
-  }
-
-  .categoryItem:last-child {
-    margin-right: 0
-  }
-
-  .categoryItem:hover {
-    width: 50%
-  }
-
-  .categoryGroup .categoryItem:nth-child(3) {
-    display: flex
-  }
-}
-
-a.categoryButton.bikan {
-  background: linear-gradient(to right, #358bff, #15c6ff);
-  background-size: 200%
-}
-
-a.categoryButton.remen {
-  background: linear-gradient(to right, #f65, #ffbf37);
-  background-size: 200%
-}
-
-a.categoryButton.shiyong {
-  background: linear-gradient(to right, #18e7ae, #1eebeb);
-  background-size: 200%
-}
-
-[data-theme=dark] a.categoryButton.bikan {
-  background: linear-gradient(to right, #0653b8, #2fcbff);
-  background-size: 200%
-}
-
-[data-theme=dark] a.categoryButton.remen {
-  background: linear-gradient(to right, #e22a16, #da980c);
-  background-size: 200%
-}
-
-[data-theme=dark] a.categoryButton.shiyong {
-  background: linear-gradient(to right, #099e74, #0ea4a4);
-  background-size: 200%
-}
-
-a.categoryButton:hover {
-  background-position: 100% 0
 }
 
 @keyframes rowup {
@@ -1274,7 +1169,6 @@ body[data-type=music] #fps-group {
   }
 }
 
-
 /* stars */
 
 .stars {
@@ -1347,7 +1241,6 @@ body[data-type=music] #fps-group {
   background: #fff;
   border-radius: 50%;
 }
-
 
 /* changebg */
 
@@ -1519,7 +1412,6 @@ body[data-type=music] #fps-group {
   border-radius: 8px;
 }
 
-
 .article-gpt .point {
   opacity: 0;
 }
@@ -1681,7 +1573,6 @@ body[data-type=music] #fps-group {
 .tk-meta-input .el-input .el-input-group__prepend {
   padding: 0 .8rem !important;
 }
-
 
 /* 侧边栏音乐歌词 */
 #card-musiclist.card-widget {

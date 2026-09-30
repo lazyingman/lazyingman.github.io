@@ -1224,7 +1224,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     } else {
       // 没有获取到文章顶图元素，也就是不在文章页，设置bar meta样式
-      root.style.setProperty("--bieyinan-bar-background", "var(--bieyinan-meta-theme-color)");
+      root.style.setProperty("--bieyinan-bar-background", "var(--bieyinan-theme)");
       root.style.setProperty("--bieyinan-main", "var(--bieyinan-theme)");
       root.style.setProperty("--bieyinan-theme-op-deep", "rgb(97, 213, 255)");
     }
@@ -1325,6 +1325,27 @@ document.addEventListener("DOMContentLoaded", function () {
     return brightness >= 0.5 ? "light" : "dark";
   };
 
+  /**
+   * 点击首页图标，使用阴影基色设置主题色；亮色复用现有方法加深。
+   * @param {MouseEvent} event 委托的点击事件，支持点击内部图片及 PJAX 后的新图标。
+   */
+  const setThemeFromTagIcon = event => {
+    const icon = event.target.closest?.(".tags-group-all .tags-group-icon");
+    if (!icon) return;
+
+    const shadowColor = getComputedStyle(icon).getPropertyValue("--icon-shadow").trim();
+    // 数据使用十六进制颜色，先校验，避免无效值传入亮度判断。
+    if (!/^#(?:[\da-f]{3}|[\da-f]{6})$/i.test(shadowColor)) return;
+    let value = colorHex(shadowColor);
+    if (getContrastYIQ(value) === "light") {
+      value = LightenDarkenColor(value, -40);
+    }
+    document.documentElement.style.setProperty("--bieyinan-theme", value);
+    document.documentElement.style.setProperty("--bieyinan-bar-background", value);
+    document.documentElement.style.setProperty("--bieyinan-main", value);
+    document.documentElement.style.setProperty("--bieyinan-theme-op-deep", colorRgb(value,0.6));
+  };
+
   //监听跳转页面输入框是否按下回车
   const listenToPageInputPress = function () {
     var input = document.getElementById("toPageText");
@@ -1406,7 +1427,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var clicklogo = true;
   function clickGpt() {
     if (clicklogo) {
-      articleGPT(`我是别亦难开发的摘要生成助理 BYN GPT，是一个基于作者手搓的生成式AI，你无法与我直接沟通，所有文本皆源于本地书写的内容。
+      articleGPT(`我是Lazym开发的摘要生成助理 BYN GPT，是一个基于作者手搓的生成式AI，你无法与我直接沟通，所有文本皆源于本地书写的内容。
       我在这里只负责显示，并仿照 GPT 的形式输出，如果你想跟我一样白嫖为主，你也可以像我这样做，
       当然，你也可以使用 Tianli 开发的 TianliGPT 来更简单地实现真正的 AI 摘要。`);
       clicklogo = false;
@@ -1477,6 +1498,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 初始化
   const unRefreshFn = function () {
+    document.addEventListener("click", setThemeFromTagIcon);
     window.addEventListener("resize", () => {
       adjustMenu(false);
       bieyinan.isHidden(document.getElementById("toggle-menu")) && mobileSidebarOpen && sidebarFn.close();
